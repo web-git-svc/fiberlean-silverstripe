@@ -1,0 +1,3 @@
+<div>
+	{$ElementalArea}
+</div>

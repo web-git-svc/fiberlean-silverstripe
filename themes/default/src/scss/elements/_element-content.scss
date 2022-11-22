@@ -1,0 +1,11 @@
+/* Layout: _element-content.scss
+---------------------------------------------------------------------------------- */
+.element-content {
+	padding: 60px 0;
+}
+
+@include respond(768px) {
+	.element-content {
+		padding: 80px 0;
+	}
+}

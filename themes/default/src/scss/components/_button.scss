@@ -1,0 +1,85 @@
+/* Layout: _button.scss
+---------------------------------------------------------------------------------- */
+a,
+button,
+input,
+span {
+	&.button {
+		align-items: center;
+		appearance: none;
+		background-color: $white;
+		border: none;
+		color: $blue-darker;
+		cursor: pointer;
+		display: inline-flex;
+		flex-wrap: wrap;
+		font-family: inherit;
+		font-weight: 400;
+		justify-content: center;
+		line-height: 1;
+		margin-bottom: 1.25em;
+		min-height: 3em;
+		padding: .6em 3.5em .4em;
+		text-align: center;
+		transition: 400ms ease-in-out;
+		vertical-align: middle;
+		width: auto;
+		border-radius: 30px;
+		@include fluid-font-size((1.6rem, 320px), (1.8rem, 992px));
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:active {
+			background-color: darken($white, 10);
+		}
+
+		&:disabled {
+			filter: grayscale(100%);
+			pointer-events: none;
+		}
+
+		&--green {
+			background-color: $green;
+
+			&:hover,
+			&:active {
+				background-color: darken($green, 10);
+			}
+		}
+
+		&--blue-dark {
+			background-color: $blue-dark;
+			color: $white;
+
+			&:hover,
+			&:active {
+				background-color: darken($blue-dark, 10);
+			}
+		}
+
+		&--orange {
+			background-color: $orange;
+
+			&:hover,
+			&:active {
+				background-color: darken($orange, 10);
+			}
+		}
+	}
+}
+
+@include respond(767px, max) {
+	a,
+	button,
+	input,
+	span {
+		&.button {
+			display: flex;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+---
+Name: app-extensions
+---
+App\Model\Page:
+  extensions:
+    - App\Extensions\Pages\PageExtension
+
+Heyday\MenuManager\MenuAdmin:
+  extensions:
+    - App\Extensions\MenuManager\MenuAdminExtension
+Heyday\MenuManager\MenuSet:
+  extensions:
+    - App\Extensions\MenuManager\MenuSetExtension
+
+SilverStripe\Assets\Storage\DBFile:
+  extensions:
+    - App\Extensions\Assets\DBFileExtension
+SilverStripe\ORM\FieldType\DBString:
+  extensions:
+    - App\Extensions\ORM\DBStringExtension
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - App\Extensions\SiteConfig\SiteConfigExtension
+
+---
+After: '#blogconfig'
+Only:
+  moduleexists: 'silverstripe/blog'
+---
+SilverStripe\Blog\Model\BlogPost:
+  extensions:
+    - App\Extensions\Blog\BlogPostExtension
+SilverStripe\Security\Member:
+  extensions:
+    - App\Extensions\Blog\BlogMemberExtension

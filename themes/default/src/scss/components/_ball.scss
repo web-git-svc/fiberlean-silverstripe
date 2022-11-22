@@ -1,0 +1,35 @@
+/* Layout: _ball.scss
+---------------------------------------------------------------------------------- */
+$front: (
+	'pink': #D32E7B,
+	'yellow': #F9DB4A,
+	'orange': #E38A32,
+	'blue': #61A6B6
+);
+
+$back: (
+	'pink': #7E1553,
+	'yellow': #61572E,
+	'orange': #7B3A35,
+	'blue': #112E32
+);
+
+.ball {
+	position: absolute;
+}
+
+.ball__front {
+	@each $color, $hex in $front {
+		.ball--#{$color} & {
+			fill: $hex;
+		}
+	}
+}
+
+.ball__back {
+	@each $color, $hex in $back {
+		.ball--#{$color} & {
+			fill: $hex;
+		}
+	}
+}

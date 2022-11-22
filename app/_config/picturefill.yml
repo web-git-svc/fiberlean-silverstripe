@@ -1,0 +1,20 @@
+---
+After: 'silverstripe-responsive-images/*'
+---
+Heyday\ResponsiveImages\ResponsiveImageExtension:
+  sets:
+    HeroSet:
+      method: FocusFill
+      css_classes: responsive-image
+      arguments:
+        "(min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 1200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min-resolution: 144dpi), (min-width: 1200px) and (min-resolution: 1.5dppx)": [ 2880, 1388 ]
+        "(min-width: 1200px)": [ 1920, 725 ]
+        "(min-width: 992px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 992px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 992px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 992px) and (min-device-pixel-ratio: 1.5), (min-width: 992px) and (min-resolution: 144dpi), (min-width: 992px) and (min-resolution: 1.5dppx)": [ 1800, 1388 ]
+        "(min-width: 992px)": [ 1200, 725 ]
+        "(min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 1488, 1488 ]
+        "(min-width: 768px)": [ 992, 992 ]
+        "(min-width: 576px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 576px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 1152, 1152 ]
+        "(min-width: 576px)": [ 768, 768 ]
+        "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 864, 864 ]
+        "(min-width: 200px)": [ 576, 576 ]
+      default_arguments: [ 1200, 725 ]

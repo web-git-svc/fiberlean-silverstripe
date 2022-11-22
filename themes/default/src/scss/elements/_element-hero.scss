@@ -1,0 +1,98 @@
+/* Layout: _element-hero.scss
+---------------------------------------------------------------------------------- */
+.element-hero {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 85px);
+	justify-content: flex-start;
+	max-height: 614px;
+	overflow: hidden;
+	padding: 95px 0;
+	position: relative;
+
+	> .container {
+		width: 100%;
+	}
+}
+
+@include respond(768px) {
+	.element-hero {
+		height: 725px;
+		justify-content: center;
+		min-height: auto;
+	}
+}
+
+/*------------------------------------
+	Content
+------------------------------------*/
+.element-hero__content {
+	color: $white;
+	font-weight: 700;
+	line-height: (52/44);
+	position: relative;
+	@include fluid-font-size((5.2rem, 320px), (9.8rem, 992px));
+	z-index: 15;
+
+	&::first-line {
+		font-weight: 300;
+	}
+}
+
+/*------------------------------------
+	Background image
+------------------------------------*/
+.responsive-image {
+	.element-hero & {
+		height: 100%;
+		inset: 0;
+		object-fit: cover;
+		position: absolute;
+		width: 100%;
+	}
+}
+
+/*------------------------------------
+	Ball
+------------------------------------*/
+.ball {
+	.element-hero & {
+		inset: auto 0 0 auto;
+		position: absolute;
+		transform: translate(50%, 50%);
+		z-index: 10;
+	}
+}
+
+@include respond(767px, max) {
+	.ball {
+		.element-hero & {
+			height: 366px;
+			inset: auto auto 0 0;
+			transform: translate(-50%, 50%);
+			width: 366px;
+		}
+	}
+}
+
+/*------------------------------------
+	Blob
+------------------------------------*/
+.element-hero__blob {
+	color: $blue-light;;
+	left: calc(100% - 497px);
+	position: absolute;
+	top: 0;
+	z-index: 5;
+}
+
+@include respond(767px, max) {
+	.element-hero__blob {
+		height: 323px;
+		inset: auto 0 0 auto;
+		left: calc(100% - 285px);
+		transform: rotate(180deg) scaleX(-1);
+		width: 535px;
+	}
+}
