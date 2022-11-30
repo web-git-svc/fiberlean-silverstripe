@@ -5,8 +5,10 @@ namespace App\Model\Elements;
 use App\Forms\GridField\GridFieldConfig_OrderableRecordEditor;
 use App\Model\Elements\Components\Feature;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\OptionsetField;
 use SilverStripe\ORM\HasManyList;
 
 /**
@@ -15,6 +17,10 @@ use SilverStripe\ORM\HasManyList;
 class ElementFeatures extends BaseElement
 {
     private static string $table_name = 'ElementFeatures';
+
+    private static array $db = [
+        'BackgroundColour' => 'Varchar',
+    ];
 
     private static array $has_many = [
         'Features' => Feature::class,
@@ -46,18 +52,35 @@ class ElementFeatures extends BaseElement
             function (FieldList $fields) {
                 $fields->removeByName(
                     [
-                        'FeatureBoxes',
+                        'Features',
                     ]
                 );
 
                 $fields->addFieldToTab(
                     'Root.Main',
                     GridField::create(
-                        'FeatureBoxes',
-                        'Feature boxes',
+                        'Features',
+                        'Features',
                         $this->Features(),
                         GridFieldConfig_OrderableRecordEditor::create()
                     )
+                );
+            }
+        );
+
+        $this->afterUpdateCMSFields(
+            function (FieldList $fields) {
+                $options = Config::inst()->get('Colours', 'colours');
+
+                $fields->addFieldsToTab(
+                    'Root.Settings',
+                    [
+                        OptionsetField::create(
+                            'BackgroundColour',
+                            'Background colour',
+                            $options,
+                        )->setEmptyString('None'),
+                    ]
                 );
             }
         );

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56d89fd0273532291634a693067f9893",
+    "content-hash": "cf9a2e32798fed7ab0ccef0cbe82d45b",
     "packages": [
         {
             "name": "adrhumphreys/silverstripe-textdropdownfield",
@@ -161,6 +161,60 @@
                 "source": "https://github.com/bigfork/silverstripe-fail-whale/tree/0.2.0"
             },
             "time": "2022-07-01T14:09:29+00:00"
+        },
+        {
+            "name": "bigfork/silverstripe-form-capture",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bigfork/silverstripe-form-capture.git",
+                "reference": "c6c9e0662f9e4812a304d2251e39e351d232be5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bigfork/silverstripe-form-capture/zipball/c6c9e0662f9e4812a304d2251e39e351d232be5c",
+                "reference": "c6c9e0662f9e4812a304d2251e39e351d232be5c",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "suggest": {
+                "silverstripe/gridfieldqueuedexport": "Allows CSV exports of large amounts of data by processing exports in the background"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "Bigfork\\SilverstripeFormCapture\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Haine",
+                    "email": "hello@andrewhaine.co.uk"
+                },
+                {
+                    "name": "Bigfork",
+                    "homepage": "https://www.bigfork.co.uk"
+                }
+            ],
+            "description": "Provides a method to capture simple silverstripe forms and a friendly admin interface for users",
+            "homepage": "http://github.com/bigfork/silverstripe-form-capture",
+            "keywords": [
+                "Forms",
+                "capture",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "http://github.com/bigfork/silverstripe-form-capture/issues",
+                "source": "https://github.com/bigfork/silverstripe-form-capture/tree/3.0.0"
+            },
+            "time": "2022-10-24T15:21:19+00:00"
         },
         {
             "name": "bigfork/silverstripe-sentry-handler",

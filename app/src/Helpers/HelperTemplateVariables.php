@@ -15,7 +15,7 @@ class HelperTemplateVariables implements TemplateGlobalProvider
 {
     private static int $ballCount = 0;
 
-    public static function ball(string $color='pink'): DBHTMLText
+    public static function ball(?string $color=null): DBHTMLText
     {
         self::$ballCount++;
         $template = SSViewer::create('App\Includes\Ball');

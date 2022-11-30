@@ -45,7 +45,6 @@ class Feature extends DataObject
 
     private static array $summary_fields = [
         'Title' => 'Title',
-        'Icon'  => 'Icon',
     ];
 
     private static string $default_sort = 'Sort ASC';

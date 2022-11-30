@@ -3,6 +3,8 @@
 namespace App\Extensions\Elemental;
 
 use AdrHumphreys\TextDropdownField\TextDropdownField;
+use App\Control\PageController;
+use SilverStripe\Control\Controller;
 use SilverStripe\Core\Convert;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Tab;
@@ -62,5 +64,12 @@ class BaseElementExtension extends DataExtension
             ['class' => $extraClass],
             Convert::raw2xml($this->owner->Title)
         );
+    }
+
+    public function getPageController(): ?Controller
+    {
+        $controller = Controller::curr();
+
+        return $controller instanceof PageController ? $controller : null;
     }
 }

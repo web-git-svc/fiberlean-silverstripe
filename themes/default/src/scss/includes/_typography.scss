@@ -53,9 +53,10 @@ body {
 
 	h1,
 	.h1 {
-		color: $black;
-		font-size: 200%;
 		font-family: $font-head;
+		@include fluid-font-size((3.2rem, 320px), (6.8rem, 992px));
+		margin-bottom: .9em;
+		line-height: (82/68);
 	}
 
 	h2,
@@ -64,6 +65,7 @@ body {
 		margin-bottom: 1em;
 		@include fluid-font-size((2.2rem, 320px), (3.2rem, 992px));
 
+		&.typography--large,
 		&.large {
 			@include fluid-font-size((2.2rem, 320px), (4.4rem, 992px));
 		}
@@ -76,8 +78,14 @@ body {
 	}
 
 	ul {
-		margin: 0 0 1em; padding: 0 0 0 1.5em;
-		list-style-type: disc;
+		margin: 0 0 1em;
+		padding: 0 0 0 .9em;
+
+		list-style-type: '- ';
+
+		li::marker {
+			font-weight: 700;
+		}
 	}
 
 	ol {

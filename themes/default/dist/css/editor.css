@@ -797,9 +797,10 @@ body {
 }
 .typography h1,
 .typography .h1 {
-  color: #000000;
-  font-size: 200%;
   font-family: ofelia-text, sans-serif;
+  font-size: calc(3.2rem + 36 * ((100vw - 320px) / 672));
+  margin-bottom: 0.9em;
+  line-height: 1.2058823529;
 }
 .typography h2,
 .typography .h2 {
@@ -807,7 +808,8 @@ body {
   margin-bottom: 1em;
   font-size: calc(2.2rem + 10 * ((100vw - 320px) / 672));
 }
-.typography h2.large,
+.typography h2.typography--large, .typography h2.large,
+.typography .h2.typography--large,
 .typography .h2.large {
   font-size: calc(2.2rem + 22 * ((100vw - 320px) / 672));
 }
@@ -818,8 +820,11 @@ body {
 }
 .typography ul {
   margin: 0 0 1em;
-  padding: 0 0 0 1.5em;
-  list-style-type: disc;
+  padding: 0 0 0 0.9em;
+  list-style-type: "- ";
+}
+.typography ul li::marker {
+  font-weight: 700;
 }
 .typography ol {
   margin: 0 0 1em;
@@ -998,6 +1003,22 @@ span.button--blue-dark:hover,
 span.button--blue-dark:active {
   background-color: #14353a;
 }
+a.button--blue-light,
+button.button--blue-light,
+input.button--blue-light,
+span.button--blue-light {
+  background-color: #46A8B8;
+  color: #FFFFFF;
+}
+a.button--blue-light:hover, a.button--blue-light:active,
+button.button--blue-light:hover,
+button.button--blue-light:active,
+input.button--blue-light:hover,
+input.button--blue-light:active,
+span.button--blue-light:hover,
+span.button--blue-light:active {
+  background-color: #388693;
+}
 a.button--orange,
 button.button--orange,
 input.button--orange,
@@ -1012,6 +1033,22 @@ input.button--orange:active,
 span.button--orange:hover,
 span.button--orange:active {
   background-color: #be6901;
+}
+a.button--pink,
+button.button--pink,
+input.button--pink,
+span.button--pink {
+  background-color: #E6057C;
+  color: #FFFFFF;
+}
+a.button--pink:hover, a.button--pink:active,
+button.button--pink:hover,
+button.button--pink:active,
+input.button--pink:hover,
+input.button--pink:active,
+span.button--pink:hover,
+span.button--pink:active {
+  background-color: #b40461;
 }
 @media (min-width: 768px){
   .typography img.left, .typography img.right, .typography img.leftAlone, .typography img.rightAlone {
@@ -1056,11 +1093,16 @@ span.button--orange:active {
   .typography--large {
     font-size: 2.8rem;
   }
+  .typography h1,
+.typography .h1 {
+    font-size: 6.8rem;
+  }
   .typography h2,
 .typography .h2 {
     font-size: 3.2rem;
   }
-  .typography h2.large,
+  .typography h2.typography--large, .typography h2.large,
+.typography .h2.typography--large,
 .typography .h2.large {
     font-size: 4.4rem;
   }

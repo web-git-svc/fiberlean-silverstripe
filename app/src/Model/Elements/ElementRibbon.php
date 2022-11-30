@@ -10,9 +10,6 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\ManyManyList;
 
-/**
- * @method ManyManyList Images()
- */
 class ElementRibbon extends BaseElement
 {
     private static array $defaults = [

@@ -4,6 +4,13 @@
  */
 
 import './classes/StickyHeader';
-import {ElementFullWidthCarousel} from './components/ElementFullWidthCarousel';
+import {ElementFullWidthCarousel}         from './components/ElementFullWidthCarousel';
+import {NavMenuHandler, OffCanvasHandler} from './components/Navigation';
 
-window.addEventListener('load', ElementFullWidthCarousel);
+const init = _ => {
+  ElementFullWidthCarousel()
+  NavMenuHandler();
+  OffCanvasHandler();
+}
+
+window.addEventListener('load', init);

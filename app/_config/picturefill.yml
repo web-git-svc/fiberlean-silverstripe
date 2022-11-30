@@ -18,3 +18,14 @@ Heyday\ResponsiveImages\ResponsiveImageExtension:
         "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 864, 864 ]
         "(min-width: 200px)": [ 576, 576 ]
       default_arguments: [ 1200, 725 ]
+    TwoColumnSet:
+      method: FocusFill
+      css_classes: responsive-image
+      arguments:
+        "(min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 768px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx)": [ 864, 864 ]
+        "(min-width: 768px)": [ 576, 576 ]
+        "(min-width: 576px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 576px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 1152, 830 ]
+        "(min-width: 576px)": [ 768, 553 ]
+        "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 864, 662 ]
+        "(min-width: 200px)": [ 576, 415 ]
+      default_arguments: [ 576, 576 ]

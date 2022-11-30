@@ -1,4 +1,4 @@
-<svg class="ball ball--{$Colour}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="661.061" height="661.061" viewBox="0 0 661.061 661.061">
+<svg class="ball<% if $Colour %> ball--{$Colour}<% end_if %>" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="661.061" height="661.061" viewBox="0 0 661.061 661.061">
 	<defs>
 		<clipPath id="clip-path-{$Count}">
 			<circle cx="326.166" cy="326.166" r="326.166" fill="none"/>

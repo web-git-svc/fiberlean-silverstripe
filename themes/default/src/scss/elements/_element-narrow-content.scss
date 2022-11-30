@@ -1,0 +1,37 @@
+/* Layout: _element-content.scss
+---------------------------------------------------------------------------------- */
+.element-narrow-content {
+	padding: 60px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+@include respond(768px) {
+	.element-narrow-content {
+		padding: 80px 0;
+	}
+}
+
+.element-narrow-content__circle {
+	svg {
+		position: absolute;
+		top: 0;
+		left: -812px;
+		z-index: -1;
+	}
+
+	&--yellow {
+		color: $yellow;
+	}
+}
+
+@include respond(767px, max) {
+	.element-narrow-content__circle {
+		svg {
+			width: 701px;
+			height: 930px;
+			top: -24px;
+			left: -442px;
+		}
+	}
+}

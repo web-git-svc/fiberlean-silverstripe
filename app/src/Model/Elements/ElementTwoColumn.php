@@ -12,6 +12,7 @@ use SilverStripe\Forms\FieldGroup;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\OptionsetField;
 use SilverStripe\ORM\FieldType\DBEnum;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
@@ -33,10 +34,10 @@ class ElementTwoColumn extends BaseElement
     private static array $db = [
         'LeftColumnType'       => 'Enum(array("Text", "Image"), "Text")',
         'LeftColumnContent'    => 'HTMLText',
-        'LeftColumnImageCrop'  => 'Boolean',
         'RightColumnType'      => 'Enum(array("Text", "Image"), "Image")',
         'RightColumnContent'   => 'HTMLText',
-        'RightColumnImageCrop' => 'Boolean',
+        'BallColour'           => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink"), "None")',
+        'ReverseOrderOnMobile' => 'Boolean',
     ];
 
     private static array $has_one = [
@@ -52,10 +53,6 @@ class ElementTwoColumn extends BaseElement
     private static array $defaults = [
         'LeftColumnType'  => 'Text',
         'RightColumnType' => 'Image',
-    ];
-
-    private static array $extensions = [
-        BeforeAfterContentExtension::class
     ];
 
     private static string $singular_name = 'two column block';
@@ -75,11 +72,10 @@ class ElementTwoColumn extends BaseElement
                         'LeftColumnType',
                         'LeftColumnContent',
                         'LeftColumnImage',
-                        'LeftColumnImageCrop',
                         'RightColumnType',
                         'RightColumnContent',
                         'RightColumnImage',
-                        'RightColumnImageCrop',
+                        'ReverseOrderOnMobile',
                     ]
                 );
 
@@ -96,11 +92,7 @@ class ElementTwoColumn extends BaseElement
                         $leftContent = HTMLEditorField::create('LeftColumnContent', 'Left column content'),
                         $leftImage = Wrapper::create(
                             UploadField::create('LeftColumnImage', 'Left column image')
-                                ->setAllowedFileCategories('image'),
-                            FieldGroup::create(
-                                'Crop image',
-                                CheckboxField::create('LeftColumnImageCrop', 'Check to crop image to a fixed size')
-                            )
+                                ->setAllowedFileCategories('image')
                         )
                     ]
                 );
@@ -115,16 +107,31 @@ class ElementTwoColumn extends BaseElement
                         $rightContent = HTMLEditorField::create('RightColumnContent', 'Right column content'),
                         $rightImage = Wrapper::create(
                             UploadField::create('RightColumnImage', 'Right column image')
-                                ->setAllowedFileCategories('image'),
-                            FieldGroup::create(
-                                'Crop image',
-                                CheckboxField::create('RightColumnImageCrop', 'Check to crop image to a fixed size')
-                            )
+                                ->setAllowedFileCategories('image')
                         ),
                     ]
                 );
                 $rightContent->displayIf('RightColumnType')->isEqualTo('Text');
                 $rightImage->displayIf('RightColumnType')->isNotEqualTo('Text');
+            }
+        );
+
+        $this->afterUpdateCMSFields(
+            function (FieldList $fields) {
+                $fields->addFieldsToTab(
+                    'Root.Settings',
+                    [
+                        OptionsetField::create(
+                            'BallColour',
+                            'Ball colour',
+                            $this->dbObject('BallColour')->enumValues()
+                        ),
+                        FieldGroup::create(
+                            'Reverse order on mobile?',
+                            CheckboxField::create('ReverseOrderOnMobile', 'Check to reverse order on mobile')
+                        ),
+                    ]
+                );
             }
         );
 

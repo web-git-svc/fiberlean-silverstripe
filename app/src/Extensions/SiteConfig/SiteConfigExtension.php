@@ -15,18 +15,23 @@ use SilverStripe\Forms\TextField;
 class SiteConfigExtension extends Extension
 {
     private static array $db = [
-        'EmailAddress'   => 'Varchar',
-        'Telephone'      => 'Varchar',
-        'StartOfHead'    => 'Text',
-        'EndOfHead'      => 'Text',
-        'StartOfBody'    => 'Text',
-        'EndOfBody'      => 'Text',
-        'FooterContent'  => 'HTMLText',
-        'FacebookURL'    => 'Text',
-        'TwitterURL'     => 'Text',
-        'LinkedInURL'    => 'Text',
-        'ContactTitle'   => 'Varchar',
-        'ContactContent' => 'HTMLText',
+        'EmailAddress'              => 'Varchar',
+        'Telephone'                 => 'Varchar',
+        'StartOfHead'               => 'Text',
+        'EndOfHead'                 => 'Text',
+        'StartOfBody'               => 'Text',
+        'EndOfBody'                 => 'Text',
+        'FooterContent'             => 'HTMLText',
+        'FacebookURL'               => 'Text',
+        'TwitterURL'                => 'Text',
+        'LinkedInURL'               => 'Text',
+        'ContactTitle'              => 'Varchar',
+        'ContactContent'            => 'HTMLText',
+        'EnquiryFormContent'        => 'HTMLText',
+        'EnquiryFormPrivacyContent' => 'HTMLText',
+        'EnquiryFormSuccessContent' => 'HTMLText',
+        'EnquiryFormRecipient'      => 'Varchar',
+        'EnquiryFormSubject'        => 'Varchar',
     ];
 
     private static array $has_one = [
@@ -64,6 +69,13 @@ class SiteConfigExtension extends Extension
                     ->setAllowedFileCategories('image'),
                 TextField::create('ContactTitle', 'Title'),
                 HTMLEditorField::create('ContactContent', 'Content'),
+
+                HeaderField::create('EnquiryFormHeader', 'Enquiry form'),
+                HTMLEditorField::create('EnquiryFormContent', 'Content'),
+                HTMLEditorField::create('EnquiryFormPrivacyContent', 'Form privacy content'),
+                HTMLEditorField::create('EnquiryFormSuccessContent', 'Success content'),
+                EmailField::create('EnquiryFormRecipient', 'Email recipient'),
+                TextField::create('EnquiryFormSubject', 'Email subject'),
             ]
         );
 

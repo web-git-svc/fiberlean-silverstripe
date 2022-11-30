@@ -11,7 +11,7 @@
 		</div>
 	<% end_if %>
 
-	{$Ball}
+	{$Ball('pink')}
 
 	{$SVGIcon('blob', 1347, 859, 'element-hero__blob')}
 </div>

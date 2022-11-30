@@ -22,6 +22,11 @@
 		<clipPath id="curved-image-clip-path" clipPathUnits="objectBoundingBox"><path d="M1,0.137 C0.556,-0.148,0.091,0.092,0,0.144 V1 H1 V0.137"></path></clipPath>
 	</svg>
 
+	<svg style="position: absolute; width: 0; height: 0;">
+		<clipPath id="intro-block-clip-path" clipPathUnits="objectBoundingBox"><path d="M0,1 h1 V0 C0.747,0.069,0.066,0.318,0,1"></path></clipPath>
+	</svg>
+
+
 	<% include App\Includes\Header %>
 
 	{$Layout}

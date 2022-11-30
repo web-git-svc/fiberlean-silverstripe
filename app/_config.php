@@ -30,8 +30,13 @@ $config->setOptions([
         ],
         [
             'title' => 'Large',
-            'selector' => 'p',
+            'selector' => 'p, h2',
             'classes' => 'typography--large'
+        ],
+        [
+            'title' => 'Large (h1)',
+            'selector' => '*',
+            'classes' => 'h1'
         ],
         [
             'title' => 'Button white',
@@ -42,6 +47,16 @@ $config->setOptions([
             'title' => 'Button green',
             'selector' => 'a',
             'classes' => 'button button--green',
-        ]
+        ],
+        [
+            'title' => 'Button blue dark',
+            'selector' => 'a',
+            'classes' => 'button button--blue-dark',
+        ],
+        [
+            'title' => 'Button orange',
+            'selector' => 'a',
+            'classes' => 'button button--orange',
+        ],
     ]
 ]);

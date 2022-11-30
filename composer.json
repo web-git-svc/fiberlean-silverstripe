@@ -30,7 +30,8 @@
         "symbiote/silverstripe-grouped-cms-menu": "^4",
         "unclecheese/display-logic": "^2",
         "wilr/silverstripe-googlesitemaps": "^2",
-        "heyday/silverstripe-menumanager": "^3.4"
+        "heyday/silverstripe-menumanager": "^3.4",
+        "bigfork/silverstripe-form-capture": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

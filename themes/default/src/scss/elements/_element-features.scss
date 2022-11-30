@@ -1,5 +1,25 @@
 /* Layout: _element-features.scss
 ---------------------------------------------------------------------------------- */
+.element-features {
+	&--blue {
+		background-color: $blue-dark;
+		color: $white;
+	}
+
+	&--orange {
+		background-color: $orange;
+		color: $white;
+	}
+
+	&--yellow {
+		background-color: $yellow;
+	}
+	//
+	//&--orange {
+	//	background-color: $orange;
+	//}
+}
+
 /*------------------------------------
 	Row
 ------------------------------------*/
@@ -32,9 +52,13 @@
 .element-features__feature-icon {
 	align-items: center;
 	aspect-ratio: 1;
-	color: $blue-light;
 	display: flex;
 	justify-content: center;
+	color: $black;
+
+	.element-features--blue & {
+		color: $blue-light;
+	}
 }
 
 /*------------------------------------

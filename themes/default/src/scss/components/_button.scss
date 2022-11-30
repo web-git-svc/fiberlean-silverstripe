@@ -61,12 +61,32 @@ span {
 			}
 		}
 
+		&--blue-light {
+			background-color: $blue-light;
+			color: $white;
+
+			&:hover,
+			&:active {
+				background-color: darken($blue-light, 10);
+			}
+		}
+
 		&--orange {
 			background-color: $orange;
 
 			&:hover,
 			&:active {
 				background-color: darken($orange, 10);
+			}
+		}
+
+		&--pink {
+			background-color: $pink;
+			color: $white;
+
+			&:hover,
+			&:active {
+				background-color: darken($pink, 10);
 			}
 		}
 	}

@@ -1,5 +1,5 @@
-<div class="bg--blue-dark typography--white">
-	<div class="container container--narrow">
+<div class="element-features element-features--{$BackgroundColour.Lowercase}">
+	<div class="container">
 		<div class="typography">
 			{$TitleTag('center')}
 		</div>
