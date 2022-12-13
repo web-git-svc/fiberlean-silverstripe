@@ -1,0 +1,48 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+:root {
+	--color-button-primary-text: #{$black-alt};
+	--color-button-primary-background: #{$white};
+	--color-button-primary-hover-text: #{$black-alt};
+	--color-button-primary-hover-background: #{darken($white, 10)};
+	--color-link-primary: #{$white};
+	--color-form-background: #{$blue-dark};
+	--color-form-text: #{$white};
+	--color-field-text: #{$black-alt}
+}
+
+body {
+	background: $blue-light;
+	background: linear-gradient(135deg, #215860, #26636c, #2b6e78, #307984, #368591, #3b909e, #409cab, #46a8b8);
+	font-family: $font-body;
+}
+
+h2.login-form__title {
+	font-family: $font-head;
+	margin-bottom: 1em;
+	font-size: 22px;
+}
+
+.message {
+	border-radius: var(--border-radius-form);
+	padding: .75em;
+
+	&.warning {
+		background-color: $form-warning;
+		color: $black-alt;
+	}
+
+	&.bad {
+		background-color: $form-bad;
+		color: $white;
+	}
+}
+
+.app-brand__link {
+	filter: drop-shadow(0 2px 4px rgba($black-alt, .5));
+}
+
+#MemberLoginForm_LoginForm_action_doLogin {
+	transition: 300ms ease-in-out background-color;
+}
