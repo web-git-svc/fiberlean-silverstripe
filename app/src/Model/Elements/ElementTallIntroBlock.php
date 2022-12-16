@@ -5,6 +5,7 @@ namespace App\Model\Elements;
 use DNADesign\Elemental\Models\ElementContent;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\OptionsetField;
 
@@ -21,7 +22,7 @@ class ElementTallIntroBlock extends ElementContent
     private static string $icon = 'font-icon-block-promo-3';
 
     private static array $db = [
-        'Colour' => 'Enum(array("Orange", "Blue", "Yellow", "Pink"), "Orange")',
+        'Colour' => 'Varchar',
     ];
 
     private static array $has_one = [
@@ -50,7 +51,7 @@ class ElementTallIntroBlock extends ElementContent
                         OptionsetField::create(
                             'Colour',
                             'Colour',
-                            $this->dbObject('Colour')->enumValues()
+                            Config::inst()->get('Colours', 'colours')
                         ),
                     ]
                 );

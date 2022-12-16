@@ -11,6 +11,38 @@
 			color: $white;
 		}
 	}
+
+	&--red {
+		background-color: $red;
+
+		.typography {
+			color: $white;
+		}
+	}
+
+	&--yellow {
+		background-color: $yellow;
+
+		.typography {
+			color: $mine-shaft;
+		}
+	}
+
+	&--blue {
+		background-color: $blue-dark;
+
+		.typography {
+			color: $white;
+		}
+	}
+
+	&--orange {
+		background-color: $orange;
+
+		.typography {
+			color: $white;
+		}
+	}
 }
 
 .element-intro-block__column {
@@ -39,6 +71,19 @@
 		.element-intro-block--pink & {
 			color: $pink;
 		}
+
+		.element-intro-block--red & {
+			color: $brown;
+		}
+
+		.element-intro-block--yellow & {
+			color: $gold;
+		}
+
+		.element-intro-block--blue & {
+			color: $blue;
+		}
+
 	}
 }
 

@@ -36,7 +36,8 @@ class ElementTwoColumn extends BaseElement
         'LeftColumnContent'    => 'HTMLText',
         'RightColumnType'      => 'Enum(array("Text", "Image"), "Image")',
         'RightColumnContent'   => 'HTMLText',
-        'BallColour'           => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink"), "None")',
+        'ShowBall'             => 'Boolean',
+        'BallColour'           => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink", "Red"), "None")',
         'ReverseOrderOnMobile' => 'Boolean',
     ];
 
@@ -75,6 +76,8 @@ class ElementTwoColumn extends BaseElement
                         'RightColumnType',
                         'RightColumnContent',
                         'RightColumnImage',
+                        'ShowBall',
+                        'BallColour',
                         'ReverseOrderOnMobile',
                     ]
                 );
@@ -121,17 +124,22 @@ class ElementTwoColumn extends BaseElement
                 $fields->addFieldsToTab(
                     'Root.Settings',
                     [
-                        OptionsetField::create(
-                            'BallColour',
+                        FieldGroup::create('Ball',
+                            CheckboxField::create('ShowBall', 'Show ball?'),
+                        ),
+                        $ballColour = Wrapper::create(OptionsetField::create(
+                        'BallColour',
                             'Ball colour',
                             $this->dbObject('BallColour')->enumValues()
-                        ),
+                        )),
                         FieldGroup::create(
                             'Reverse order on mobile?',
                             CheckboxField::create('ReverseOrderOnMobile', 'Check to reverse order on mobile')
                         ),
                     ]
                 );
+
+                $ballColour->displayIf('ShowBall')->isChecked();
             }
         );
 

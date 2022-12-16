@@ -89,6 +89,26 @@ span {
 				background-color: darken($pink, 10);
 			}
 		}
+
+		&--red {
+			background-color: $brown;
+			color: $white;
+
+			&:hover,
+			&:active {
+				background-color: darken($brown, 10);
+			}
+		}
+
+		&--yellow {
+			background-color: $yellow;
+			color: $black;
+
+			&:hover,
+			&:active {
+				background-color: darken($yellow, 5);
+			}
+		}
 	}
 }
 

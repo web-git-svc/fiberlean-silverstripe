@@ -6,7 +6,9 @@
 		{$LeftColumnContent}
 
 		<% if $RightColumnType == 'Image' %>
-			{$Ball}
+			<% if $ShowBall %>
+				{$Ball}
+			<% end_if %>
 		<% end_if %>
 	<% end_if %>
 </div>

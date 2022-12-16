@@ -10,6 +10,26 @@
 		background-color: $pink-dark;
 		color: $white;
 	}
+
+	&--red {
+		background-color: $red;
+		color: $white;
+	}
+
+	&--yellow {
+		background-color: $gold;
+		color: $white;
+	}
+
+	&--blue {
+		background-color: $blue-dark;
+		color: $white;
+	}
+
+	&--orange {
+		background-color: $orange;
+		color: $white;
+	}
 }
 
 @include respond(768px) {
@@ -33,6 +53,22 @@
 
 	.element-testimonial--pink & {
 		color: $pink;
+	}
+
+	.element-testimonial--red & {
+		color: $brown;
+	}
+
+	.element-testimonial--yellow & {
+		color: $yellow;
+	}
+
+	.element-testimonial--orange & {
+		color: $brown;
+	}
+
+	.element-testimonial--blue & {
+		color: $blue-light;
 	}
 }
 
@@ -65,6 +101,22 @@
 
 	.element-testimonial--pink & {
 		@extend .button--pink;
+	}
+
+	.element-testimonial--orange & {
+		@extend .button--orange;
+	}
+
+	.element-testimonial--blue & {
+		@extend .button--blue-light;
+	}
+
+	.element-testimonial--red & {
+		@extend .button--red;
+	}
+
+	.element-testimonial--yellow & {
+		@extend .button--yellow;
 	}
 }
 

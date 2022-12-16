@@ -1,7 +1,9 @@
 <?php
 
+use App\View\Shortcodes\EmbedShortcodeProvider;
 use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
 use SilverStripe\i18n\i18n;
+use SilverStripe\View\Parsers\ShortcodeParser;
 
 // Set the site locale
 i18n::set_locale('en_GB');
@@ -60,3 +62,6 @@ $config->setOptions([
         ],
     ]
 ]);
+
+ShortcodeParser::get('default')
+    ->register('embed', [EmbedShortcodeProvider::class, 'handle_shortcode']);
