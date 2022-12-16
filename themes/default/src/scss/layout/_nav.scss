@@ -26,19 +26,14 @@
 /*------------------------------------
 	Menu
 ------------------------------------*/
-.nav__menu {
-	display: grid;
-	gap: 36px;
-}
-
 @include respond(992px) {
 	.nav__menu {
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
 		justify-content: flex-end;
+		gap: 36px;
 	}
-
 }
 
 /*------------------------------------
@@ -46,6 +41,16 @@
 ------------------------------------*/
 .nav__item {
 	position: relative;
+}
+
+@include respond(991px, max) {
+	.nav__item {
+		margin: 16px 0;
+
+		&:first-of-type {
+			margin: 0 0 16px;
+		}
+	}
 }
 
 /*------------------------------------
@@ -67,7 +72,7 @@
 	background-color: $blue;
 	color: $white;
 	display: none;
-	margin: 18px -20px -18px;
+	margin: 16px -20px 0;
 	padding: 1em 20px;
 	text-align: left;
 	transition: 400ms ease-in-out;

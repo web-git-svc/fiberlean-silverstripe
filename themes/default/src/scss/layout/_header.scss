@@ -64,28 +64,27 @@ $headerBreakpont: $container-width + $container-padding + $container-padding;
 	margin: 0;
 	padding: 20px;
 
-	span {
-		background: $black-alt;
+	span,
+	span:before,
+	span:after {
+		background: $navy;
 		border-radius: 3px;
 		display: block;
 		height: 4px;
+		width: 22px;
+	}
+
+	span {
 		outline-color: transparent !important;
 		transition: background-color 0.2s linear;
 		vertical-align: middle;
-		width: 36px;
 		will-change: background-color;
 
 		&:before,
 		&:after {
-			background: $black-alt;
-			border-radius: 3px;
-			content: '';
-			display: block;
-			height: 4px;
 			position: absolute;
 			transition: transform 0.2s ease,
 			margin 0.2s ease 0.1s;
-			width: 36px;
 		}
 
 		&:before {

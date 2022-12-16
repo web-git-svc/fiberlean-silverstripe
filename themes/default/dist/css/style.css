@@ -2480,17 +2480,12 @@ span.button--pink:active,
 /*------------------------------------
 	Menu
 ------------------------------------*/
-.nav__menu {
-  display: grid;
-  gap: 36px;
-}
 /*------------------------------------
 	Item
 ------------------------------------*/
 .nav__item {
   position: relative;
 }
-
 /*------------------------------------
 	Link
 ------------------------------------*/
@@ -2509,7 +2504,7 @@ span.button--pink:active,
   background-color: #337B86;
   color: #FFFFFF;
   display: none;
-  margin: 18px -20px -18px;
+  margin: 16px -20px 0;
   padding: 1em 20px;
   text-align: left;
   transition: 400ms ease-in-out;
@@ -2915,6 +2910,7 @@ a.nav__sublink:hover, a.nav__sublink:active {
         flex-wrap: wrap;
     -ms-flex-pack: end;
         justify-content: flex-end;
+    gap: 36px;
   }
   .nav__submenu {
     border-radius: 0 0 1em;
@@ -3068,6 +3064,12 @@ span.button {
   .menu-active .nav {
     opacity: 1;
     top: 0;
+  }
+  .nav__item {
+    margin: 16px 0;
+  }
+  .nav__item:first-of-type {
+    margin: 0 0 16px;
   }
 }
 @media (max-width: 767px){

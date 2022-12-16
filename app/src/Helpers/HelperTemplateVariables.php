@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use SilverStripe\Core\Convert;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
@@ -34,7 +33,8 @@ class HelperTemplateVariables implements TemplateGlobalProvider
         int $width = null,
         int $height = null,
         string $classes = null
-    ): DBField {
+    ): DBField
+    {
         $markup = HTML::createTag(
             'svg',
             [
