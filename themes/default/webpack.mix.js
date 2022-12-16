@@ -24,6 +24,7 @@ mix
   .js('src/js/app.js', 'dist/js')
   .sass('src/scss/editor.scss', 'dist/css')
   .sass('src/scss/style.scss', 'dist/css')
+  .sass('src/scss/login.scss', 'dist/css')
   .sourceMaps()
   .copyDirectory('src/webfonts', 'dist/webfonts');
 
