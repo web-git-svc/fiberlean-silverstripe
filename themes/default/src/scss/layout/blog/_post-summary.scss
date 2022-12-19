@@ -22,6 +22,10 @@
 /*------------------------------------
 	Column
 ------------------------------------*/
+.post-summary__column {
+	position: relative;
+}
+
 @include respond(767px, max) {
 	.post-summary__column {
 		&--image {

@@ -6,9 +6,11 @@
 import './classes/StickyHeader';
 import {ElementFullWidthCarousel}         from './components/ElementFullWidthCarousel';
 import {NavMenuHandler, OffCanvasHandler} from './components/Navigation';
+import {ElementSlideshow} from "./components/ElementSlideshow";
 
 const init = _ => {
-  ElementFullWidthCarousel()
+  ElementFullWidthCarousel();
+  ElementSlideshow();
   NavMenuHandler();
   OffCanvasHandler();
 }

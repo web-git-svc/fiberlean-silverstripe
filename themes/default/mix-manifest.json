@@ -2,7 +2,7 @@
     "/dist/js/spritemap.js": "/dist/js/spritemap.js",
     "/dist/images/icons.svg": "/dist/images/icons.svg",
     "/dist/js/app.js": "/dist/js/app.js",
+    "/dist/css/style.css": "/dist/css/style.css",
     "/dist/css/editor.css": "/dist/css/editor.css",
-    "/dist/css/login.css": "/dist/css/login.css",
-    "/dist/css/style.css": "/dist/css/style.css"
+    "/dist/css/login.css": "/dist/css/login.css"
 }
