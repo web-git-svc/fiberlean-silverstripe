@@ -11,11 +11,19 @@
 	gap: 36px 24px;
 	align-items: flex-start;
 	margin-bottom: 40px;
+
+	&--reverse {
+		flex-direction: column-reverse;
+	}
 }
 
 @include respond(767px) {
 	.post-summary {
 		margin-bottom: 86px;
+
+		&--reverse {
+			flex-direction: row;
+		}
 	}
 }
 

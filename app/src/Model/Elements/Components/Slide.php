@@ -84,4 +84,17 @@ class Slide extends DataObject
 
         return parent::getCMSFields();
     }
+
+    public function getFileTypeNice(): string
+    {
+        $type = $this->File()->getFileType();
+
+        if (!$type) {
+            return '';
+        } else if ($type == 'Adobe Acrobat PDF file') {
+            return 'PDF';
+        } else {
+            return $type;
+        }
+    }
 }

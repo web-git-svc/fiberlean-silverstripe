@@ -1,4 +1,4 @@
-<div class="element-content">
+<div class="element-content bg--{$BackgroundColour}">
 	<div class="container typography trim">
 		{$TitleTag}
 

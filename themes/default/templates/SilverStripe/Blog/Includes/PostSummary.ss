@@ -1,4 +1,4 @@
-<div class="post-summary">
+<div class="post-summary <% if $Even %>post-summary--reverse<% end_if %>">
 	<% if $Odd %>
 		<div class="post-summary__column post-summary__column--left post-summary__column--image trim">
 			{$FeaturedImage.TwoColumnSet}

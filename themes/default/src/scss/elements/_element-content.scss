@@ -2,6 +2,7 @@
 ---------------------------------------------------------------------------------- */
 .element-content {
 	padding: 60px 0;
+	overflow: hidden;
 }
 
 @include respond(768px) {

@@ -8,10 +8,10 @@
 					<ul class="splide__list">
 						<% loop $Slides %>
 							<li class="splide__slide element-slideshow__slide">
-								{$Image}
+								{$Image.ElementSlideshowSet}
 								<% if $File %>
 									<div class="element-slideshow__slide--file">
-										<a href="{$File.URL}" class="button button--blue-dark" download>Download {$File.Type}</a>
+										<a href="{$File.URL}" class="button button--blue-dark" download>Download {$FileTypeNice}</a>
 									</div>
 								<% end_if %>
 							</li>

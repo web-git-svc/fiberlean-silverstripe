@@ -21,6 +21,9 @@ SilverStripe\ORM\FieldType\DBString:
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - App\Extensions\SiteConfig\SiteConfigExtension
+DNADesign\Elemental\Models\ElementContent:
+  extensions:
+    - App\Extensions\Elemental\ElementContentExtension
 
 ---
 After: '#blogconfig'
