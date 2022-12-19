@@ -1,0 +1,137 @@
+/* Layout: blog
+---------------------------------------------------------------------------------- */
+
+/*------------------------------------
+	Post summary
+------------------------------------*/
+.post-summary {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 36px 24px;
+	align-items: flex-start;
+	margin-bottom: 40px;
+}
+
+@include respond(767px) {
+	.post-summary {
+		margin-bottom: 86px;
+	}
+}
+
+/*------------------------------------
+	Column
+------------------------------------*/
+@include respond(767px, max) {
+	.post-summary__column {
+		&--image {
+			margin: 0 -20px;
+			width: calc(100% + 40px);
+		}
+	}
+}
+
+@include respond(768px) {
+	.post-summary__column {
+		flex: 1 1 calc(50% - 12px);
+
+		&--image {
+			min-height: 558px;
+			position: relative;
+
+			img {
+				border-radius: 0 0 100px 0;
+				position: absolute;
+				object-fit: cover;
+				width: calc(50vw - 12px);
+				height: 100%;
+				right: 96px;
+				max-width: none;
+			}
+		}
+
+		&--image.post-summary__column--right {
+			img {
+				border-radius: 0 0 0 100px;
+				left: 96px;
+				right: auto;
+			}
+		}
+	}
+}
+
+/*------------------------------------
+	Title
+------------------------------------*/
+.post-summary__title {
+	display: block;
+	margin-bottom: 16px;
+	font-size: 2.2rem;
+	font-weight: 700;
+	color: $black-alt;
+	text-decoration: none;
+
+	&:before {
+		position: absolute;
+		inset: 0;
+		content: "";
+		z-index: 10;
+	}
+
+	&:hover ~ .post-summary__summary svg {
+		left: 10px;
+	}
+}
+
+@include respond(768px) {
+	.post-summary__title {
+		font-size: 3.2rem;
+	}
+}
+
+/*------------------------------------
+	Date
+------------------------------------*/
+.post-summary__date {
+	margin-bottom: 24px;
+
+	a,
+	p {
+		font-size: 1.5rem;
+		color: $black-alt;
+	}
+}
+
+@include respond(768px) {
+	.post-summary__date {
+		margin-bottom: 48px;
+		font-size: 1.6rem;
+	}
+}
+
+/*------------------------------------
+	Summary
+------------------------------------*/
+.post-summary__summary {
+	font-size: 1.6rem;
+	color: $black-alt;
+
+	svg {
+		position: relative;
+		left: 0;
+		margin-top: 24px;
+		transition: left 300ms ease;
+		color: $blue-dark;
+	}
+}
+
+@include respond(768px) {
+	.post-summary__summary {
+		font-size: 1.8rem;
+
+		svg {
+			margin-top: 49px;
+		}
+	}
+}
+

@@ -31,7 +31,8 @@
         "unclecheese/display-logic": "^2",
         "wilr/silverstripe-googlesitemaps": "^2",
         "heyday/silverstripe-menumanager": "^3.4",
-        "bigfork/silverstripe-form-capture": "^3.0"
+        "bigfork/silverstripe-form-capture": "^3.0",
+        "silverstripe/blog": "^3.11"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

@@ -1035,7 +1035,7 @@ body {
   fill: #D32E7B;
 }
 .ball--yellow .ball__front {
-  fill: #F9DB4A;
+  fill: #FFDA01;
 }
 .ball--orange .ball__front, .element-applications--orange .element-applications__ball svg .ball__front {
   fill: #E38A32;
@@ -1043,18 +1043,24 @@ body {
 .ball--blue .ball__front {
   fill: #61A6B6;
 }
+.ball--red .ball__front {
+  fill: #7A2325;
+}
 
 .ball--pink .ball__back {
   fill: #7E1553;
 }
 .ball--yellow .ball__back {
-  fill: #61572E;
+  fill: #635727;
 }
 .ball--orange .ball__back, .element-applications--orange .element-applications__ball svg .ball__back {
   fill: #7B3A35;
 }
 .ball--blue .ball__back {
   fill: #112E32;
+}
+.ball--red .ball__back {
+  fill: #7E1553;
 }
 
 /* Layout: _bg.scss
@@ -1218,35 +1224,53 @@ span.button--blue-dark:hover,
 span.button--blue-dark:active {
   background-color: #14353a;
 }
-a.button--blue-light,
+a.button--blue-light, .element-testimonial--blue a.button,
 button.button--blue-light,
+.element-testimonial--blue button.button,
 input.button--blue-light,
-span.button--blue-light {
+.element-testimonial--blue input.button,
+span.button--blue-light,
+.element-testimonial--blue span.button {
   background-color: #46A8B8;
   color: #FFFFFF;
 }
-a.button--blue-light:hover, a.button--blue-light:active,
+a.button--blue-light:hover, .element-testimonial--blue a.button:hover, a.button--blue-light:active, .element-testimonial--blue a.button:active,
 button.button--blue-light:hover,
+.element-testimonial--blue button.button:hover,
 button.button--blue-light:active,
+.element-testimonial--blue button.button:active,
 input.button--blue-light:hover,
+.element-testimonial--blue input.button:hover,
 input.button--blue-light:active,
+.element-testimonial--blue input.button:active,
 span.button--blue-light:hover,
-span.button--blue-light:active {
+.element-testimonial--blue span.button:hover,
+span.button--blue-light:active,
+.element-testimonial--blue span.button:active {
   background-color: #388693;
 }
-a.button--orange,
+a.button--orange, .element-testimonial--orange a.button,
 button.button--orange,
+.element-testimonial--orange button.button,
 input.button--orange,
-span.button--orange {
+.element-testimonial--orange input.button,
+span.button--orange,
+.element-testimonial--orange span.button {
   background-color: #F18501;
 }
-a.button--orange:hover, a.button--orange:active,
+a.button--orange:hover, .element-testimonial--orange a.button:hover, a.button--orange:active, .element-testimonial--orange a.button:active,
 button.button--orange:hover,
+.element-testimonial--orange button.button:hover,
 button.button--orange:active,
+.element-testimonial--orange button.button:active,
 input.button--orange:hover,
+.element-testimonial--orange input.button:hover,
 input.button--orange:active,
+.element-testimonial--orange input.button:active,
 span.button--orange:hover,
-span.button--orange:active {
+.element-testimonial--orange span.button:hover,
+span.button--orange:active,
+.element-testimonial--orange span.button:active {
   background-color: #be6901;
 }
 a.button--pink, .element-testimonial--pink a.button,
@@ -1273,6 +1297,56 @@ span.button--pink:hover,
 span.button--pink:active,
 .element-testimonial--pink span.button:active {
   background-color: #b40461;
+}
+a.button--red, .element-testimonial--red a.button,
+button.button--red,
+.element-testimonial--red button.button,
+input.button--red,
+.element-testimonial--red input.button,
+span.button--red,
+.element-testimonial--red span.button {
+  background-color: #853532;
+  color: #FFFFFF;
+}
+a.button--red:hover, .element-testimonial--red a.button:hover, a.button--red:active, .element-testimonial--red a.button:active,
+button.button--red:hover,
+.element-testimonial--red button.button:hover,
+button.button--red:active,
+.element-testimonial--red button.button:active,
+input.button--red:hover,
+.element-testimonial--red input.button:hover,
+input.button--red:active,
+.element-testimonial--red input.button:active,
+span.button--red:hover,
+.element-testimonial--red span.button:hover,
+span.button--red:active,
+.element-testimonial--red span.button:active {
+  background-color: #602624;
+}
+a.button--yellow, .element-testimonial--yellow a.button,
+button.button--yellow,
+.element-testimonial--yellow button.button,
+input.button--yellow,
+.element-testimonial--yellow input.button,
+span.button--yellow,
+.element-testimonial--yellow span.button {
+  background-color: #FEDA02;
+  color: #000000;
+}
+a.button--yellow:hover, .element-testimonial--yellow a.button:hover, a.button--yellow:active, .element-testimonial--yellow a.button:active,
+button.button--yellow:hover,
+.element-testimonial--yellow button.button:hover,
+button.button--yellow:active,
+.element-testimonial--yellow button.button:active,
+input.button--yellow:hover,
+.element-testimonial--yellow input.button:hover,
+input.button--yellow:active,
+.element-testimonial--yellow input.button:active,
+span.button--yellow:hover,
+.element-testimonial--yellow span.button:hover,
+span.button--yellow:active,
+.element-testimonial--yellow span.button:active {
+  background-color: #e6c501;
 }
 /* Component: container
 ---------------------------------------------------------------------------------- */
@@ -2045,6 +2119,30 @@ span.button--pink:active,
 .element-intro-block--pink .typography {
   color: #FFFFFF;
 }
+.element-intro-block--red {
+  background-color: #C91517;
+}
+.element-intro-block--red .typography {
+  color: #FFFFFF;
+}
+.element-intro-block--yellow {
+  background-color: #FEDA02;
+}
+.element-intro-block--yellow .typography {
+  color: #2D2D2D;
+}
+.element-intro-block--blue {
+  background-color: #215860;
+}
+.element-intro-block--blue .typography {
+  color: #FFFFFF;
+}
+.element-intro-block--orange {
+  background-color: #F18501;
+}
+.element-intro-block--orange .typography {
+  color: #FFFFFF;
+}
 
 .element-intro-block__column {
   padding-top: 38px;
@@ -2063,6 +2161,15 @@ span.button--pink:active,
 }
 .element-intro-block--pink .element-intro-block__right svg {
   color: #E6057C;
+}
+.element-intro-block--red .element-intro-block__right svg {
+  color: #853532;
+}
+.element-intro-block--yellow .element-intro-block__right svg {
+  color: #B79C00;
+}
+.element-intro-block--blue .element-intro-block__right svg {
+  color: #337B86;
 }
 .element-intro-block__image {
   -webkit-clip-path: url(#intro-block-clip-path);
@@ -2199,6 +2306,22 @@ span.button--pink:active,
   background-color: #7E1553;
   color: #FFFFFF;
 }
+.element-testimonial--red {
+  background-color: #C91517;
+  color: #FFFFFF;
+}
+.element-testimonial--yellow {
+  background-color: #B79C00;
+  color: #FFFFFF;
+}
+.element-testimonial--blue {
+  background-color: #215860;
+  color: #FFFFFF;
+}
+.element-testimonial--orange {
+  background-color: #F18501;
+  color: #FFFFFF;
+}
 .element-testimonial__open-quote {
   font-size: 68px;
   font-weight: 700;
@@ -2208,6 +2331,18 @@ span.button--pink:active,
 }
 .element-testimonial--pink .element-testimonial__open-quote {
   color: #E6057C;
+}
+.element-testimonial--red .element-testimonial__open-quote {
+  color: #853532;
+}
+.element-testimonial--yellow .element-testimonial__open-quote {
+  color: #FEDA02;
+}
+.element-testimonial--orange .element-testimonial__open-quote {
+  color: #853532;
+}
+.element-testimonial--blue .element-testimonial__open-quote {
+  color: #46A8B8;
 }
 .element-testimonial__quote {
   text-align: left;
@@ -2238,6 +2373,110 @@ span.button--pink:active,
   position: absolute;
   bottom: -125px;
   z-index: 2;
+}
+/* Layout: three column text
+---------------------------------------------------------------------------------- */
+.element-three-column-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.element-three-column-text--pink {
+  background-color: #7E1553;
+  color: #FFFFFF;
+}
+.element-three-column-text--red {
+  background-color: #C91517;
+  color: #FFFFFF;
+}
+.element-three-column-text--red .element-three-column-text__column-content {
+  color: #FFFFFF;
+}
+.element-three-column-text--yellow {
+  background-color: #B79C00;
+  color: #FFFFFF;
+}
+.element-three-column-text--blue {
+  background-color: #215860;
+  color: #FFFFFF;
+}
+.element-three-column-text--blue .element-three-column-text__column-content {
+  color: #FFFFFF;
+}
+.element-three-column-text--orange {
+  background-color: #F18501;
+  color: #FFFFFF;
+}
+/*------------------------------------
+	Title
+------------------------------------*/
+.element-three-column-text__title {
+  margin-bottom: 30px;
+  font-size: 3.2rem;
+}
+/*------------------------------------
+	Columns
+------------------------------------*/
+/*------------------------------------
+	Column
+------------------------------------*/
+.element-three-column-text__column {
+  width: 100%;
+}
+/*------------------------------------
+	Column title
+------------------------------------*/
+.element-three-column-text__column-title {
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+}
+.element-three-column-text--blue .element-three-column-text__column-title {
+  color: #46A8B8;
+}
+/*------------------------------------
+	Column content
+------------------------------------*/
+.element-three-column-text__column-content {
+  margin-bottom: 30px;
+}
+/* Element: _element-two-column-curve.scss
+---------------------------------------------------------------------------------- */
+.element-two-column-curve {
+  padding: 60px 0 42px;
+  position: relative;
+  overflow: hidden;
+}
+/*------------------------------------
+	Background shape
+------------------------------------*/
+.element-two-column-curve__background-shape {
+  color: #FEDA02;
+  position: absolute;
+  top: 0;
+  left: -812px;
+  z-index: -1;
+}
+.element-two-column-curve--blue .element-two-column-curve__background-shape {
+  color: #46A8B8;
+}
+/*------------------------------------
+	Ball
+------------------------------------*/
+.element-two-column-curve .ball {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  z-index: -1;
+  width: 315px;
+  height: 315px;
+}
+/*------------------------------------
+	Before
+------------------------------------*/
+.element-two-column-curve__before {
+  margin-bottom: 50px;
 }
 /* Element: _element-feature-boxes.scss
 ---------------------------------------------------------------------------------- */
@@ -2277,6 +2516,34 @@ span.button--pink:active,
           transform: translateX(50%);
 }
 
+/* Element: video
+---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Video
+------------------------------------*/
+.element-video__video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 30px;
+}
+.element-video__video div {
+  width: 100% !important;
+}
+.element-video__video .responsive-video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 65%;
+}
+.element-video__video .responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
 /* element: element
 ---------------------------------------------------------------------------------- */
 /* Layout: _card.scss
@@ -2433,28 +2700,26 @@ span.button--pink:active,
   margin: 0;
   padding: 20px;
 }
-.header__off-canvas-button span {
+.header__off-canvas-button span,
+.header__off-canvas-button span:before,
+.header__off-canvas-button span:after {
   background: #032F33;
   border-radius: 3px;
   display: block;
   height: 4px;
+  width: 22px;
+}
+.header__off-canvas-button span {
   outline-color: transparent !important;
   transition: background-color 0.2s linear;
   vertical-align: middle;
-  width: 36px;
   will-change: background-color;
 }
 .header__off-canvas-button span:before, .header__off-canvas-button span:after {
-  background: #032F33;
-  border-radius: 3px;
-  content: "";
-  display: block;
-  height: 4px;
   position: absolute;
   transition: margin 0.2s ease 0.1s, -webkit-transform 0.2s ease;
   transition: transform 0.2s ease, margin 0.2s ease 0.1s;
   transition: transform 0.2s ease, margin 0.2s ease 0.1s, -webkit-transform 0.2s ease;
-  width: 36px;
 }
 .header__off-canvas-button span:before {
   margin-top: -11px;
@@ -2480,17 +2745,12 @@ span.button--pink:active,
 /*------------------------------------
 	Menu
 ------------------------------------*/
-.nav__menu {
-  display: grid;
-  gap: 36px;
-}
 /*------------------------------------
 	Item
 ------------------------------------*/
 .nav__item {
   position: relative;
 }
-
 /*------------------------------------
 	Link
 ------------------------------------*/
@@ -2509,7 +2769,7 @@ span.button--pink:active,
   background-color: #337B86;
   color: #FFFFFF;
   display: none;
-  margin: 18px -20px -18px;
+  margin: 16px -20px 0;
   padding: 1em 20px;
   text-align: left;
   transition: 400ms ease-in-out;
@@ -2542,6 +2802,145 @@ a.nav__sublink:link, a.nav__sublink:visited {
 a.nav__sublink:hover, a.nav__sublink:active {
   text-decoration: underline;
 }
+/* Layout: pagination
+---------------------------------------------------------------------------------- */
+.pagination {
+  text-align: center;
+  margin-bottom: 40px;
+}
+/*------------------------------------
+	Link
+------------------------------------*/
+.pagination__link {
+  display: inline-block;
+  margin: 0 6px;
+  width: 30px;
+  height: 30px;
+  padding-top: 4px;
+  border-radius: 50%;
+  background-color: #46A8B8;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: background-color 300ms ease;
+}
+.pagination__link:hover {
+  background-color: #388693;
+}
+/*------------------------------------
+	Current link
+------------------------------------*/
+.pagination__link--current {
+  border: 1px solid #46A8B8;
+  font-weight: 700;
+  background-color: #FFFFFF;
+  color: #032F33;
+}
+.pagination__link--current:hover {
+  background-color: #e6e6e6;
+}
+
+/*------------------------------------
+	Inactive link
+------------------------------------*/
+.pagination__link--inactive {
+  pointer-events: none;
+}
+
+/*------------------------------------
+	Prev/next links
+------------------------------------*/
+.pagination__link.pagination__link--prev,
+.pagination__link.pagination__link--next {
+  position: relative;
+  top: -2px;
+  padding-top: 0;
+  background-color: transparent;
+  transition: color 300ms ease;
+  color: #46A8B8;
+}
+.pagination__link.pagination__link--prev:hover,
+.pagination__link.pagination__link--next:hover {
+  color: #388693;
+}
+.pagination__link.pagination__link--prev:hover svg,
+.pagination__link.pagination__link--next:hover svg {
+  color: #388693;
+}
+.pagination__link.pagination__link--prev svg,
+.pagination__link.pagination__link--next svg {
+  max-width: 30px;
+  color: #46A8B8;
+}
+.pagination__link--prev svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* Layout: blog
+---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Post summary
+------------------------------------*/
+.post-summary {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 36px 24px;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  margin-bottom: 40px;
+}
+/*------------------------------------
+	Column
+------------------------------------*/
+/*------------------------------------
+	Title
+------------------------------------*/
+.post-summary__title {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #032F33;
+  text-decoration: none;
+}
+.post-summary__title:before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  z-index: 10;
+}
+.post-summary__title:hover ~ .post-summary__summary svg {
+  left: 10px;
+}
+/*------------------------------------
+	Date
+------------------------------------*/
+.post-summary__date {
+  margin-bottom: 24px;
+}
+.post-summary__date a,
+.post-summary__date p {
+  font-size: 1.5rem;
+  color: #032F33;
+}
+/*------------------------------------
+	Summary
+------------------------------------*/
+.post-summary__summary {
+  font-size: 1.6rem;
+  color: #032F33;
+}
+.post-summary__summary svg {
+  position: relative;
+  left: 0;
+  margin-top: 24px;
+  transition: left 300ms ease;
+  color: #215860;
+}
 @media screen and (min-height: 400px){
   .header-wrapper--sticky, .menu-active .header-wrapper {
     -webkit-filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.17));
@@ -2565,6 +2964,29 @@ a.nav__sublink:hover, a.nav__sublink:active {
 @media (min-width: 576px){
   .element-products__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .element-three-column-text {
+    padding-top: 76px;
+    padding-bottom: 102px;
+  }
+  .element-three-column-text__title {
+    margin-bottom: 56px;
+    font-size: 4.4rem;
+  }
+  .element-three-column-text__columns {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 20px;
+  }
+  .element-three-column-text__column {
+    width: calc(50% - 20px);
+  }
+}
+@media (min-width: 767px){
+  .post-summary {
+    margin-bottom: 86px;
   }
 }
 @media (min-width: 768px){
@@ -2850,6 +3272,40 @@ a.nav__sublink:hover, a.nav__sublink:active {
     height: 360px;
     bottom: -180px;
   }
+  .element-three-column-text__columns {
+    gap: 48px;
+  }
+  .element-three-column-text__column {
+    width: calc(33% - 48px);
+  }
+  .element-three-column-text__column-title {
+    margin-bottom: 20px;
+    font-size: 3.2rem;
+  }
+  .element-three-column-text__column-content {
+    margin-bottom: 0;
+  }
+  .element-two-column-curve {
+    padding: 72px 0 80px;
+    margin-top: 36px;
+  }
+  .element-two-column-curve--blue .element-two-column-curve__background-shape {
+    width: 1813px;
+    height: 2404px;
+    left: -937px;
+  }
+  .element-two-column-curve .ball {
+    width: 385px;
+    height: 385px;
+    -webkit-transform: translate(50%, 35%);
+            transform: translate(50%, 35%);
+  }
+  .element-two-column-curve__before {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 59px;
+  }
   .element-two-column--padding-bottom {
     padding-bottom: 137px;
   }
@@ -2879,6 +3335,68 @@ a.nav__sublink:hover, a.nav__sublink:active {
     border-radius: 0 0 0 100px;
     left: 96px;
     right: auto;
+  }
+  .element-video__video {
+    padding-bottom: 80px;
+  }
+  .pagination {
+    margin-bottom: 86px;
+  }
+  .pagination__link {
+    width: 50px;
+    height: 50px;
+    margin: 0 12px;
+    padding-top: 11px;
+    font-size: 1.8rem;
+  }
+  .pagination__link.pagination__link--prev,
+.pagination__link.pagination__link--next {
+    top: -4px;
+  }
+  .pagination__link.pagination__link--prev svg,
+.pagination__link.pagination__link--next svg {
+    max-width: none;
+  }
+  .post-summary__column {
+    -ms-flex: 1 1 calc(50% - 12px);
+        flex: 1 1 calc(50% - 12px);
+  }
+  .post-summary__column--image {
+    min-height: 558px;
+    position: relative;
+  }
+  .post-summary__column--image img {
+    border-radius: 0 0 100px 0;
+    position: absolute;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: calc(50vw - 12px);
+    height: 100%;
+    right: 96px;
+    max-width: none;
+  }
+  .post-summary__column--image.post-summary__column--right img {
+    border-radius: 0 0 0 100px;
+    left: 96px;
+    right: auto;
+  }
+  .post-summary__title {
+    font-size: 3.2rem;
+  }
+  .post-summary__date {
+    margin-bottom: 48px;
+    font-size: 1.6rem;
+  }
+  .post-summary__summary {
+    font-size: 1.8rem;
+  }
+  .post-summary__summary svg {
+    margin-top: 49px;
+  }
+}
+@media (min-width: 900px){
+  .element-two-column-curve__before {
+    gap: 120px;
   }
 }
 @media (min-width: 992px){
@@ -2915,6 +3433,7 @@ a.nav__sublink:hover, a.nav__sublink:active {
         flex-wrap: wrap;
     -ms-flex-pack: end;
         justify-content: flex-end;
+    gap: 36px;
   }
   .nav__submenu {
     border-radius: 0 0 1em;
@@ -3069,6 +3588,12 @@ span.button {
     opacity: 1;
     top: 0;
   }
+  .nav__item {
+    margin: 16px 0;
+  }
+  .nav__item:first-of-type {
+    margin: 0 0 16px;
+  }
 }
 @media (max-width: 767px){
   a.button,
@@ -3116,11 +3641,21 @@ span.button {
     top: -24px;
     left: -442px;
   }
+  .element-two-column-curve__background-shape {
+    width: 701px;
+    height: 930px;
+    top: -24px;
+    left: -442px;
+  }
   .element-two-column__column--image {
     margin: 0 -20px;
     width: calc(100% + 40px);
   }
   .element-two-column .ball {
     display: none;
+  }
+  .post-summary__column--image {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
   }
 }
