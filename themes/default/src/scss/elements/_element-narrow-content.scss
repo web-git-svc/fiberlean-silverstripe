@@ -4,6 +4,10 @@
 	padding: 60px 0;
 	position: relative;
 	overflow: hidden;
+
+	&--grey {
+		background-color: $grey;
+	}
 }
 
 @include respond(768px) {

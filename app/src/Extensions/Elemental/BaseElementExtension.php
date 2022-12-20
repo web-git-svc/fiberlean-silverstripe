@@ -36,6 +36,7 @@ class BaseElementExtension extends DataExtension
                 'HeadingLevel',
                 'Title',
                 'Settings',
+                'BackgroundColour',
             ]
         );
 

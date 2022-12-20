@@ -3,6 +3,7 @@
 .element-two-column {
 	overflow: hidden;
 	position: relative;
+	margin-top: 36px;
 }
 
 @include respond(768px) {

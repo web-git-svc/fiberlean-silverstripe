@@ -22,6 +22,11 @@ class ElementNarrowTwoColumn extends ElementTwoColumn
 {
     private static string $table_name = 'ElementNarrowTwoColumn';
 
+    private static array $db = [
+        'LeftImageScaleWidth'    => 'Boolean',
+        'RightImageScaleWidth'    => 'Boolean',
+    ];
+
     private static string $singular_name = 'narrow two column block';
 
     private static string $plural_name = 'narrow two column blocks';
@@ -37,8 +42,25 @@ class ElementNarrowTwoColumn extends ElementTwoColumn
                 $fields->removeByName(
                     [
                         'BallColour',
-
+                        'LeftImageScaleWidth',
+                        'RightImageScaleWidth',
                     ]
+                );
+
+                $fields->insertAfter('LeftColumnType',
+                    Wrapper::create(
+                        FieldGroup::create('Image size',
+                            CheckboxField::create('LeftImageScaleWidth', 'Scale image')
+                        )
+                    )->displayIf('LeftColumnType')->isEqualTo('Image')->end(),
+                );
+
+                $fields->insertAfter('RightColumnType',
+                    Wrapper::create(
+                        FieldGroup::create('Image size',
+                            CheckboxField::create('RightImageScaleWidth', 'Scale image')
+                        )
+                    )->displayIf('RightColumnType')->isEqualTo('Image')->end(),
                 );
             }
         );
