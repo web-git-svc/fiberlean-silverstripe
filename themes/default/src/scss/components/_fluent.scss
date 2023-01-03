@@ -2,9 +2,73 @@
 ---------------------------------------------------------------------------------- */
 
 /*------------------------------------
+	Outer
+------------------------------------*/
+.fluent__outer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*------------------------------------
+	Inner
+------------------------------------*/
+.fluent__inner {
+	position: relative;
+}
+
+/*------------------------------------
+	Button
+------------------------------------*/
+.fluent__button {
+	display: block;
+	position: relative;
+	border: none;
+	border-bottom: 1px solid $blue-dark;
+	font-size: 1.4rem;
+	cursor: pointer;
+	z-index: 10;
+}
+
+/*------------------------------------
+	List
+------------------------------------*/
+ul.fluent__list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 223px;
+	max-height: 111px;
+	background-color: $white;
+	transition: max-height 300ms ease;
+	font-size: 1.4rem;
+	opacity: 1;
+
+	span {
+		display: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+@include respond(768px) {
+	ul.fluent__list {
+
+		span {
+			display: inline-block;
+		}
+	}
+}
+
+ul.fluent__list--hidden {
+	max-height: 0;
+	opacity: 0;
+}
+
+/*------------------------------------
 	Image
 ------------------------------------*/
-
 .fluent__image {
 	max-width: 14px;
 	max-height: 14px;

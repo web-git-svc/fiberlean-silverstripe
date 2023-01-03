@@ -1,20 +1,21 @@
 <% if $Locales %>
-	<div class="left">
-		<nav class="primary">
+	<div class="fluent__outer">
+		<div class="fluent__inner">
 			<% loop $Locales %>
 				<% if $LinkingMode == 'current' %>
-					<button>{$Title}</button>
+					<button class="fluent__button">{$Title}</button>
 				<% end_if %>
 			<% end_loop %>
-			<ul>
+			<ul class="fluent__list fluent__list--hidden">
 				<% loop $Locales %>
 					<li class="$LinkingMode">
-						<img class="fluent__image" src="{$ThemeDir}/dist/images/fluent/{$URLSegment.Lowercase}.png" alt="{$Title}"/>
-						<a href="$Link.ATT" <% if $LinkingMode != 'invalid' %>rel="alternate"
-						   hreflang="$HrefLang"<% end_if %>>$Title.XML</a>
+						<a href="$Link.ATT" <% if $LinkingMode != 'invalid' %>rel="alternate" hreflang="$HrefLang"<% end_if %>>
+							<img class="fluent__image" src="{$ThemeDir}/dist/images/fluent/{$URLSegment.Lowercase}.png" alt="{$Title}"/>
+							<span>$Title.XML</span>
+						</a>
 					</li>
 				<% end_loop %>
 			</ul>
-		</nav>
+		</div>
 	</div>
 <% end_if %>

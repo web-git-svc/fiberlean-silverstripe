@@ -1366,6 +1366,61 @@ span.button--yellow:active,
 /* Layout: Fluent (translate)
 ---------------------------------------------------------------------------------- */
 /*------------------------------------
+	Outer
+------------------------------------*/
+.fluent__outer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+/*------------------------------------
+	Inner
+------------------------------------*/
+.fluent__inner {
+  position: relative;
+}
+
+/*------------------------------------
+	Button
+------------------------------------*/
+.fluent__button {
+  display: block;
+  position: relative;
+  border: none;
+  border-bottom: 1px solid #215860;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/*------------------------------------
+	List
+------------------------------------*/
+ul.fluent__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 223px;
+  max-height: 111px;
+  background-color: #FFFFFF;
+  transition: max-height 300ms ease;
+  font-size: 1.4rem;
+  opacity: 1;
+}
+ul.fluent__list span {
+  display: none;
+}
+ul.fluent__list a {
+  text-decoration: none;
+}
+ul.fluent__list--hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+/*------------------------------------
 	Image
 ------------------------------------*/
 .fluent__image {
@@ -3208,6 +3263,9 @@ select:not([multiple]):not([size]).blog__category-select {
   .typography .captionImage img {
     float: none;
     margin: 0;
+  }
+  ul.fluent__list span {
+    display: inline-block;
   }
   .form__two-column {
     display: grid;
