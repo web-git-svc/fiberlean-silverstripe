@@ -3,6 +3,8 @@
 namespace App\Model;
 
 use App\Control\PageController;
+use DNADesign\Elemental\Models\ElementalArea;
+use SilverStripe\Blog\Model\BlogPost;
 use SilverStripe\CMS\Controllers\RootURLController;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
@@ -19,6 +21,11 @@ class Page extends SiteTree
 
     private static $icon_class = 'font-icon-p-alt-2';
 
+    private static $field_include = [
+        'ElementalAreaID',
+    ];
+
+
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
@@ -31,6 +38,20 @@ class Page extends SiteTree
 
         return parent::getCMSFields();
     }
+
+    protected function onBeforeWrite()
+    {
+        parent::onBeforeWrite();
+
+        if (!$this->isDraftedInLocale() && $this->isInDB()) {
+            /** @var ElementalArea $elementalArea */
+            $elementalArea = $this->ElementalArea();
+            $elementalAreaNew = $elementalArea->duplicate();
+
+            $this->ElementalAreaID = $elementalAreaNew->ID;
+        }
+    }
+
 
     public function getSettingsFields()
     {
@@ -100,5 +121,11 @@ class Page extends SiteTree
         }
 
         return $items;
+    }
+
+    public function getLatestPosts($limit = 3)
+    {
+        $blogposts = BlogPost::get();
+        return $blogposts->limit($limit);
     }
 }

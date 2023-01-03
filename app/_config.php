@@ -6,7 +6,7 @@ use SilverStripe\i18n\i18n;
 use SilverStripe\View\Parsers\ShortcodeParser;
 
 // Set the site locale
-i18n::set_locale('en_GB');
+//i18n::set_locale('en_GB');
 
 // TinyMCE Config
 $config = TinyMCEConfig::get('cms');

@@ -827,6 +827,9 @@ body {
   font-weight: 700;
   color: #F18501;
 }
+.typography ul.no-list {
+  list-style-type: none !important;
+}
 .typography ol {
   margin: 0 0 1em;
   padding: 0 0 0 1.5em;

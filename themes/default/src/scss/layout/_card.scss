@@ -20,6 +20,18 @@
 .card__image {
 	background-color: #EEE;
 	aspect-ratio: 360/223;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+@include respond(768px) {
+	.card__image {
+		max-height: 223px;
+	}
 }
 
 /*------------------------------------

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "522cdb0f808a556d9feae5daac49012c",
+    "content-hash": "4a6eebc27d14e78614edd06a5f9cc8a1",
     "packages": [
         {
             "name": "adrhumphreys/silverstripe-textdropdownfield",
@@ -7142,6 +7142,85 @@
                 }
             ],
             "time": "2022-08-02T15:47:23+00:00"
+        },
+        {
+            "name": "tractorcow/silverstripe-fluent",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tractorcow-farm/silverstripe-fluent.git",
+                "reference": "37656d26069652c2606b423004aff738310f222a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tractorcow-farm/silverstripe-fluent/zipball/37656d26069652c2606b423004aff738310f222a",
+                "reference": "37656d26069652c2606b423004aff738310f222a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.1 || ^8",
+                "silverstripe/admin": "^1",
+                "silverstripe/framework": "^4.7",
+                "silverstripe/vendor-plugin": "^1",
+                "silverstripe/versioned": "^1.7",
+                "symbiote/silverstripe-gridfieldextensions": "^3.1"
+            },
+            "require-dev": {
+                "silverstripe/recipe-testing": "^1 || ^2"
+            },
+            "suggest": {
+                "silverstripe/cms": "Localise pages"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev",
+                    "5.x-dev": "5.2.x-dev"
+                },
+                "expose": [
+                    "client/dist"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "TractorCow\\Fluent\\": "src/",
+                    "TractorCow\\Fluent\\Tests\\": "tests/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian.mooyman@gmail.com"
+                },
+                {
+                    "name": "Robbie Averill",
+                    "email": "robbie@silverstripe.com"
+                }
+            ],
+            "description": "Simple localisation for Silverstripe",
+            "keywords": [
+                "i18n",
+                "internationalisation",
+                "internationalization",
+                "language",
+                "locale",
+                "localisation",
+                "localization",
+                "multilingual",
+                "silverstripe",
+                "translatable",
+                "translation"
+            ],
+            "support": {
+                "issues": "http://github.com/tractorcow-farm/silverstripe-fluent/issues",
+                "source": "https://github.com/tractorcow-farm/silverstripe-fluent/tree/6.0.0"
+            },
+            "time": "2022-03-27T22:00:01+00:00"
         },
         {
             "name": "unclecheese/display-logic",

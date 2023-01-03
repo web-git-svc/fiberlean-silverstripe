@@ -5,23 +5,23 @@
 				{$TitleTag('center large')}
 			</div>
 		<% end_if %>
-
-		<%--        <% if $LinkedPage.BlogPosts %>--%>
-		<ul class="element-latest-posts__grid">
-			<%--                <% loop $LinkedPage.BlogPosts %>--%>
-			<li>
-				<% include App\Includes\Card %>
-			</li>
-
-			<li>
-				<% include App\Includes\Card %>
-			</li>
-
-			<li>
-				<% include App\Includes\Card %>
-			</li>
-			<%--                <% end_loop %>--%>
-		</ul>
+		<% if $LinkedCategory.BlogPosts %>
+			<ul class="element-latest-posts__grid no-list">
+				<% loop $LinkedCategory.BlogPosts.Limit(3) %>
+					<li>
+						<% include App\Includes\Card %>
+					</li>
+				<% end_loop %>
+			</ul>
+		<% else %>
+			<ul class="element-latest-posts__grid no-list">
+				<% loop $LatestPosts %>
+					<li>
+						<% include App\Includes\Card %>
+					</li>
+				<% end_loop %>
+			</ul>
+		<% end_if %>
 
 		<div style="text-align: center">
 			<a href="{$LinkedPage.Link}" class="button<% if $Background == 'White' %> button--blue-dark<% end_if %>">

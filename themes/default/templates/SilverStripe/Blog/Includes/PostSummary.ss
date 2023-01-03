@@ -12,8 +12,10 @@
 
 			<div class="post-summary__date">
 				<p>Posted in
-					<% if $CurrentCategory %>
-						<a href="{$CurrentCategory.Link}">{$CurrentCategory.Title}</a>
+					<% if $Categories %>
+						<% with $Categories.First %>
+							<a href="{$Link}">{$Title}</a>
+						<% end_with %>
 					<% else %>
 						<a href="{$Parent.Link}">News</a>
 					<% end_if %> on {$PublishDate.Format('dd MMMM YYYY')}</p>

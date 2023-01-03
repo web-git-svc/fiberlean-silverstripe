@@ -1,6 +1,7 @@
 <div class="header-wrapper" data-header-wrapper>
 	<sticky-header>
 		<header class="header">
+			<% include LocaleMenu %>
 			<div class="header__row">
 				<a href="{$BaseURL}" class="header__logo">
 					<img src="{$ThemeDir}/dist/images/branding/fibrelean.svg" alt="" width="250" height="82"/>

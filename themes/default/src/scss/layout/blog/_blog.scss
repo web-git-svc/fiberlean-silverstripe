@@ -1,0 +1,37 @@
+/* Layout: blog
+---------------------------------------------------------------------------------- */
+
+/*------------------------------------
+	Top
+------------------------------------*/
+.blog__top {
+
+}
+
+@include respond(768px) {
+	.blog__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+/*------------------------------------
+	Category dropdown
+------------------------------------*/
+.blog__category-select {
+	margin-bottom: 40px;
+	padding: 13px 100px 13px 25px;
+	border-radius: 30px;
+	background-color: $blue-dark;
+	color: $white;
+	text-align: left;
+	cursor: pointer;
+}
+
+select:not([multiple]):not([size]) {
+	&.blog__category-select {
+		background-image: url(../images/dropdown-arrow.svg);
+		background-position: 95% center;
+	}
+}

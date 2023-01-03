@@ -826,6 +826,9 @@ body {
   font-weight: 700;
   color: #F18501;
 }
+.typography ul.no-list {
+  list-style-type: none !important;
+}
 .typography ol {
   margin: 0 0 1em;
   padding: 0 0 0 1.5em;
@@ -1360,6 +1363,16 @@ span.button--yellow:active,
   max-width: 843px;
 }
 
+/* Layout: Fluent (translate)
+---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Image
+------------------------------------*/
+.fluent__image {
+  max-width: 14px;
+  max-height: 14px;
+}
+
 /* Component: form
 ---------------------------------------------------------------------------------- */
 /*------------------------------------
@@ -1799,6 +1812,7 @@ span.button--yellow:active,
 }
 .element-applications--orange .element-applications__items li {
   background-color: #F18501;
+  color: #032F33;
 }
 /* Layout: _element-contact-us.scss
 ---------------------------------------------------------------------------------- */
@@ -2677,7 +2691,12 @@ span.button--yellow:active,
   background-color: #EEE;
   aspect-ratio: 360/223;
 }
-
+.card__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*------------------------------------
 	Content
 ------------------------------------*/
@@ -2913,6 +2932,29 @@ a.nav__sublink:link, a.nav__sublink:visited {
 a.nav__sublink:hover, a.nav__sublink:active {
   text-decoration: underline;
 }
+/* Layout: blog
+---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Top
+------------------------------------*/
+/*------------------------------------
+	Category dropdown
+------------------------------------*/
+.blog__category-select {
+  margin-bottom: 40px;
+  padding: 13px 100px 13px 25px;
+  border-radius: 30px;
+  background-color: #215860;
+  color: #FFFFFF;
+  text-align: left;
+  cursor: pointer;
+}
+
+select:not([multiple]):not([size]).blog__category-select {
+  background-image: url(../images/dropdown-arrow.svg);
+  background-position: 95% center;
+}
+
 /* Layout: blogpost
 ---------------------------------------------------------------------------------- */
 .pagination {
@@ -3506,6 +3548,17 @@ a.nav__sublink:hover, a.nav__sublink:active {
   }
   .element-video__video {
     padding-bottom: 80px;
+  }
+  .card__image {
+    max-height: 223px;
+  }
+  .blog__top {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
   }
   .pagination {
     margin-bottom: 86px;

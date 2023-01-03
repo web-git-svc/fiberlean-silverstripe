@@ -87,6 +87,10 @@ body {
 			font-weight: 700;
 			color: $orange;
 		}
+
+		&.no-list {
+			list-style-type: none !important;
+		}
 	}
 
 	ol {

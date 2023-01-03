@@ -5,6 +5,7 @@ namespace App\Model\Elements;
 use App\Forms\GridField\GridFieldConfig_OrderableRecordEditor;
 use App\Model\Elements\Components\Feature;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Blog\Model\BlogCategory;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
@@ -25,7 +26,7 @@ class ElementLatestPosts extends BaseElement
     ];
 
     private static array $has_one = [
-        'LinkedPage' => SiteTree::class,
+        'LinkedCategory' => BlogCategory::class,
     ];
 
     private static string $singular_name = 'latest posts block';
@@ -40,13 +41,13 @@ class ElementLatestPosts extends BaseElement
     {
         $this->beforeUpdateCMSFields(
             function (FieldList $fields) {
-                $linkedPages = [];
+                $linkedCategories = BlogCategory::get();
 
                 $fields->addFieldsToTab(
                     'Root.Main',
                     [
                         TextField::create('ButtonText', 'Button text'),
-                        DropdownField::create('LinkedPageID', 'Linked page', $linkedPages),
+                        DropdownField::create('LinkedCategoryID', 'Linked category', $linkedCategories)->setEmptyString('Please select'),
                     ]
                 );
             }
@@ -79,8 +80,8 @@ class ElementLatestPosts extends BaseElement
     {
         $blockSchema = parent::provideBlockSchema();
 
-        $blockSchema['content'] = $this->LinkedPage()->exists() ?
-        "Show latest posts from {$this->LinkedPage()->Title}"
+        $blockSchema['content'] = $this->LinkedCategory()->exists() ?
+        "Show latest posts from {$this->LinkedCategory()->Title}"
         : 'No linked page selected';
 
         return $blockSchema;
