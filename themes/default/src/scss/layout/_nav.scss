@@ -69,14 +69,15 @@
 	Sub menu
 ------------------------------------*/
 .nav__submenu {
-	background-color: $blue;
-	color: $white;
 	display: none;
+	width: 100vw;
 	margin: 16px -20px 0;
 	padding: 1em 20px;
+	border: 1px solid $black-alt;
+	background-color: $white;
+	color: $black-alt;
 	text-align: left;
 	transition: 400ms ease-in-out;
-	width: 100vw;
 	z-index: 10;
 
 	.nav__item:hover &,
@@ -96,13 +97,12 @@
 
 @include respond(992px) {
 	.nav__submenu {
-		border-radius: 0 0 1em;
 		color: inherit;
 		display: block;
 		left: 50%;
 		margin: 0;
 		opacity: 0;
-		padding: 1em;
+		padding: 9px 32px 12px 12px;
 		position: absolute;
 		top: calc(120% + 18px);
 		transform: translateX(-50%);
@@ -149,8 +149,8 @@ a.nav__sublink {
 	display: block;
 	text-transform: uppercase;
 	font-size: 1.4rem;
-	font-weight: 700;
-	color: $white;
+	font-weight: 300;
+	color: $black-alt;
 	text-decoration: none;
 
 	&:link,
@@ -166,6 +166,6 @@ a.nav__sublink {
 
 @include respond(992px) {
 	a.nav__sublink {
-		text-align: center;
+		text-align: left;
 	}
 }

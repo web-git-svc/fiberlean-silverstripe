@@ -8,6 +8,9 @@ use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Core\Config\Config;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FieldGroup;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\OptionsetField;
@@ -25,7 +28,9 @@ class ElementApplications extends BaseElement
     private static string $icon = 'font-icon-block-promo-3';
 
     private static array $db = [
-        'Colour' => 'Varchar',
+        'Colour'            => 'Varchar',
+        'BackgroundColour'  => 'Varchar',
+        'ShowBall'          => 'Boolean',
     ];
 
     private static array $has_many = [
@@ -40,7 +45,11 @@ class ElementApplications extends BaseElement
     {
         $this->afterUpdateCMSFields(
             function (FieldList $fields) {
-                $fields->removeByName('Applications');
+                $fields->removeByName([
+                    'Applications',
+                    'BackgroundColour',
+                    'ShowBall',
+                ]);
 
                 $fields->addFieldsToTab(
                     'Root.Main',
@@ -54,6 +63,11 @@ class ElementApplications extends BaseElement
                     ]
                 );
 
+                $colours =[
+                    'white' => 'White',
+                    'grey'  => 'Grey',
+                ];
+
                 $fields->addFieldsToTab(
                     'Root.Settings',
                     [
@@ -62,6 +76,15 @@ class ElementApplications extends BaseElement
                             'Colour',
                             Config::inst()->get('Colours', 'colours')
                         )->setEmptyString('None'),
+                        FieldGroup::create('Ball',
+                            CheckboxField::create('ShowBall', 'Show ball?'),
+                        ),
+                        DropdownField::create(
+                            'BackgroundColour',
+                            'Background colour',
+                            $colours,
+                            'White',
+                        ),
                     ]
                 );
             }

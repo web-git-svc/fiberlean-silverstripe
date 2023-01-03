@@ -3,9 +3,12 @@
 namespace App\Model\Elements;
 
 use DNADesign\Elemental\Models\ElementContent;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FieldGroup;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\OptionsetField;
+use UncleCheese\DisplayLogic\Forms\Wrapper;
 
 class ElementNarrowContent extends ElementContent
 {
@@ -19,13 +22,21 @@ class ElementNarrowContent extends ElementContent
 
     private static array $db = [
         'CircleColour'      => 'Enum(array("None", "Orange", "Blue", "Yellow"), "None")',
-        'BackgroundColour'  => 'Varchar(255)'
+        'BackgroundColour'  => 'Varchar(255)',
+        'ShowBall'          => 'Boolean',
+        'BallColour'        => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink", "Red"), "None")',
     ];
 
     public function getCMSFields(): FieldList
     {
         $this->afterUpdateCMSFields(
             function (FieldList $fields) {
+
+                $fields->removeByName([
+                    'ShowBall',
+                    'BallColour',
+                ]);
+
                 $fields->addFieldsToTab(
                     'Root.Settings',
                     [
@@ -37,9 +48,19 @@ class ElementNarrowContent extends ElementContent
                         DropdownField::create('BackgroundColour', 'Background colour', [
                             'white' => 'White',
                             'grey'  => 'Grey',
-                        ])->setEmptyString('Please select')
+                        ])->setEmptyString('Please select'),
+                        FieldGroup::create('Ball',
+                            CheckboxField::create('ShowBall', 'Show ball?'),
+                        ),
+                        $ballColour = Wrapper::create(OptionsetField::create(
+                            'BallColour',
+                            'Ball colour',
+                            $this->dbObject('BallColour')->enumValues()
+                        )),
                     ]
                 );
+
+                $ballColour->displayIf('ShowBall')->isChecked();
             }
         );
 

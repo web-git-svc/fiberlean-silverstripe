@@ -1,3 +1,65 @@
-:root{--color-button-primary-text:#032f33;--color-button-primary-background:#fff;--color-button-primary-hover-text:#032f33;--color-button-primary-hover-background:#e6e6e6;--color-link-primary:#fff;--color-form-background:#215860;--color-form-text:#fff;--color-field-text:#032f33 }body{background:#46a8b8;background:linear-gradient(135deg,#21575f,#25616a 21%,#296770 30%,#2d717c 39%,#327b86 46%,#368591 54%,#388c99 61%,#3e95a3 69%,#429fae 79%,#46aab9)}body,h2.login-form__title{font-family:ofelia-text,sans-serif}h2.login-form__title{font-size:22px;margin-bottom:1em}.message{border-radius:var(--border-radius-form);padding:.75em}.message.warning{background-color:#fd0;color:#032f33}.message.bad{background-color:#d4351c;color:#fff}.app-brand__link{-webkit-filter:drop-shadow(0 2px 4px rgba(3,47,51,.5));filter:drop-shadow(0 2px 4px rgba(3,47,51,.5))}#MemberLoginForm_LoginForm_action_doLogin{transition:background-color .3s ease-in-out}
+/* SCSS Variables
+---------------------------------------------------------------------------------- */
+/* Mixins
+---------------------------------------------------------------------------------- */
+/* Media queries
+---------------------------------------------------------------------------------- */
+/* High-DPI displays
+---------------------------------------------------------------------------------- */
+/* Fluid font-size mixin
+ *
+ * Usage example: @include fluid-font-size( (1.2rem, 320px), (3rem, 960px) );
+ *
+ * Will result in font size of 1.2rem @ 320px, which will grow in sync with the
+ * viewport width. It will reach 3rem @ 960px.
+ *
+ * Also dds a media query to stop the font size growing once it hits the max
+ * size. This can be disabled - sometimes the media query merging logic gets
+ * messed up, so it may be necessary to cap it manually
+---------------------------------------------------------------------------------- */
+/* Strip 'px', 'rem' etc units from a number
+---------------------------------------------------------------------------------- */
+:root {
+  --color-button-primary-text: #032F33;
+  --color-button-primary-background: #FFFFFF;
+  --color-button-primary-hover-text: #032F33;
+  --color-button-primary-hover-background: #e6e6e6;
+  --color-link-primary: #FFFFFF;
+  --color-form-background: #215860;
+  --color-form-text: #FFFFFF;
+  --color-field-text: #032F33 ;
+}
 
-/*# sourceMappingURL=login.css.map*/
+body {
+  background: #46A8B8;
+  background: linear-gradient(135deg, #21575f 0%, #25616a 21%, #296770 30%, #2d717c 39%, #327b86 46%, #368591 54%, #388c99 61%, #3e95a3 69%, #429fae 79%, #46aab9 100%);
+  font-family: ofelia-text, sans-serif;
+}
+
+h2.login-form__title {
+  font-family: ofelia-text, sans-serif;
+  margin-bottom: 1em;
+  font-size: 22px;
+}
+
+.message {
+  border-radius: var(--border-radius-form);
+  padding: 0.75em;
+}
+.message.warning {
+  background-color: #FFDD00;
+  color: #032F33;
+}
+.message.bad {
+  background-color: #D4351C;
+  color: #FFFFFF;
+}
+
+.app-brand__link {
+  -webkit-filter: drop-shadow(0 2px 4px rgba(3, 47, 51, 0.5));
+          filter: drop-shadow(0 2px 4px rgba(3, 47, 51, 0.5));
+}
+
+#MemberLoginForm_LoginForm_action_doLogin {
+  transition: 300ms ease-in-out background-color;
+}

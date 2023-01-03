@@ -75,6 +75,7 @@ $headerBreakpont: $container-width + $container-padding + $container-padding;
 	}
 
 	span {
+		position: relative;
 		outline-color: transparent !important;
 		transition: background-color 0.2s linear;
 		vertical-align: middle;

@@ -10,4 +10,10 @@
 
 		{$HTML}
 	</div>
+
+	<% if $ShowBall %>
+		<div class="element-narrow-content__ball <% if $BallColour != 'None' %> element-two-column--padding-bottom ball--{$BallColour.Lowercase}<% end_if %>">
+			{$Ball}
+		</div>
+	<% end_if %>
 </div>

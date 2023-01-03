@@ -39,6 +39,7 @@ class ElementTwoColumn extends BaseElement
         'ShowBall'             => 'Boolean',
         'BallColour'           => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink", "Red"), "None")',
         'ReverseOrderOnMobile' => 'Boolean',
+        'BackgroundColour'     => 'Varchar',
     ];
 
     private static array $has_one = [
@@ -79,6 +80,7 @@ class ElementTwoColumn extends BaseElement
                         'ShowBall',
                         'BallColour',
                         'ReverseOrderOnMobile',
+                        'BackgroundColour',
                     ]
                 );
 
@@ -121,6 +123,12 @@ class ElementTwoColumn extends BaseElement
 
         $this->afterUpdateCMSFields(
             function (FieldList $fields) {
+
+                $colours =[
+                    'white' => 'White',
+                    'grey'  => 'Grey',
+                ];
+
                 $fields->addFieldsToTab(
                     'Root.Settings',
                     [
@@ -135,6 +143,12 @@ class ElementTwoColumn extends BaseElement
                         FieldGroup::create(
                             'Reverse order on mobile?',
                             CheckboxField::create('ReverseOrderOnMobile', 'Check to reverse order on mobile')
+                        ),
+                        DropdownField::create(
+                            'BackgroundColour',
+                            'Background colour',
+                            $colours,
+                            'White',
                         ),
                     ]
                 );

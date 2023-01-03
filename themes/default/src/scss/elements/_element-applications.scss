@@ -11,6 +11,10 @@
 	}
 }
 
+.element-applications--bg-grey {
+	background-color: $grey;
+}
+
 .element-applications__section {
 	position: relative;
 	padding-top: 50px;
@@ -32,6 +36,11 @@
 	&--right {
 		inset: 0 0 auto auto;
 		transform: translate(50%, -50%);
+	}
+
+	&--single {
+		inset: 100% 0 auto auto;
+		transform: translate(50%, -20%);
 	}
 
 	svg {

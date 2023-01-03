@@ -1,4 +1,4 @@
-<div class="element-two-column<% if $BallColour != 'None' %> element-two-column--padding-bottom ball--{$BallColour.Lowercase}<% end_if %>">
+<div class="element-two-column<% if $BallColour != 'None' %> element-two-column--padding-bottom ball--{$BallColour.Lowercase}<% end_if %> element-two-column--{$BackgroundColour}">
 	<% include App\Model\Elements\Includes\Before %>
 
 	<div class="container typography">

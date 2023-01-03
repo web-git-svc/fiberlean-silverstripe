@@ -39,3 +39,17 @@
 		}
 	}
 }
+
+.element-narrow-content__ball {
+	position: absolute;
+	bottom: -200px;
+	width: 368px;
+	height: 368px;
+	right: 0;
+	transform: translateX(50%);
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
