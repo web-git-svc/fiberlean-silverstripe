@@ -38,7 +38,21 @@ class ElementApplications extends BaseElement
     ];
 
     private static array $owns = [
-        'Applications'
+        'Applications',
+    ];
+
+    private static array $cascade_duplicates = [
+        'Applications',
+    ];
+
+    private static array $cascade_deletes = [
+        'Applications',
+    ];
+
+    private static array $fields_exclude = [
+        'Colour',
+        'BackgroundColour',
+        'ShowBall',
     ];
 
     public function getCMSFields(): FieldList

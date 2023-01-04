@@ -19,9 +19,6 @@ class ElementSlideshow extends BaseElement
 {
     private static string $table_name = 'ElementSlideshow';
 
-    private static array $db = [
-    ];
-
     private static array $has_many = [
         'Slides' => Slide::class,
     ];

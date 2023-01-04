@@ -4,7 +4,6 @@ Name: app-extensions
 App\Model\Page:
   extensions:
     - App\Extensions\Pages\PageExtension
-    - App\Extensions\Fluent\PageFluentExtension
 
 Heyday\MenuManager\MenuAdmin:
   extensions:

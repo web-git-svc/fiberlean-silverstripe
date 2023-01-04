@@ -19,6 +19,10 @@ class ElementTwoColumnCurve extends ElementContent
         'RightContent'  => 'HTMLText',
     ];
 
+    private static array $fields_exclude = [
+        'Colour',
+    ];
+
     private static string $singular_name = 'two column curve block';
 
     private static string $plural_name = 'two column curve blocks';

@@ -3,6 +3,8 @@ Name: app-fluent
 ---
 TractorCow\Fluent\Extension\FluentDirectorExtension:
   disable_default_prefix: true
+
+# Data objects
 App\Model\Elements\Components\Application:
   extensions:
     - 'TractorCow\Fluent\Extension\FluentVersionedExtension'
@@ -32,3 +34,8 @@ App\Model\Elements\Components\Slide:
     - 'TractorCow\Fluent\Extension\FluentVersionedExtension'
   translate:
     - 'Title'
+
+# Elements
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - 'TractorCow\Fluent\Extension\FluentVersionedExtension'

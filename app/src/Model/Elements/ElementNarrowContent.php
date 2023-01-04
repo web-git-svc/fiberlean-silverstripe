@@ -27,6 +27,13 @@ class ElementNarrowContent extends ElementContent
         'BallColour'        => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink", "Red"), "None")',
     ];
 
+    private static array $fields_exclude = [
+        'CircleColour',
+        'BackgroundColour',
+        'ShowBall',
+        'BallColour',
+    ];
+
     public function getCMSFields(): FieldList
     {
         $this->afterUpdateCMSFields(

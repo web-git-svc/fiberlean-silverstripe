@@ -33,6 +33,10 @@ class ElementTallIntroBlock extends ElementContent
         'Image',
     ];
 
+    private static array $fields_exclude = [
+        'Colour',
+    ];
+
     public function getCMSFields(): FieldList
     {
         $this->afterUpdateCMSFields(

@@ -44,6 +44,14 @@ class Application extends DataObject
         'ApplicationItems',
     ];
 
+    private static array $cascade_duplicates = [
+        'ApplicationItems',
+    ];
+
+    private static array $cascade_deletes= [
+        'ApplicationItems',
+    ];
+
     private static array $summary_fields = [
         'Title'           => 'Title',
         'Content.Summary' => 'Content',

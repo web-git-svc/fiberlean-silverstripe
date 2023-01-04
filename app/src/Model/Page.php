@@ -12,53 +12,40 @@ use SilverStripe\Core\ClassInfo;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Permission;
 
 class Page extends SiteTree
 {
-    private static $table_name = 'Page';
+    private static string $table_name = 'Page';
 
-    private static $icon_class = 'font-icon-p-alt-2';
-
-    private static $field_include = [
-        'ElementalAreaID',
-    ];
-
+    private static string $icon_class = 'font-icon-p-alt-2';
 
     public function getCMSFields()
     {
-        $this->beforeUpdateCMSFields(function (FieldList $fields) {
-            $homeURL = Config::inst()->get(RootURLController::class, 'default_homepage_link');
+        $this->beforeUpdateCMSFields(
+            function (FieldList $fields) {
+                $homeURL = Config::inst()->get(RootURLController::class, 'default_homepage_link');
 
-            if (!Permission::check('ADMIN') && $this->URLSegment === $homeURL) {
-                $fields->removeByName('URLSegment');
+                if (!Permission::check('ADMIN') && $this->URLSegment === $homeURL) {
+                    $fields->removeByName('URLSegment');
+                }
             }
-        });
+        );
 
         return parent::getCMSFields();
     }
 
-    protected function onBeforeWrite()
-    {
-        parent::onBeforeWrite();
-
-        if (!$this->isDraftedInLocale() && $this->isInDB()) {
-            /** @var ElementalArea $elementalArea */
-            $elementalArea = $this->ElementalArea();
-            $elementalAreaNew = $elementalArea->duplicate();
-
-            $this->ElementalAreaID = $elementalAreaNew->ID;
-        }
-    }
-
-
     public function getSettingsFields()
     {
-        $this->beforeExtending('updateSettingsFields', function (FieldList $fields) {
-            // Hide ShowInSearch checkbox if we don't have a search
-            $fields->removeByName('ShowInSearch');
-        });
+        $this->beforeExtending(
+            'updateSettingsFields',
+            function (FieldList $fields) {
+                // Hide ShowInSearch checkbox if we don't have a search
+                $fields->removeByName('ShowInSearch');
+            }
+        );
 
         return parent::getSettingsFields();
     }
@@ -123,7 +110,7 @@ class Page extends SiteTree
         return $items;
     }
 
-    public function getLatestPosts($limit = 3)
+    public function getLatestPosts(int $limit = 3): DataList
     {
         $blogposts = BlogPost::get();
         return $blogposts->limit($limit);

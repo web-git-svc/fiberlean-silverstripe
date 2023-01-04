@@ -23,8 +23,13 @@ class ElementNarrowTwoColumn extends ElementTwoColumn
     private static string $table_name = 'ElementNarrowTwoColumn';
 
     private static array $db = [
-        'LeftImageScaleWidth'    => 'Boolean',
-        'RightImageScaleWidth'    => 'Boolean',
+        'LeftImageScaleWidth'  => 'Boolean',
+        'RightImageScaleWidth' => 'Boolean',
+    ];
+
+    private static array $fields_exclude = [
+        'LeftImageScaleWidth',
+        'RightImageScaleWidth',
     ];
 
     private static string $singular_name = 'narrow two column block';

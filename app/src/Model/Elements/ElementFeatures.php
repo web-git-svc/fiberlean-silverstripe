@@ -38,6 +38,10 @@ class ElementFeatures extends BaseElement
         'Features',
     ];
 
+    private static array $fields_exclude = [
+        'BackgroundColour',
+    ];
+
     private static string $singular_name = 'features block';
 
     private static string $plural_name = 'feature blocks';

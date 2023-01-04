@@ -32,7 +32,6 @@ class ElementVideo extends BaseElement
     {
         $this->beforeUpdateCMSFields(
             function (FieldList $fields) {
-                $fields->removeByName(['Images']);
                 $fields->addFieldsToTab(
                     'Root.Main',
                     [
@@ -51,9 +50,9 @@ class ElementVideo extends BaseElement
         return 'Video';
     }
 
-    public function getEmbedVideo()
+    public function getEmbedVideo(): ?string
     {
-        if (!$this->VideoURL) return;
+        if (!$this->VideoURL) return null;
 
         $parser = ShortcodeParser::get();
         $content = "[embed url={$this->VideoURL}][/embed]";

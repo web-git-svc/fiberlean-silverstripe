@@ -32,21 +32,27 @@ class ElementThreeColumnText extends BaseElement
         'RightColumnContent'        => 'HTMLText',
     ];
 
+    private static array $fields_exclude = [
+        'Colour',
+    ];
+
     public function getCMSFields(): FieldList
     {
         $this->afterUpdateCMSFields(
             function (FieldList $fields) {
-                $fields->removeByName([
-                    'LeftColumnHeader',
-                    'LeftColumnTitle',
-                    'LeftColumnContent',
-                    'MiddleColumnHeader',
-                    'MiddleColumnTitle',
-                    'MiddleColumnContent',
-                    'RightColumnHeader',
-                    'RightColumnTitle',
-                    'RightColumnContent',
-                ]);
+                $fields->removeByName(
+                    [
+                        'LeftColumnHeader',
+                        'LeftColumnTitle',
+                        'LeftColumnContent',
+                        'MiddleColumnHeader',
+                        'MiddleColumnTitle',
+                        'MiddleColumnContent',
+                        'RightColumnHeader',
+                        'RightColumnTitle',
+                        'RightColumnContent',
+                    ]
+                );
 
                 $fields->addFieldsToTab(
                     'Root.Main',

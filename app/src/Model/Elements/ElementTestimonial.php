@@ -47,6 +47,10 @@ class ElementTestimonial extends BaseElement
         'LinkType' => 'Page',
     ];
 
+    private static array $fields_exclude = [
+        'Colour',
+    ];
+
     private static string $singular_name = 'testimonial block';
 
     private static string $plural_name = 'testimonial blocks';

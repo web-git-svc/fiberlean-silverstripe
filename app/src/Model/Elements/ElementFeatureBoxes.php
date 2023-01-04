@@ -38,6 +38,11 @@ class ElementFeatureBoxes extends ElementContent
         'FeatureBoxes',
     ];
 
+    private static array $fields_exclude = [
+        'Colour',
+        'Columns',
+    ];
+
     private static string $singular_name = 'feature boxes block';
 
     private static string $plural_name = 'feature box blocks';

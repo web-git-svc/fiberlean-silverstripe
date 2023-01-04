@@ -37,6 +37,10 @@ class ElementLatestPosts extends BaseElement
 
     private static string $icon = 'font-icon-block-layout-2';
 
+    private static array $fields_exclude = [
+        'Background',
+    ];
+
     public function getCMSFields(): FieldList
     {
         $this->beforeUpdateCMSFields(

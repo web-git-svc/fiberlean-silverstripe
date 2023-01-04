@@ -9,7 +9,10 @@ use SilverStripe\Core\Convert;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Tab;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\View\HTML;
+use TractorCow\Fluent\Extension\FluentExtension;
+use TractorCow\Fluent\Model\Locale;
 
 class BaseElementExtension extends DataExtension
 {
@@ -40,12 +43,25 @@ class BaseElementExtension extends DataExtension
             ]
         );
 
+        $titleField = TextDropdownField::create('TitleAndHeadingLevel', 'Title', 'Title', 'HeadingLevel', $this->HeadingLevels)
+            ->setName('TitleAndHeadingLevel');
+
+        // The title field in elemental is a fancy composite field containing a text box and a checkbox,
+        // so we have to manually add the fluent "field is translatable" badge
+        if (class_exists(Locale::class) && !$titleField->hasClass('fluent__localised-field')) {
+            $translatedTooltipTitle = _t(FluentExtension::class . ".FLUENT_ICON_TOOLTIP", 'Translatable field');
+            $tooltip = DBField::create_field(
+                'HTMLFragment',
+                "<span class='font-icon-translatable' title='$translatedTooltipTitle'></span>"
+            );
+
+            $titleField->addExtraClass('fluent__localised-field');
+            $titleField->setTitle(DBField::create_field('HTMLFragment', $tooltip . $titleField->Title()));
+        }
+
         /** @var Tab $tab */
         $tab = $fields->fieldByName('Root.Main');
-        $tab->getChildren()->unshift(
-            TextDropdownField::create('TitleAndHeadingLevel', 'Title', 'Title', 'HeadingLevel', $this->HeadingLevels)
-                ->setName('TitleAndHeadingLevel')
-        );
+        $tab->getChildren()->unshift($titleField);
 
         // Move history tab last
         if ($historyTab = $fields->fieldByName('Root.History')) {

@@ -57,6 +57,13 @@ class ElementTwoColumn extends BaseElement
         'RightColumnType' => 'Image',
     ];
 
+    private static array $fields_exclude = [
+        'ShowBall',
+        'BallColour',
+        'ReverseOrderOnMobile',
+        'BackgroundColour',
+    ];
+
     private static string $singular_name = 'two column block';
 
     private static string $plural_name = 'two column blocks';
