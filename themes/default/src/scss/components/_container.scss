@@ -1,0 +1,11 @@
+/* Component: container
+---------------------------------------------------------------------------------- */
+.container {
+	margin: 0 auto;
+	max-width: $container-width;
+	padding: 0 $container-padding;
+
+	&--narrow {
+		max-width: 843px;
+	}
+}

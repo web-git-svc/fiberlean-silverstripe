@@ -1,0 +1,106 @@
+/* Layout: _element-contact-us.scss
+---------------------------------------------------------------------------------- */
+.element-contact-us {
+	overflow: hidden;
+	position: relative;
+	padding: 0;
+}
+
+@include respond(768px) {
+	.element-contact-us {
+		background-color: $green;
+	}
+}
+
+@include respond(767px, max) {
+	.element-contact-us__images {
+		position: relative;
+		aspect-ratio: 393/375;
+		clip-path: url(#curved-image-clip-path);
+		overflow: hidden;
+	}
+}
+
+.element-contact-us__image {
+	position: relative;
+	aspect-ratio: 393/375;
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		inset: 0;
+	}
+}
+
+@include respond(768px) {
+	.element-contact-us__image {
+		width: 50%;
+		height: 100%;
+		inset: 0 60% auto auto;
+		position: absolute;
+		clip-path: ellipse(100% 100% at 0 100%);
+		z-index: 5;
+		max-width: 637px;
+
+		&:before {
+			content: '';
+			padding-top: 100%;
+			display: block;
+		}
+	}
+}
+
+@include respond(1620px) {
+	.element-contact-us__image {
+		width: 50%;
+		height: 100%;
+		inset: 0 auto auto 0;
+
+	}
+}
+
+.element-contact-us__column {
+	padding: 50px 0;
+}
+
+@include respond(768px) {
+	.element-contact-us__column {
+		width: 50%;
+		max-width: 456px;
+		margin: 0 0 0 auto;
+		padding: 80px 0;
+	}
+}
+
+.ball {
+	.element-contact-us & {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 282px;
+		height: 282px;
+		transform: translate(50%, 50%);
+	}
+}
+
+@include respond(768px) {
+	.ball {
+		.element-contact-us & {
+			width: 653px;
+			height: 653px;
+			transform: translateY(50%);
+			right: 50%;
+		}
+	}
+}
+
+@include respond(1620px) {
+	.ball {
+		.element-contact-us & {
+			right: auto;
+			left: 250px;
+		}
+	}
+}

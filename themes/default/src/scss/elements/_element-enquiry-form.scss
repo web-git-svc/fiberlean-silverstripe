@@ -1,0 +1,36 @@
+/* Layout: _element-enquiry-form.scss
+---------------------------------------------------------------------------------- */
+.element-enquiry-form {
+	padding: 87px 0 80px;
+}
+
+.element-enquiry-form__form {
+	form {
+		color: $white;
+
+		label {
+			color: currentColor;
+			font-weight: 400;
+			background-color: $blue-dark !important;
+
+			em {
+				color: currentColor;
+				font-weight: 400;
+			}
+		}
+
+		input,
+		textarea {
+			border: 2px solid currentColor !important;
+			color: currentColor !important;
+		}
+
+		.form__actions {
+			text-align: center;
+		}
+	}
+}
+
+.element-enquiry-form__privacy {
+	margin: 24px 0 48px;
+}
