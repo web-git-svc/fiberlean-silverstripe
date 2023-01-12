@@ -1,0 +1,129 @@
+/* Layout: Fluent (translate)
+---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Outer
+------------------------------------*/
+.fluent__outer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+@include respond(992px) {
+	.fluent__outer {
+		margin-bottom: 20px;
+	}
+}
+
+/*------------------------------------
+	Inner
+------------------------------------*/
+.fluent__inner {
+	position: relative;
+}
+
+@include respond(992px) {
+	.fluent__inner {
+		padding: 0 30px 0 15px;
+	}
+}
+
+/*------------------------------------
+	Button
+------------------------------------*/
+.fluent__button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	border: none;
+	border-bottom: 1px solid $blue;
+	font-size: 1.4rem;
+	cursor: pointer;
+	z-index: 10;
+
+	span {
+		display: none;
+		color: $blue-dark;
+	}
+
+	svg {
+		margin-left: 6px;
+	}
+}
+
+@include respond(992px) {
+	.fluent__button {
+
+		span {
+			display: inline-block;
+		}
+
+		svg {
+			margin-left: 10px;
+		}
+	}
+}
+
+/*------------------------------------
+	List
+------------------------------------*/
+ul.fluent__list {
+	position: absolute;
+	top: 95%;
+	left: 50%;
+	width: 100%;
+	max-height: 111px;
+	padding: 9px;
+	border: 1px solid $blue;
+	background-color: $white;
+	transition: all 300ms ease;
+	transform: translateX(-50%);
+	font-size: 1.4rem;
+	opacity: 1;
+	z-index: 200;
+	text-align: center;
+
+	span {
+		display: none;
+	}
+
+	li {
+		margin-bottom: 1em;
+	}
+
+	a {
+		color: $blue-dark;
+		text-decoration: none;
+	}
+}
+
+@include respond(992px) {
+	ul.fluent__list {
+		min-width: 220px;
+		padding: 9px 32px 7px 15px;
+		text-align: left;
+
+		span {
+			display: inline-block;
+		}
+	}
+}
+
+ul.fluent__list--hidden {
+	max-height: 0;
+	opacity: 0;
+	z-index: -1;
+}
+
+/*------------------------------------
+	Image
+------------------------------------*/
+.fluent__image {
+	max-width: 14px;
+	max-height: 14px;
+}
+
+@include respond(992px) {
+	.fluent__image {
+		margin-right: 11px;
+	}
+}

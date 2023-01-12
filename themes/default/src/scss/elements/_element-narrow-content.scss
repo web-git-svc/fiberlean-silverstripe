@@ -1,0 +1,62 @@
+/* Layout: _element-content.scss
+---------------------------------------------------------------------------------- */
+.element-narrow-content {
+	padding: 60px 0;
+	position: relative;
+	overflow: hidden;
+
+	&--grey {
+		background-color: $grey;
+	}
+}
+
+@include respond(768px) {
+	.element-narrow-content {
+		padding: 80px 0;
+	}
+}
+
+.element-narrow-content__circle {
+	svg {
+		position: absolute;
+		top: 0;
+		left: -812px;
+		z-index: -1;
+	}
+
+	&--yellow {
+		color: $yellow;
+	}
+}
+
+@include respond(767px, max) {
+	.element-narrow-content__circle {
+		svg {
+			width: 701px;
+			height: 930px;
+			top: -24px;
+			left: -442px;
+		}
+	}
+}
+
+.element-narrow-content__ball {
+	display: none;
+	position: absolute;
+	bottom: -200px;
+	width: 368px;
+	height: 368px;
+	right: 0;
+	transform: translateX(50%);
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@include respond(768px) {
+	.element-narrow-content__ball {
+		display: block;
+	}
+}

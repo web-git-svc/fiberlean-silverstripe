@@ -1,0 +1,89 @@
+/* Layout: _element-applications.scss
+---------------------------------------------------------------------------------- */
+.element-applications {
+	padding-bottom: 50px;
+	overflow: hidden;
+}
+
+@include respond(768px) {
+	.element-applications {
+		padding-bottom: 100px;
+	}
+}
+
+.element-applications--bg-grey {
+	background-color: $grey;
+}
+
+.element-applications__section {
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.element-applications__ball {
+	position: absolute;
+	inset: 0 auto auto 0;
+	width: 367px;
+	height: 367px;
+	transform: translate(-50%, -50%);
+
+	&--right {
+		inset: 0 0 auto auto;
+		transform: translate(50%, -50%);
+	}
+
+	&--single {
+		inset: 100% 0 auto auto;
+		transform: translate(50%, -20%);
+	}
+
+	svg {
+		width: 100%;
+		height: 100%;
+
+		.element-applications--orange & {
+			@extend .ball--orange;
+		}
+	}
+}
+
+@include respond(1199px, max) {
+	.element-applications__ball {
+		display: none;
+	}
+}
+
+.element-applications__items {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+	margin-top: 48px;
+
+	li {
+		@include fluid-font-size((2rem, 320px), (2.4rem, 992px));
+		font-weight: 700;
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		padding: .9em;
+		border-radius: 0 0 50px 0;
+
+		.element-applications--orange & {
+			background-color: $orange;
+			color: $black-alt;
+		}
+	}
+}
+
+@include respond(768px) {
+	.element-applications__items {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@include respond(992px) {
+	.element-applications__items {
+		gap: 57px;
+	}
+}

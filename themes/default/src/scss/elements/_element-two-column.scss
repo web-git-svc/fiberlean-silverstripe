@@ -1,0 +1,118 @@
+/* Element: _element-feature-boxes.scss
+---------------------------------------------------------------------------------- */
+.element-two-column {
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 40px;
+}
+
+@include respond(768px) {
+	.element-two-column {
+		padding-bottom: 60px;
+
+		&--padding-bottom {
+			padding-bottom: 137px;
+		}
+	}
+}
+
+/*------------------------------------
+	Background colour
+------------------------------------*/
+.element-two-column--grey {
+	padding-top: 50px;
+	background-color: $grey;
+}
+
+@include respond(768px) {
+	.element-two-column--grey {
+		padding-top: 100px;
+		background-color: $grey;
+	}
+}
+
+/*------------------------------------
+	Grid
+------------------------------------*/
+.element-two-column__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 36px 24px;
+	align-items: center;
+}
+
+@include respond(768px) {
+	.element-two-column__row {
+		&--reverse {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+/*------------------------------------
+	Column
+------------------------------------*/
+@include respond(767px, max) {
+	.element-two-column__column {
+		&--image {
+			margin: 0 -20px;
+			width: calc(100% + 40px);
+		}
+	}
+}
+
+@include respond(768px) {
+	.element-two-column__column {
+		flex: 1 1 calc(50% - 12px);
+
+		&--image {
+			min-height: 558px;
+			position: relative;
+
+			img {
+				border-radius: 0 0 100px 0;
+				position: absolute;
+				object-fit: cover;
+				width: calc(50vw - 12px);
+				height: 100%;
+				right: 96px;
+				max-width: none;
+			}
+		}
+
+		&--image.element-two-column__column--right {
+			img {
+				border-radius: 0 0 0 100px;
+				left: 96px;
+				right: auto;
+			}
+		}
+	}
+}
+
+@include respond(767px, max) {
+	.ball {
+		.element-two-column & {
+			display: none;
+		}
+	}
+}
+
+.ball {
+	.element-two-column & {
+		position: absolute;
+		bottom: -231px;
+		width: 368px;
+		height: 368px;
+	}
+
+	.element-two-column__column--left & {
+		left: 0;
+		transform: translateX(-50%);
+	}
+
+	.element-two-column__column--right & {
+		right: 0;
+		transform: translateX(50%);
+	}
+}

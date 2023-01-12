@@ -1,0 +1,38 @@
+/* Element: _element-feature-boxes.scss
+---------------------------------------------------------------------------------- */
+.element-narrow-two-column {
+	padding: 50px 0;
+}
+
+@include respond(768px) {
+	.element-narrow-two-column {
+		padding: 50px 0 100px;
+	}
+}
+
+/*------------------------------------
+	Grid
+------------------------------------*/
+.element-narrow-two-column__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 36px 24px;
+	align-items: flex-start;
+}
+
+@include respond(768px) {
+	.element-narrow-two-column__row {
+		&--reverse {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+/*------------------------------------
+	Column
+------------------------------------*/
+@include respond(768px) {
+	.element-narrow-two-column__column {
+		flex: 1 1 calc(50% - 12px);
+	}
+}
