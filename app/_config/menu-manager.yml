@@ -1,6 +1,0 @@
----
-Name: app-menu-manager
----
-Heyday\MenuManager\MenuSet:
-  default_sets:
-    - Footer

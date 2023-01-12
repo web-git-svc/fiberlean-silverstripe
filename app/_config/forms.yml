@@ -1,6 +1,0 @@
----
-Name: app-forms
----
-SilverStripe\Forms\HTMLEditor\HTMLEditorField:
-  default_classes:
-    - 'stacked'
