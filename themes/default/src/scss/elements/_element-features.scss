@@ -6,11 +6,19 @@
 	&--blue {
 		background-color: $blue-dark;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 
 	&--orange {
 		background-color: $orange;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 
 	&--yellow {

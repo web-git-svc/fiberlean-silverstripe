@@ -1084,6 +1084,10 @@ body {
 .breadcrumbs {
   font-size: calc(1.2rem + 4 * ((100vw - 320px) / 672));
   padding: 38px 0;
+  color: #215860;
+}
+.bg--blue-dark .breadcrumbs {
+  color: #FFFFFF;
 }
 
 /*------------------------------------
@@ -1097,8 +1101,6 @@ body {
   -ms-flex-align: center;
       align-items: center;
   gap: 0.33em 0.66em;
-  list-style-type: none !important;
-  padding-left: 0 !important;
 }
 
 /*------------------------------------
@@ -1106,10 +1108,6 @@ body {
 ------------------------------------*/
 .breadcrumbs__item {
   position: relative;
-  color: #215860;
-}
-.bg--blue-dark .breadcrumbs__item {
-  color: #FFFFFF;
 }
 .breadcrumbs__item:not(:first-child) {
   padding-left: 1em;
@@ -2142,7 +2140,7 @@ ul.fluent__list--hidden {
 	Card content
 ------------------------------------*/
 .element-feature-boxes__card-content {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .element-feature-boxes__card-content h3 {
   font-size: 1.6rem;
@@ -2179,8 +2177,14 @@ ul.fluent__list--hidden {
   background-color: #215860;
   color: #FFFFFF;
 }
+.element-features--blue .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-features--orange {
   background-color: #F18501;
+  color: #FFFFFF;
+}
+.element-features--orange .breadcrumbs {
   color: #FFFFFF;
 }
 .element-features--yellow {
@@ -2322,10 +2326,16 @@ ul.fluent__list--hidden {
 .element-intro-block--pink .typography {
   color: #FFFFFF;
 }
+.element-intro-block--pink .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-intro-block--red {
   background-color: #C91517;
 }
 .element-intro-block--red .typography {
+  color: #FFFFFF;
+}
+.element-intro-block--red .breadcrumbs {
   color: #FFFFFF;
 }
 .element-intro-block--yellow {
@@ -2334,16 +2344,25 @@ ul.fluent__list--hidden {
 .element-intro-block--yellow .typography {
   color: #2D2D2D;
 }
+.element-intro-block--yellow .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-intro-block--blue {
   background-color: #215860;
 }
 .element-intro-block--blue .typography {
   color: #FFFFFF;
 }
+.element-intro-block--blue .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-intro-block--orange {
   background-color: #F18501;
 }
 .element-intro-block--orange .typography {
+  color: #FFFFFF;
+}
+.element-intro-block--orange .breadcrumbs {
   color: #FFFFFF;
 }
 .element-intro-block__column {
@@ -2585,20 +2604,35 @@ ul.fluent__list--hidden {
   background-color: #7E1553;
   color: #FFFFFF;
 }
+.element-testimonial--pink .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-testimonial--red {
   background-color: #C91517;
+  color: #FFFFFF;
+}
+.element-testimonial--red .breadcrumbs {
   color: #FFFFFF;
 }
 .element-testimonial--yellow {
   background-color: #B79C00;
   color: #FFFFFF;
 }
+.element-testimonial--yellow .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-testimonial--blue {
   background-color: #215860;
   color: #FFFFFF;
 }
+.element-testimonial--blue .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-testimonial--orange {
   background-color: #F18501;
+  color: #FFFFFF;
+}
+.element-testimonial--orange .breadcrumbs {
   color: #FFFFFF;
 }
 .element-testimonial__open-quote {
@@ -2664,8 +2698,14 @@ ul.fluent__list--hidden {
   background-color: #7E1553;
   color: #FFFFFF;
 }
+.element-three-column-text--pink .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-three-column-text--red {
   background-color: #C91517;
+  color: #FFFFFF;
+}
+.element-three-column-text--red .breadcrumbs {
   color: #FFFFFF;
 }
 .element-three-column-text--red .element-three-column-text__column-content {
@@ -2675,8 +2715,14 @@ ul.fluent__list--hidden {
   background-color: #B79C00;
   color: #FFFFFF;
 }
+.element-three-column-text--yellow .breadcrumbs {
+  color: #FFFFFF;
+}
 .element-three-column-text--blue {
   background-color: #215860;
+  color: #FFFFFF;
+}
+.element-three-column-text--blue .breadcrumbs {
   color: #FFFFFF;
 }
 .element-three-column-text--blue .element-three-column-text__column-content {
@@ -2684,6 +2730,9 @@ ul.fluent__list--hidden {
 }
 .element-three-column-text--orange {
   background-color: #F18501;
+  color: #FFFFFF;
+}
+.element-three-column-text--orange .breadcrumbs {
   color: #FFFFFF;
 }
 /*------------------------------------
