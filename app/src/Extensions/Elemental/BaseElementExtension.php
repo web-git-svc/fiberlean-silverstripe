@@ -33,6 +33,8 @@ class BaseElementExtension extends DataExtension
         'hidden' => 'Hide title',
     ];
 
+    public static $breadcrumbs_rendered = false;
+
     public function updateCMSFields(FieldList $fields): void
     {
         $fields->removeByName(
@@ -90,5 +92,16 @@ class BaseElementExtension extends DataExtension
         $controller = Controller::curr();
 
         return $controller instanceof PageController ? $controller : null;
+    }
+
+    public function BreadcrumbsRendered(): bool
+    {
+        if (!self::$breadcrumbs_rendered) {
+            self::$breadcrumbs_rendered = true;
+
+            return false;
+        }
+
+        return true;
     }
 }

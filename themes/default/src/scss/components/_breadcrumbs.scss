@@ -1,8 +1,8 @@
 /* Component: breadcrumbs
 ---------------------------------------------------------------------------------- */
-
 .breadcrumbs {
-	font-size: 1.4rem;
+	@include fluid-font-size((1.2rem, 320px), (1.6rem, 992px));
+	padding: 38px 0;
 }
 
 /*------------------------------------
@@ -13,6 +13,8 @@
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 0.33em 0.66em;
+	list-style-type: none !important;
+	padding-left: 0 !important;
 }
 
 /*------------------------------------
@@ -20,6 +22,11 @@
 ------------------------------------*/
 .breadcrumbs__item {
 	position: relative;
+	color: $blue-dark;
+
+	.bg--blue-dark & {
+		color: $white;
+	}
 
 	&:not(:first-child) {
 		padding-left: 1em;
@@ -27,15 +34,11 @@
 		&:before {
 			position: absolute;
 			top: 0; bottom: 0;
-			left: -0.25em;
+			left: -0.15em;
 			display: block;
-			width: 0.5em; height: 0.5em;
 			margin: auto 0;
-			border-style: solid;
-			border-width: 1px 1px 0 0;
-			border-color: $black-alt;
-			content: '';
-			transform: rotate(45deg);
+			color: currentColor;
+			content: '>';
 		}
 	}
 }
@@ -44,7 +47,7 @@
 	Link
 ------------------------------------*/
 .breadcrumbs__link {
-	color: $black;
+	color: inherit;
 
 	&:link,
 	&:visited {

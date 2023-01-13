@@ -1,4 +1,6 @@
 <div class="element-narrow-content element-narrow-content--{$BackgroundColour}">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<% if $CircleColour != 'None' %>
 		<div class="element-narrow-content__circle element-narrow-content__circle--{$CircleColour.Lowercase}">
 			{$SVGIcon('semi-circle', 1575, 2089)}

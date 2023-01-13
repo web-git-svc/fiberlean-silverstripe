@@ -1,5 +1,7 @@
 <div class="bg--grey">
 	<div class="element-products">
+		<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 		<div class="container">
 			<div class="typography">
 				<h2 class="large center">

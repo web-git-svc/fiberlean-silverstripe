@@ -1,4 +1,6 @@
 <div class="element-narrow-two-column">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container typography">
 		<% if $TitleTag %>
 			{$TitleTag('center')}

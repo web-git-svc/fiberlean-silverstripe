@@ -1,4 +1,5 @@
-<div class="element-card-feature-boxes">
+<div class="element-card-feature-boxes bg--blue-dark">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
 
 	<% if $TitleTag || $HTML %>
 		<div class="container typography typography--white">

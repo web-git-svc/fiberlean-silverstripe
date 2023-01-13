@@ -6,6 +6,8 @@
 	<% end_if %>
 
 	<div class="<% if $Style == 'Left' %>bg--green<% end_if %>">
+		<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 		<div class="container typography">
 			<div class="element-curved-image-content__column">
 				{$TitleTag('element-curved-image-content__title')}

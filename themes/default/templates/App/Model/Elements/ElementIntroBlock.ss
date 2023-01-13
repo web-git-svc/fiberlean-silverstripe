@@ -1,4 +1,6 @@
 <div class="element-intro-block element-intro-block--{$Colour.Lowercase}">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container typography trim">
 		<div class="element-intro-block__column">
 			{$TitleTag}

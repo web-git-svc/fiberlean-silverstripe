@@ -1,4 +1,6 @@
 <div class="element-tall-intro-block">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container typography trim">
 		<div class="element-tall-intro-block__column">
 			{$TitleTag}

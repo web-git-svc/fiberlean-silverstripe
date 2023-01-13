@@ -1082,7 +1082,8 @@ body {
 /* Component: breadcrumbs
 ---------------------------------------------------------------------------------- */
 .breadcrumbs {
-  font-size: 1.4rem;
+  font-size: calc(1.2rem + 4 * ((100vw - 320px) / 672));
+  padding: 38px 0;
 }
 
 /*------------------------------------
@@ -1096,6 +1097,8 @@ body {
   -ms-flex-align: center;
       align-items: center;
   gap: 0.33em 0.66em;
+  list-style-type: none !important;
+  padding-left: 0 !important;
 }
 
 /*------------------------------------
@@ -1103,6 +1106,10 @@ body {
 ------------------------------------*/
 .breadcrumbs__item {
   position: relative;
+  color: #215860;
+}
+.bg--blue-dark .breadcrumbs__item {
+  color: #FFFFFF;
 }
 .breadcrumbs__item:not(:first-child) {
   padding-left: 1em;
@@ -1111,24 +1118,18 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -0.25em;
+  left: -0.15em;
   display: block;
-  width: 0.5em;
-  height: 0.5em;
   margin: auto 0;
-  border-style: solid;
-  border-width: 1px 1px 0 0;
-  border-color: #032F33;
-  content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  color: currentColor;
+  content: ">";
 }
 
 /*------------------------------------
 	Link
 ------------------------------------*/
 .breadcrumbs__link {
-  color: #000000;
+  color: inherit;
 }
 .breadcrumbs__link:link, .breadcrumbs__link:visited {
   text-decoration: none;
@@ -3964,6 +3965,9 @@ select:not([multiple]):not([size]).blog__category-select {
 .typography .h2.typography--large,
 .typography .h2.large {
     font-size: 4.4rem;
+  }
+  .breadcrumbs {
+    font-size: 1.6rem;
   }
   a.button,
 button.button,
