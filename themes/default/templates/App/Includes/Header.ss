@@ -14,8 +14,14 @@
 							<% loop $Menu(1) %>
 								<li class="nav__item nav__item--{$LinkingMode}">
 									<a class="nav__link" href="{$Link}">{$MenuTitle}</a>
-									<% if $Children %>
+									<% if $Children || $Categories %>
 										<ul class="nav__submenu">
+											<% loop $Categories %>
+												<li class="nav__subitem<% if $Top.CurrentCategory.ID == $ID%> nav__subitem--current<% end_if %>">
+													<a class="nav__sublink" href="{$Link}">{$Title}</a>
+												</li>
+											<% end_loop %>
+
 											<% loop $Children %>
 												<li class="nav__subitem nav__subitem--{$LinkingMode}">
 													<a class="nav__sublink" href="{$Link}">{$MenuTitle}</a>
