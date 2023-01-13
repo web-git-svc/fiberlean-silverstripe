@@ -1,6 +1,8 @@
 <div class="element-feature-boxes element-feature-boxes--{$Colour.LowerCase}">
 	{$SVGIcon('semi-circle', 1575, 2089, 'element-feature-boxes__background-shape')}
 
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<% if $TitleTag || $HTML %>
 		<div class="container typography">
 			<div class="element-feature-boxes__before">
