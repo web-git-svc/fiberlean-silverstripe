@@ -13,7 +13,7 @@
 						<ul class="nav__menu">
 							<% loop $Menu(1) %>
 								<li class="nav__item nav__item--{$LinkingMode}">
-									<a class="nav__link" href="{$Link}">{$MenuTitle}</a>
+									<a class="nav__link" href="{$Link}"<% if $NewWindow %> target="_blank"<% end_if %>>{$MenuTitle}</a>
 									<% if $Children || $Categories %>
 										<ul class="nav__submenu">
 											<% loop $Categories %>
@@ -24,7 +24,7 @@
 
 											<% loop $Children %>
 												<li class="nav__subitem nav__subitem--{$LinkingMode}">
-													<a class="nav__sublink" href="{$Link}">{$MenuTitle}</a>
+													<a class="nav__sublink" href="{$Link}"<% if $NewWindow %> target="_blank"<% end_if %>>{$MenuTitle}</a>
 												</li>
 											<% end_loop %>
 										</ul>

@@ -25,6 +25,10 @@ DNADesign\Elemental\Models\ElementContent:
   extensions:
     - App\Extensions\Elemental\ElementContentExtension
 
+SilverStripe\CMS\Model\RedirectorPage:
+  extensions:
+    - App\Extensions\CMS\RedirectorPageExtension
+
 TractorCow\Fluent\Model\Locale:
   extensions:
     - App\Extensions\Fluent\LocaleExtension
