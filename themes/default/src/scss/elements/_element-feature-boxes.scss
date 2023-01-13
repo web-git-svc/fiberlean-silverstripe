@@ -121,6 +121,7 @@
 ------------------------------------*/
 .element-feature-boxes__card {
 	height: 100%;
+	position: relative;
 }
 
 /*------------------------------------
@@ -151,8 +152,22 @@
 			text-decoration: none;
 		}
 
+		&:before {
+			content: '';
+			position: absolute;
+			inset: 0;
+		}
+
+		&:active,
+		&:hover {
+			svg {
+				transform: translateX(3px);
+			}
+		}
+
 		svg {
 			color: $blue-dark;
+			transition: 300ms ease-in-out transform;
 		}
 	}
 }

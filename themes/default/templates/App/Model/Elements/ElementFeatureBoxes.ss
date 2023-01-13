@@ -31,7 +31,7 @@
 
 							<div class="element-feature-boxes__card-content">
 								<h3>
-									<% if $Link %>
+									<% if $LinkSet %>
 										<a
 											href="{$LinkSet}"
 											<% if $LinkTarget %>target="{$LinkTarget}"<% end_if %>
@@ -41,7 +41,7 @@
 
 									{$Title}
 
-									<% if $Link %>
+									<% if $LinkSet %>
 											{$SVGIcon('arrow', 20, 20)}
 										</a>
 									<% end_if %>

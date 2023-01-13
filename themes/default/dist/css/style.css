@@ -2079,6 +2079,7 @@ ul.fluent__list--hidden {
 ------------------------------------*/
 .element-feature-boxes__card {
   height: 100%;
+  position: relative;
 }
 
 /*------------------------------------
@@ -2108,8 +2109,18 @@ ul.fluent__list--hidden {
 .element-feature-boxes__card-content a:link, .element-feature-boxes__card-content a:visited {
   text-decoration: none;
 }
+.element-feature-boxes__card-content a:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.element-feature-boxes__card-content a:active svg, .element-feature-boxes__card-content a:hover svg {
+  -webkit-transform: translateX(3px);
+          transform: translateX(3px);
+}
 .element-feature-boxes__card-content a svg {
   color: #215860;
+  transition: 300ms ease-in-out transform;
 }
 /* Layout: _element-features.scss
 ---------------------------------------------------------------------------------- */
