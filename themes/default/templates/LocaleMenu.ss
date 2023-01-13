@@ -19,7 +19,7 @@
 
 			<ul class="fluent__list fluent__list--hidden">
 				<% loop $Locales %>
-<%--					<% if $CurrentLocaleObject.HrefLang != $HrefLang %>--%>
+					<% if $CurrentLocaleObject.HrefLang != $HrefLang %>
 						<li class="{$LinkingMode}">
 							<a
 								href="{$Link.ATT}"
@@ -39,7 +39,7 @@
 							</span>
 							</a>
 						</li>
-<%--					<% end_if %>--%>
+					<% end_if %>
 				<% end_loop %>
 			</ul>
 		</div>
