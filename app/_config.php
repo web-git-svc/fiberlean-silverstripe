@@ -63,5 +63,10 @@ $config->setOptions([
     ]
 ]);
 
+$simpleConfig = clone TinyMCEConfig::get('cms');
+$simpleConfig->setOption('body_class', 'typography');
+$simpleConfig->setButtonsForLine(1, 'bullist numlist | bold italic subscript superscript | sslink unlink anchor ssmedia ssembed hr | pastetext undo redo | code');
+TinyMCEConfig::set_config('simple', $simpleConfig);
+
 ShortcodeParser::get('default')
     ->register('embed', [EmbedShortcodeProvider::class, 'handle_shortcode']);

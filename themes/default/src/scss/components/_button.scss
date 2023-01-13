@@ -109,6 +109,10 @@ span {
 				background-color: darken($yellow, 5);
 			}
 		}
+
+		&--dark-font {
+			color: $black-alt;
+		}
 	}
 }
 

@@ -1086,6 +1086,12 @@ span.button--yellow:hover,
 span.button--yellow:active {
   background-color: #e6c501;
 }
+a.button--dark-font,
+button.button--dark-font,
+input.button--dark-font,
+span.button--dark-font {
+  color: #032F33;
+}
 @media (min-width: 768px){
   .typography img.left, .typography img.right, .typography img.leftAlone, .typography img.rightAlone {
     display: inline-block;

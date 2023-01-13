@@ -1352,6 +1352,12 @@ span.button--yellow:active,
 .element-testimonial--yellow span.button:active {
   background-color: #e6c501;
 }
+a.button--dark-font,
+button.button--dark-font,
+input.button--dark-font,
+span.button--dark-font {
+  color: #032F33;
+}
 /* Component: container
 ---------------------------------------------------------------------------------- */
 .container {
@@ -1921,6 +1927,47 @@ ul.fluent__list--hidden {
   background-color: #F18501;
   color: #032F33;
 }
+/* Element: _element-card-feature-boxes.scss
+---------------------------------------------------------------------------------- */
+.element-card-feature-boxes {
+  padding: 60px 0 42px;
+  position: relative;
+  overflow: hidden;
+  background-color: #215860;
+}
+/*------------------------------------
+	Grid
+------------------------------------*/
+.element-card-feature-boxes__grid {
+  display: grid;
+  gap: 42px 14px;
+}
+/*------------------------------------
+	Card
+------------------------------------*/
+.element-card-feature-boxes__card {
+  height: 100%;
+  position: relative;
+}
+
+/*------------------------------------
+	Card image
+------------------------------------*/
+.element-card-feature-boxes__card-image {
+  border-radius: 0 0 100px 0;
+  overflow: hidden;
+}
+
+/*------------------------------------
+	Card content
+------------------------------------*/
+.element-card-feature-boxes__card-content {
+  margin: 20px 0 0;
+}
+.element-card-feature-boxes__card-content:has(~ .button) {
+  margin: 20px 0 30px;
+}
+
 /* Layout: _element-contact-us.scss
 ---------------------------------------------------------------------------------- */
 .element-contact-us {
@@ -3299,6 +3346,10 @@ select:not([multiple]):not([size]).blog__category-select {
   }
 }
 @media (min-width: 576px){
+  .element-card-feature-boxes__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 42px 20px;
+  }
   .element-products__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3378,6 +3429,9 @@ select:not([multiple]):not([size]).blog__category-select {
   }
   .element-applications__items {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .element-card-feature-boxes {
+    padding: 72px 0 80px;
   }
   .element-contact-us {
     background-color: #5ACB77;
