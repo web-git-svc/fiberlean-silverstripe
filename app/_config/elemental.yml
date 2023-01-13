@@ -10,3 +10,4 @@ DNADesign\Elemental\Models\BaseElement:
   extensions:
     - App\Extensions\Elemental\BaseElementExtension
   inline_editable: false
+  enable_title_in_template: true
