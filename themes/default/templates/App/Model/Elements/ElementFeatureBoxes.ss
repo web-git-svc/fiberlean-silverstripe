@@ -1,4 +1,4 @@
-<div class="element-feature-boxes element-feature-boxes--{$Colour.LowerCase}">
+<div class="element-feature-boxes element-feature-boxes--{$Colour.LowerCase} ball--{$Colour.LowerCase}">
 	{$SVGIcon('semi-circle', 1575, 2089, 'element-feature-boxes__background-shape')}
 
 	<% include App\Model\Elements\Includes\Breadcrumbs %>
@@ -56,9 +56,5 @@
 		<% end_if %>
 	</div>
 
-	<% if $Colour == 'Blue' %>
-		{$Ball('orange')}
-	<% else %>
-		{$Ball('yellow')}
-	<% end_if %>
+	{$Ball}
 </div>

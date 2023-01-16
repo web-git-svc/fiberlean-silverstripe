@@ -2093,6 +2093,15 @@ ul.fluent__list--hidden {
 .element-feature-boxes--blue .element-feature-boxes__background-shape {
   color: #46A8B8;
 }
+.element-feature-boxes--pink .element-feature-boxes__background-shape {
+  color: #E6057C;
+}
+.element-feature-boxes--red .element-feature-boxes__background-shape {
+  color: #C91517;
+}
+.element-feature-boxes--orange .element-feature-boxes__background-shape {
+  color: #F18501;
+}
 /*------------------------------------
 	Ball
 ------------------------------------*/
@@ -2468,6 +2477,14 @@ ul.fluent__list--hidden {
 /*------------------------------------
 	Column
 ------------------------------------*/
+.element-narrow-two-column__column--video > div {
+  width: 100% !important;
+}
+.element-narrow-two-column__column--video iframe {
+  aspect-ratio: 4/3;
+  width: 100%;
+  height: auto;
+}
 /* Layout: _element-products.scss
 ---------------------------------------------------------------------------------- */
 .element-products {

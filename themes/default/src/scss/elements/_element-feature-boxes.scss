@@ -26,6 +26,18 @@
 	.element-feature-boxes--blue & {
 		color: $blue-light;
 	}
+
+	.element-feature-boxes--pink & {
+		color: $pink;
+	}
+
+	.element-feature-boxes--red & {
+		color: $red;
+	}
+
+	.element-feature-boxes--orange & {
+		color: $orange;
+	}
 }
 
 @include respond(767px, max) {
