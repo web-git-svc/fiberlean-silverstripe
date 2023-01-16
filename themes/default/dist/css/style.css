@@ -3182,6 +3182,20 @@ a.nav__sublink:link, a.nav__sublink:visited {
 a.nav__sublink:hover, a.nav__sublink:active {
   text-decoration: underline;
 }
+/* Layout: _sitemap.scss
+---------------------------------------------------------------------------------- */
+ul.sitemap__top-level {
+  list-style-type: none;
+  padding: 0;
+}
+ul.sitemap__top-level > li {
+  margin-bottom: 2em;
+}
+
+h2.sitemap__heading {
+  margin-bottom: 0.5em;
+}
+
 /* Layout: blog
 ---------------------------------------------------------------------------------- */
 /*------------------------------------
