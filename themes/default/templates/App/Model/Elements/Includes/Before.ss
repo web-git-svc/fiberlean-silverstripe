@@ -1,6 +1,6 @@
 <% include App\Model\Elements\Includes\Breadcrumbs %>
 
-<% if $BeforeHTML %>
+<% if $TitleTag || $BeforeHTML %>
 	<div class="element__before">
 		<div class="container typography">
 			{$TitleTag}
