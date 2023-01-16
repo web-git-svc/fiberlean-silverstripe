@@ -3,7 +3,7 @@
 		<header class="header">
 			<div class="header__row">
 				<a href="{$BaseURL}" class="header__logo">
-					<img src="{$ThemeDir}/dist/images/branding/fibrelean.svg" alt="" width="250" height="82"/>
+					<img src="{$ThemeDir}/dist/images/branding/logo.png" alt="" width="200" height="82"/>
 				</a>
 
 				<div class="header__row--right">
