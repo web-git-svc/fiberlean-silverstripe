@@ -7,5 +7,7 @@ SilverStripe\Admin\LeftAndMain:
       icon: 'cog'
       children:
         - SilverStripe-VersionedAdmin-ArchiveAdmin
+        - TractorCow-Fluent-Control-LocaleAdmin
+        - Heyday-MenuManager-MenuAdmin
         - SilverStripe-RedirectedURLs-Admin-RedirectedURLAdmin
         - SilverStripe-SiteConfig-SiteConfigLeftAndMain
