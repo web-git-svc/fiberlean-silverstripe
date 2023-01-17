@@ -2,11 +2,17 @@
 ---------------------------------------------------------------------------------- */
 .breadcrumbs {
 	@include fluid-font-size((1.2rem, 320px), (1.6rem, 992px));
-	padding: 38px 0;
+	padding: 24px 0;
 	color: $blue-dark;
 
 	.bg--blue-dark & {
 		color: $white;
+	}
+}
+
+@include respond(576px) {
+	.breadcrumbs {
+		padding: 38px 0;
 	}
 }
 

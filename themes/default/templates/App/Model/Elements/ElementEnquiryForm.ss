@@ -9,6 +9,12 @@
 						<% if $PageController.Sent('EnquiryForm') %>
 							{$SiteConfig.EnquiryFormSuccessContent}
 
+							<script>
+								dataLayer.push({
+									'event': 'FormSubmitted',
+									'FormTitle': 'Enquiry Form'
+								});
+							</script>
 						<% else %>
 							{$SiteConfig.EnquiryFormContent}
 						<% end_if %>

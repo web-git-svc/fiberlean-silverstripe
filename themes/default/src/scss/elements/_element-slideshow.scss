@@ -38,21 +38,16 @@
 	Arrows
 ------------------------------------*/
 .element-slideshow .splide__arrow {
-	top: 30%;
+	top: 50%;
 	padding: 0;
 	opacity: 1;
 	background: transparent;
+	transform: translateY(-50%);
 
 	svg {
 		height: 30px;
 		width: 30px;
 		color: $blue-dark;
-	}
-}
-
-@include respond(768px) {
-	.element-slideshow .splide__arrow {
-		top: 40%;
 	}
 }
 
@@ -69,7 +64,7 @@
 }
 
 .element-slideshow .splide__arrow.splide__arrow--prev {
-	left: -35px;
+	left: 20px;
 }
 
 @include respond(1280px) {
@@ -79,7 +74,7 @@
 }
 
 .element-slideshow .splide__arrow.splide__arrow--next {
-	right: -35px;
+	right: 20px;
 }
 
 @include respond(1280px) {
