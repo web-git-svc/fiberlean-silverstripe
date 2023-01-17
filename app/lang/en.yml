@@ -1,3 +1,5 @@
 en:
+  Bigfork\SilverStripeOAuth\Client\Authenticator\Authenticator:
+    TITLE: 'Single Sign-On'
   SilverStripe\SiteConfig\SiteConfigLeftAndMain:
     MENUTITLE: Configuration
