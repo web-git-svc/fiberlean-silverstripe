@@ -16,6 +16,7 @@
 								});
 							</script>
 						<% else %>
+							{$TitleTag('typography--large')}
 							{$SiteConfig.EnquiryFormContent}
 						<% end_if %>
 					</div>

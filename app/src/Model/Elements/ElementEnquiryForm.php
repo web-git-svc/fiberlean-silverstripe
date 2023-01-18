@@ -23,29 +23,6 @@ class ElementEnquiryForm extends BaseElement
 
     private static string $icon = 'font-icon-block-form';
 
-    public function getCMSFields(): FieldList
-    {
-        $this->afterUpdateCMSFields(
-            function (FieldList $fields) {
-                $fields->removeByName(
-                    [
-                        'TitleAndHeadingLevel',
-                    ]
-                );
-
-                $fields->addFieldsToTab(
-                    'Root.Main',
-                    [
-                        TextField::create('Title', 'Title')
-                            ->performReadonlyTransformation(),
-                    ]
-                );
-            }
-        );
-
-        return parent::getCMSFields();
-    }
-
     public function getType(): string
     {
         return 'Enquiry form';
