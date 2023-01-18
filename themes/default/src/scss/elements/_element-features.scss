@@ -23,6 +23,10 @@
 
 	&--yellow {
 		background-color: $yellow;
+
+		.breadcrumbs {
+			color: $mine-shaft;
+		}
 	}
 	//
 	//&--orange {
