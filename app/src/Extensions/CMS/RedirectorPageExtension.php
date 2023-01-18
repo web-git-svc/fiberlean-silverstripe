@@ -4,6 +4,7 @@ namespace App\Extensions\CMS;
 
 use Bramus\Ansi\ControlFunctions\Base;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\CMS\Model\RedirectorPage;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldGroup;
@@ -69,9 +70,11 @@ HTML
 
     public function updateRedirectionLink(&$link): void
     {
-        if ($this->getOwner()->LinkTo() && $this->getOwner()->Element()) {
-            $anchor = "#{$this->getOwner()->Element()->getAnchor()}";
-            $link = $this->getOwner()->LinkTo()->Link($anchor);
+        /** @var RedirectorPage $page */
+        $page = $this->getOwner();
+        if ($page->RedirectionType === 'Internal' && $page->LinkTo() && $page->Element()) {
+            $anchor = "#{$page->Element()->getAnchor()}";
+            $link = $page->LinkTo()->Link($anchor);
         }
     }
 }
