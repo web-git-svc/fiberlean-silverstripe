@@ -29,6 +29,11 @@ App\Model\Elements\Components\FeatureBox:
     - 'LinkType'
     - 'LinkURL'
     - 'LinkTarget'
+App\Model\Elements\Components\HeroSlide:
+  extensions:
+    - 'TractorCow\Fluent\Extension\FluentVersionedExtension'
+  translate:
+    - 'Title'
 App\Model\Elements\Components\Slide:
   extensions:
     - 'TractorCow\Fluent\Extension\FluentVersionedExtension'
