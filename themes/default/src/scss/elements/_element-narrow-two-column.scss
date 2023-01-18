@@ -2,6 +2,10 @@
 ---------------------------------------------------------------------------------- */
 .element-narrow-two-column {
 	padding: 50px 0;
+
+	&--grey {
+		background-color: $grey;
+	}
 }
 
 @include respond(768px) {
