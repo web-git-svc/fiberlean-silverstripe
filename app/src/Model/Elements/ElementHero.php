@@ -42,7 +42,7 @@ class ElementHero extends BaseElement
 
     private static string $description = 'Hero block';
 
-    private static string $icon = 'font-icon-block-image';
+    private static string $icon = 'font-icon-block-file';
 
     public function getCMSFields(): FieldList
     {

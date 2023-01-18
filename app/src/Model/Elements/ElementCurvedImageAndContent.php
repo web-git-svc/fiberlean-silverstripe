@@ -59,7 +59,7 @@ class ElementCurvedImageAndContent extends ElementContent
 
     private static string $description = 'Curved image and content block';
 
-    private static string $icon = 'font-icon-block-image';
+    private static string $icon = 'font-icon-block-file';
 
     public function getCMSFields(): FieldList
     {

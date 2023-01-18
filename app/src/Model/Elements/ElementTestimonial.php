@@ -57,7 +57,7 @@ class ElementTestimonial extends BaseElement
 
     private static string $description = 'Testimonial block';
 
-    private static string $icon = 'font-icon-block-image';
+    private static string $icon = 'font-icon-block-quote';
 
     public function getCMSFields(): FieldList
     {
