@@ -1,0 +1,15 @@
+/* Layout: _bg.scss
+---------------------------------------------------------------------------------- */
+.bg {
+	&--blue-dark {
+		background-color: $blue-dark;
+	}
+
+	&--green {
+		background-color: $green;
+	}
+
+	&--grey {
+		background-color: $grey;
+	}
+}

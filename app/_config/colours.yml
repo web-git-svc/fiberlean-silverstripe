@@ -1,0 +1,10 @@
+---
+Name: app-colours
+---
+Colours:
+  colours:
+    orange: 'Orange'
+    yellow: 'Yellow'
+    blue: 'Blue'
+    pink: 'Pink'
+    red: 'Red'
