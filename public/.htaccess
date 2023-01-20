@@ -73,22 +73,9 @@ Options -Indexes
     </IfModule>
 
     RewriteEngine On
-
-    # Force www.actualdomain.com with 301 redirects
-    # RewriteCond %{HTTP_HOST} !^.*\.(test|dev|devdomain\.co\.uk)$ [NC]
-    # RewriteCond %{HTTP_HOST} !^www\.actualdomain\.com$ [NC]
-    # RewriteRule ^(.*)$ http://www.actualdomain.com/$1 [R=301,L]
-
     RewriteBase '/'
 
-    # Force trailing slash
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_METHOD} =GET
-    RewriteCond %{REQUEST_URI} !^/admin/
-    RewriteCond %{REQUEST_URI} !^/sitemap\.xml
-    RewriteRule ^(.*)([^/])$ $1$2/ [R=301,NE,L]
-
-    # SilverStripe rewrites - includes optional maintenance rule for the above
+    # SilverStripe rewrites
     RewriteCond %{REQUEST_URI} ^(.*)$
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule .* index.php
