@@ -1,3 +1,5 @@
+<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 <div class="container">
 	<div class="element-slideshow">
 		{$TitleTag('element-slideshow__title')}

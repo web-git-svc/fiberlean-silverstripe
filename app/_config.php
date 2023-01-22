@@ -1,8 +1,10 @@
 <?php
 
 use App\View\Shortcodes\EmbedShortcodeProvider;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
-use SilverStripe\i18n\i18n;
+use SilverStripe\Security\Security;
 use SilverStripe\View\Parsers\ShortcodeParser;
 
 // Set the site locale
@@ -63,5 +65,21 @@ $config->setOptions([
     ]
 ]);
 
+$simpleConfig = clone TinyMCEConfig::get('cms');
+$simpleConfig->setOption('body_class', 'typography');
+$simpleConfig->setButtonsForLine(1, 'bullist numlist | bold italic subscript superscript | sslink unlink anchor ssmedia ssembed hr | pastetext undo redo | code');
+TinyMCEConfig::set_config('simple', $simpleConfig);
+
 ShortcodeParser::get('default')
     ->register('embed', [EmbedShortcodeProvider::class, 'handle_shortcode']);
+
+// Re-order authenticators so OAuth shows before email/password
+$injector = Config::inst()->get(Injector::class);
+$securityService = $injector[Security::class] ?? null;
+if ($securityService && isset($securityService['properties']['Authenticators'])) {
+    $authenticators = $securityService['properties']['Authenticators'];
+    $authenticators = array_reverse($authenticators);
+    $securityService['properties']['Authenticators'] = $authenticators;
+    Config::modify()->set(Injector::class, Security::class, $securityService);
+}
+

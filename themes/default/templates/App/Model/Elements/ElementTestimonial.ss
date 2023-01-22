@@ -1,4 +1,6 @@
 <div class="element-testimonial<% if $Colour %> element-testimonial--{$Colour} ball--{$Colour}<% end_if %>">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container container--narrow">
 		<% if $Testimonial %>
 			<div class="element-testimonial__open-quote">

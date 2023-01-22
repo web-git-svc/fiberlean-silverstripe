@@ -2,6 +2,10 @@
 ---------------------------------------------------------------------------------- */
 .element-narrow-two-column {
 	padding: 50px 0;
+
+	&--grey {
+		background-color: $grey;
+	}
 }
 
 @include respond(768px) {
@@ -31,6 +35,20 @@
 /*------------------------------------
 	Column
 ------------------------------------*/
+.element-narrow-two-column__column {
+	&--video {
+		> div {
+			width: 100% !important;
+		}
+
+		iframe {
+			aspect-ratio: 4/3;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
 @include respond(768px) {
 	.element-narrow-two-column__column {
 		flex: 1 1 calc(50% - 12px);

@@ -50,7 +50,7 @@ class ElementProducts extends BaseElement
                     [
                         SortableUploadField::create('Images', 'Images')
                             ->setAllowedFileCategories('image')
-                            ->setFolderName('produts'),
+                            ->setFolderName('products'),
                     ]
                 );
             }

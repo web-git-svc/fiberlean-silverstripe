@@ -1,0 +1,187 @@
+/* Element: _element-content-with-features.scss
+---------------------------------------------------------------------------------- */
+.element-content-with-features {
+	padding: 60px 0 42px;
+	position: relative;
+	overflow: hidden;
+}
+
+@include respond(768px) {
+	.element-content-with-features {
+		padding: 72px 0 80px;
+		margin-top: 36px;
+	}
+}
+
+/*------------------------------------
+	Background shape
+------------------------------------*/
+.element-content-with-features__background-shape {
+	color: $yellow;
+	position: absolute;
+	top: 0;
+	left: -812px;
+	z-index: -1;
+
+	.element-content-with-features--blue & {
+		color: $blue-light;
+	}
+
+	.element-content-with-features--pink & {
+		color: $pink;
+	}
+
+	.element-content-with-features--red & {
+		color: $red;
+	}
+
+	.element-content-with-features--orange & {
+		color: $orange;
+	}
+}
+
+div.element-content-with-features__background-shape {
+	opacity: .5;
+	clip-path: url('#image-blob-clip');
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+}
+
+@include respond(767px, max) {
+	div.element-content-with-features__background-shape {
+		display: none;
+	}
+}
+
+@include respond(767px, max) {
+	.element-content-with-features__background-shape {
+		width: 701px;
+		height: 930px;
+		top: -24px;
+		left: -442px;
+	}
+}
+
+@include respond(768px) {
+	.element-content-with-features__background-shape {
+		.element-content-with-features--blue & {
+			width: 1813px;
+			height: 2404px;
+			left: -937px;
+		}
+	}
+}
+
+/*------------------------------------
+	Ball
+------------------------------------*/
+.ball {
+	.element-content-with-features & {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		transform: translate(50%, 50%);
+		z-index: -1;
+		width: 315px;
+		height: 315px;
+	}
+}
+
+@include respond(768px) {
+	.ball {
+		.element-content-with-features & {
+			width: 385px;
+			height: 385px;
+			transform: translate(50%, 35%);
+		}
+	}
+}
+
+/*------------------------------------
+	Before
+------------------------------------*/
+.element-content-with-features__before {
+	margin-bottom: 50px;
+}
+
+@include respond(768px) {
+	.element-content-with-features__before {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+		margin-bottom: 59px;
+	}
+}
+
+/*------------------------------------
+	Grid
+------------------------------------*/
+.element-content-with-features__grid {
+	display: grid;
+	gap: 42px 14px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@include respond(768px) {
+	.element-content-with-features__grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 42px 20px;
+	}
+}
+
+@include respond(992px) {
+	.element-content-with-features__grid {
+		&--four {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		&--five {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+}
+
+/*------------------------------------
+	Card
+------------------------------------*/
+.element-content-with-features__card {
+	@include fluid-font-size((2rem, 320px), (2.4rem, 992px));
+	font-weight: 700;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	padding: .9em;
+	border-radius: 0 0 50px 0;
+	background-color: $yellow;
+
+	.element-content-with-features--blue &,
+	.element-content-with-features--pink &,
+	.element-content-with-features--red & {
+		color: $white;
+	}
+
+	.element-content-with-features--red & {
+		background-color: $red;
+	}
+
+	.element-content-with-features--blue & {
+		background-color: $blue-dark;
+	}
+
+	.element-content-with-features--pink & {
+		background-color: $pink;
+	}
+
+	.element-content-with-features--red & {
+		background-color: $red;
+	}
+
+	.element-content-with-features--orange & {
+		background-color: $orange;
+	}
+}

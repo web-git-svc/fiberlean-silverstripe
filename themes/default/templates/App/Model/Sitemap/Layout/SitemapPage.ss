@@ -1,4 +1,3 @@
-
 <main class="container typography">
 	<h1>
 		{$Title}

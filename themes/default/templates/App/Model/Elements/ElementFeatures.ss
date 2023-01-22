@@ -1,4 +1,6 @@
 <div class="element-features element-features--{$BackgroundColour.Lowercase}">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container">
 		<div class="typography">
 			{$TitleTag('center')}

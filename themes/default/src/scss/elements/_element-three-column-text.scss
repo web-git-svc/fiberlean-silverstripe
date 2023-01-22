@@ -8,11 +8,19 @@
 	&--pink {
 		background-color: $pink-dark;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 
 	&--red {
 		background-color: $red;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 
 		.element-three-column-text__column-content {
 			color: $white;
@@ -22,11 +30,19 @@
 	&--yellow {
 		background-color: $gold;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 
 	&--blue {
 		background-color: $blue-dark;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 
 		.element-three-column-text__column-content {
 			color: $white;
@@ -36,6 +52,10 @@
 	&--orange {
 		background-color: $orange;
 		color: $white;
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 }
 

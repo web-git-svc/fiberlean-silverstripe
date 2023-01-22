@@ -1,12 +1,12 @@
-<ul>
+<ul<% if $TopLevel %> class="sitemap__top-level"<% end_if %>>
 	<% loop $Pages %>
 		<li>
 			<% if $Up.TopLevel %>
-				<h2>
+				<h2  class="sitemap__heading">
 					<a href="{$Link}">{$MenuTitle}</a>
 				</h2>
 			<% else %>
-				<a href="{$Link}">{$MenuTitle}</a>
+				<a class="sitemap__link" href="{$Link}">{$MenuTitle}</a>
 			<% end_if %>
 
 			<% if $Children %>

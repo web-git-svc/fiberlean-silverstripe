@@ -1,0 +1,56 @@
+/* Element: _element-card-feature-boxes.scss
+---------------------------------------------------------------------------------- */
+.element-card-feature-boxes {
+	padding: 60px 0 42px;
+	position: relative;
+	overflow: hidden;
+	background-color: $blue-dark;
+}
+
+@include respond(768px) {
+	.element-card-feature-boxes {
+		padding: 72px 0 80px;
+	}
+}
+
+/*------------------------------------
+	Grid
+------------------------------------*/
+.element-card-feature-boxes__grid {
+	display: grid;
+	gap: 42px 14px;
+}
+
+@include respond(576px) {
+	.element-card-feature-boxes__grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 42px 20px;
+	}
+}
+
+/*------------------------------------
+	Card
+------------------------------------*/
+.element-card-feature-boxes__card {
+	height: 100%;
+	position: relative;
+}
+
+/*------------------------------------
+	Card image
+------------------------------------*/
+.element-card-feature-boxes__card-image {
+	border-radius: 0 0 100px 0;
+	overflow: hidden;
+}
+
+/*------------------------------------
+	Card content
+------------------------------------*/
+.element-card-feature-boxes__card-content {
+	margin: 20px 0 0;
+
+	&:has(~ .button) {
+		margin: 20px 0 30px;
+	}
+}

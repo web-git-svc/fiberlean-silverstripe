@@ -1,16 +1,44 @@
 /* Layout: _element-hero.scss
 ---------------------------------------------------------------------------------- */
 .element-hero {
+	margin-bottom: 60px;
+}
+
+@include respond(768px) {
+	.element-hero {
+		margin-bottom: 80px;
+	}
+}
+
+/*------------------------------------
+	Carousel
+------------------------------------*/
+.element-hero__carousel {
+	visibility: visible;
+}
+
+/*------------------------------------
+	Slide
+------------------------------------*/
+.element-hero__slide {
+	position: relative;
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	height: calc(100vh - 85px);
 	justify-content: flex-start;
 	max-height: 614px;
 	overflow: hidden;
 	padding: 95px 0;
-	margin-bottom: 60px;
-	position: relative;
+
+	&:not(:first-child) {
+		display: none;
+
+		.is-initialized & {
+			display: flex;
+		}
+	}
 
 	> .container {
 		width: 100%;
@@ -18,8 +46,7 @@
 }
 
 @include respond(768px) {
-	.element-hero {
-		margin-bottom: 80px;
+	.element-hero__slide {
 		height: 725px;
 		justify-content: center;
 		min-height: auto;

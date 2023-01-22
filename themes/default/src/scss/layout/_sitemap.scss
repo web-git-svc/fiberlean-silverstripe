@@ -1,0 +1,14 @@
+/* Layout: _sitemap.scss
+---------------------------------------------------------------------------------- */
+ul.sitemap__top-level {
+	list-style-type: none;
+	padding: 0;
+
+	> li {
+		margin-bottom: 2em;
+	}
+}
+
+h2.sitemap__heading {
+	margin-bottom: .5em;
+}

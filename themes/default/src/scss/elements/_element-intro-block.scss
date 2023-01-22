@@ -10,12 +10,20 @@
 		.typography {
 			color: $white;
 		}
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 
 	&--red {
 		background-color: $red;
 
 		.typography {
+			color: $white;
+		}
+
+		.breadcrumbs {
 			color: $white;
 		}
 	}
@@ -26,6 +34,10 @@
 		.typography {
 			color: $mine-shaft;
 		}
+
+		.breadcrumbs {
+			color: $mine-shaft;
+		}
 	}
 
 	&--blue {
@@ -34,12 +46,20 @@
 		.typography {
 			color: $white;
 		}
+
+		.breadcrumbs {
+			color: $white;
+		}
 	}
 
 	&--orange {
 		background-color: $orange;
 
 		.typography {
+			color: $white;
+		}
+
+		.breadcrumbs {
 			color: $white;
 		}
 	}

@@ -16,6 +16,16 @@
 	}
 }
 
+// Ensure that text doesn't touch the preceeding element when the preceeding element has no bottom padding
+@include respond(767px, max) {
+	.element--elementtallintroblock + .element--elementtwocolumn,
+	.element--elementribbon + .element--elementtwocolumn {
+		.element-two-column__column--text:first-child {
+			padding-top: 36px;
+		}
+	}
+}
+
 /*------------------------------------
 	Background colour
 ------------------------------------*/
@@ -54,6 +64,9 @@
 ------------------------------------*/
 @include respond(767px, max) {
 	.element-two-column__column {
+		flex: 0 0 auto;
+		width: 100%;
+
 		&--image {
 			margin: 0 -20px;
 			width: calc(100% + 40px);
@@ -64,6 +77,7 @@
 @include respond(768px) {
 	.element-two-column__column {
 		flex: 1 1 calc(50% - 12px);
+		width: auto;
 
 		&--image {
 			min-height: 558px;
