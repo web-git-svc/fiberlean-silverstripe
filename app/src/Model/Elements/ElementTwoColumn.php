@@ -31,10 +31,14 @@ class ElementTwoColumn extends BaseElement
 {
     private static string $table_name = 'ElementTwoColumn';
 
+    private $columns = [
+        "Text", "Image"
+    ];
+
     private static array $db = [
-        'LeftColumnType'       => 'Enum(array("Text", "Image"), "Text")',
+        'LeftColumnType'       => 'Enum(array("Text", "Image", "Video"), "Text")',
         'LeftColumnContent'    => 'HTMLText',
-        'RightColumnType'      => 'Enum(array("Text", "Image"), "Image")',
+        'RightColumnType'      => 'Enum(array("Text", "Image", "Video"), "Image")',
         'RightColumnContent'   => 'HTMLText',
         'ShowBall'             => 'Boolean',
         'BallColour'           => 'Enum(array("None", "Orange", "Blue", "Yellow", "Pink", "Red"), "None")',
@@ -91,8 +95,6 @@ class ElementTwoColumn extends BaseElement
                     ]
                 );
 
-                /** @var DBEnum $leftColumnTypeField */
-                $leftColumnTypeField = $this->dbObject('LeftColumnType');
                 /** @var DBEnum $rightColumnTypeField */
                 $rightColumnTypeField = $this->dbObject('RightColumnType');
 
@@ -100,7 +102,7 @@ class ElementTwoColumn extends BaseElement
                     'Root.Main',
                     [
                         HeaderField::create('LeftColumn', 'Left column'),
-                        DropdownField::create('LeftColumnType', 'Left column type', $leftColumnTypeField->enumValues()),
+                        DropdownField::create('LeftColumnType', 'Left column type', $this->getLeftColumnsTypes()),
                         $leftContent = HTMLEditorField::create('LeftColumnContent', 'Left column content'),
                         $leftImage = Wrapper::create(
                             UploadField::create('LeftColumnImage', 'Left column image')
@@ -109,13 +111,13 @@ class ElementTwoColumn extends BaseElement
                     ]
                 );
                 $leftContent->displayIf('LeftColumnType')->isEqualTo('Text');
-                $leftImage->displayIf('LeftColumnType')->isNotEqualTo('Text');
+                $leftImage->displayIf('LeftColumnType')->isEqualTo('Image');
 
                 $fields->addFieldsToTab(
                     'Root.Main',
                     [
                         HeaderField::create('RightColumn', 'Right column'),
-                        DropdownField::create('RightColumnType', 'Type', $rightColumnTypeField->enumValues()),
+                        DropdownField::create('RightColumnType', 'Type', $this->getRightColumnsTypes()),
                         $rightContent = HTMLEditorField::create('RightColumnContent', 'Right column content'),
                         $rightImage = Wrapper::create(
                             UploadField::create('RightColumnImage', 'Right column image')
@@ -124,7 +126,7 @@ class ElementTwoColumn extends BaseElement
                     ]
                 );
                 $rightContent->displayIf('RightColumnType')->isEqualTo('Text');
-                $rightImage->displayIf('RightColumnType')->isNotEqualTo('Text');
+                $rightImage->displayIf('RightColumnType')->isEqualTo('Image');
             }
         );
 
@@ -194,5 +196,25 @@ class ElementTwoColumn extends BaseElement
         $blockSchema['content'] = $content->summary();
 
         return $blockSchema;
+    }
+
+    public function getLeftColumnsTypes(): array
+    {
+        /** @var DBEnum $leftColumnTypeField */
+        $leftColumnTypeField = $this->dbObject('LeftColumnType');
+        $values = $leftColumnTypeField->enumValues();
+
+        unset($values['Video']);
+        return $values;
+    }
+
+    public function getRightColumnsTypes(): array
+    {
+        /** @var DBEnum $leftColumnTypeField */
+        $leftColumnTypeField = $this->dbObject('LeftColumnType');
+        $values = $leftColumnTypeField->enumValues();
+
+        unset($values['Video']);
+        return $values;
     }
 }

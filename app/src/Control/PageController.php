@@ -26,6 +26,10 @@ class PageController extends ContentController
 {
     use SentTrait;
 
+    private static array $allowed_actions = [
+        'EnquiryForm',
+    ];
+
     protected function init()
     {
         parent::init();
@@ -86,7 +90,7 @@ class PageController extends ContentController
 
     public function doEnquiryForm(array $data, Form $form, HTTPRequest $request): ?HTTPResponse
     {
-        if (!empty($data['Title'])) {
+        if (empty($data['Title'])) {
             $form->captureForm('Enquiry form submission', 'Name', 'Email' );
 
             Email::create()
@@ -94,7 +98,7 @@ class PageController extends ContentController
                 ->addData($data)
                 ->setFrom('noreply@fiberlean.com')
                 ->setReplyTo($data['Email'])
-                ->setTo($this->SiteConfig()->EnquiryFormRecipient)
+                ->setTo($this->SiteConfig()->EnquiryFormRecipient ?? 'info@fiberlean.com')
                 ->setSubject($this->SiteConfig()->EnquiryFormSubject ?? 'New Enquiry Form Submission')
                 ->send();
 

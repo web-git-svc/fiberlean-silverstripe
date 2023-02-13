@@ -22,7 +22,6 @@
 	}
 }
 
-
 /*------------------------------------
 	Menu
 ------------------------------------*/
@@ -109,7 +108,7 @@
 		left: 50%;
 		margin: 0;
 		opacity: 0;
-		padding: 9px 32px 12px 12px;
+		padding: 1.5em 12px 12px 12px;
 		position: absolute;
 		top: calc(120% + 18px);
 		transform: translateX(-50%);
@@ -139,6 +138,8 @@
 
 		li:not(:last-child) {
 			margin-bottom: 1.5em;
+			border-bottom: 1px solid rgba($grey, 1);
+			padding-bottom: 1.5em;
 		}
 	}
 }
@@ -177,6 +178,6 @@ a.nav__sublink {
 
 @include respond(992px) {
 	a.nav__sublink {
-		text-align: left;
+		text-align: center;
 	}
 }

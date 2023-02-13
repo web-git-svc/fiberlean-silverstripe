@@ -3,11 +3,11 @@
 
 :root {
 	--color-button-primary-text: #{$black-alt};
-	--color-button-primary-background: #{$white};
+	--color-button-primary-background: #{mix($white, $blue-light, 50%)};
 	--color-button-primary-hover-text: #{$black-alt};
 	--color-button-primary-hover-background: #{darken($white, 10)};
 	--color-link-primary: #{$white};
-	--color-form-background: #{$blue-dark};
+	--color-form-background: #{mix($blue-dark, $black-alt, 50%)};
 	--color-form-text: #{$white};
 	--color-field-text: #{$black-alt}
 }
@@ -30,10 +30,24 @@ body {
 	font-family: $font-body;
 }
 
-h2.login-form__title {
-	font-family: $font-head;
-	margin-bottom: 1em;
-	font-size: 22px;
+.login-form {
+	ul {
+		display: none;
+	}
+
+	.form-tab {
+		margin-top: 2rem;
+	}
+
+	h2.login-form__title {
+		font-family: $font-head;
+		font-size: 2rem;
+	}
+
+	h3 {
+		margin-bottom: 1rem;
+		font-size: 1.6rem;
+	}
 }
 
 .message {
@@ -55,6 +69,7 @@ h2.login-form__title {
 	filter: drop-shadow(0 2px 4px rgba($black-alt, .5));
 }
 
-#MemberLoginForm_LoginForm_action_doLogin {
+input.action,
+button.action {
 	transition: 300ms ease-in-out background-color;
 }

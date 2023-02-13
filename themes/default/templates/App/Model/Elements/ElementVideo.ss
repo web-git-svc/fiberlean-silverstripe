@@ -1,3 +1,5 @@
+<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 <div class="container typography">
 	<div class="element-video">
 		{$TitleTag('element-video__title')}

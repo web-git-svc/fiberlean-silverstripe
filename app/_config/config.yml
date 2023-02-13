@@ -23,5 +23,9 @@ SilverStripe\Core\Injector\Injector:
   Intervention\Image\ImageManager:
     constructor:
       - { driver: imagick }
-
-
+SilverStripe\Security\Member:
+  extensions:
+    - App\Extensions\Security\MemberExtension
+SilverStripe\Security\MemberAuthenticator\LostPasswordHandler:
+  extensions:
+    - App\Extensions\Security\LostPasswordHandler

@@ -1,5 +1,7 @@
-<div class="element-feature-boxes element-feature-boxes--{$Colour.LowerCase}">
+<div class="element-feature-boxes element-feature-boxes--{$Colour.LowerCase} ball--{$Colour.LowerCase}">
 	{$SVGIcon('semi-circle', 1575, 2089, 'element-feature-boxes__background-shape')}
+
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
 
 	<% if $TitleTag || $HTML %>
 		<div class="container typography">
@@ -31,7 +33,7 @@
 
 							<div class="element-feature-boxes__card-content">
 								<h3>
-									<% if $Link %>
+									<% if $LinkSet %>
 										<a
 											href="{$LinkSet}"
 											<% if $LinkTarget %>target="{$LinkTarget}"<% end_if %>
@@ -41,7 +43,7 @@
 
 									{$Title}
 
-									<% if $Link %>
+									<% if $LinkSet %>
 											{$SVGIcon('arrow', 20, 20)}
 										</a>
 									<% end_if %>
@@ -54,9 +56,5 @@
 		<% end_if %>
 	</div>
 
-	<% if $Colour == 'Blue' %>
-		{$Ball('orange')}
-	<% else %>
-		{$Ball('yellow')}
-	<% end_if %>
+	{$Ball}
 </div>

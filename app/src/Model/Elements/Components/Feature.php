@@ -41,6 +41,8 @@ class Feature extends DataObject
 
     private static array $has_one = [
         'FeatureBlock' => ElementFeatures::class,
+        'FeatureBlock' => ElementFeatures::class,
+
     ];
 
     private static array $summary_fields = [

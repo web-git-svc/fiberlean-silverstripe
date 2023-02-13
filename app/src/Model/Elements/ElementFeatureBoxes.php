@@ -5,6 +5,7 @@ namespace App\Model\Elements;
 use App\Forms\GridField\GridFieldConfig_OrderableRecordEditor;
 use App\Model\Elements\Components\FeatureBox;
 use DNADesign\Elemental\Models\ElementContent;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\OptionsetField;
@@ -18,7 +19,7 @@ class ElementFeatureBoxes extends ElementContent
     private static string $table_name = 'ElementFeatureBoxes';
 
     private static array $db = [
-        'Colour'  => 'Enum(array("Blue", "Yellow"), "Yellow")',
+        'Colour'  => 'Varchar',
         'Columns' => 'Enum(array("Three", "Four", "Five"), "Four")',
     ];
 
@@ -81,7 +82,7 @@ class ElementFeatureBoxes extends ElementContent
                         OptionsetField::create(
                             'Colour',
                             'Colour',
-                            $this->dbObject('Colour')->enumValues()
+                            Config::inst()->get('Colours', 'colours')
                         ),
                         OptionsetField::create(
                             'Columns',

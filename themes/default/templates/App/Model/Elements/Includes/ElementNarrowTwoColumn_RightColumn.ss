@@ -6,6 +6,8 @@
 		<% else %>
 			{$RightColumnImage.TwoColumnSet}
 		<% end_if %>
+	<% else_if $RightColumnType == 'Video' && $RightColumnVideo %>
+		{$RightColumnVideo}
 	<% else %>
 		{$RightColumnContent}
 	<% end_if %>

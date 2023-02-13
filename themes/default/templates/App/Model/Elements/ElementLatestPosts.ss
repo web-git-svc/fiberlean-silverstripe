@@ -1,4 +1,6 @@
 <div class="element-latest-posts<% if $Background == 'Blue' %> bg--blue-dark<% else %> bg--white<% end_if %>">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container">
 		<% if $TitleTag %>
 			<div class="typography<% if $Background == 'Blue' %> typography--white<% end_if %>">

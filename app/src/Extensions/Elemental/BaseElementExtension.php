@@ -6,10 +6,12 @@ use AdrHumphreys\TextDropdownField\TextDropdownField;
 use App\Control\PageController;
 use SilverStripe\Control\Controller;
 use SilverStripe\Core\Convert;
+use SilverStripe\Forms\CompositeValidator;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Tab;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\ValidationResult;
 use SilverStripe\View\HTML;
 use TractorCow\Fluent\Extension\FluentExtension;
 use TractorCow\Fluent\Model\Locale;
@@ -30,6 +32,8 @@ class BaseElementExtension extends DataExtension
         'h3'     => 'Heading 3',
         'hidden' => 'Hide title',
     ];
+
+    public static $breadcrumbs_rendered = false;
 
     public function updateCMSFields(FieldList $fields): void
     {
@@ -72,7 +76,7 @@ class BaseElementExtension extends DataExtension
 
     public function TitleTag(string $extraClass = ''): string
     {
-        if ($this->owner->HeadingLevel === 'hidden') {
+        if ($this->owner->HeadingLevel === 'hidden' || !$this->owner->Title) {
             return '';
         }
 
@@ -88,5 +92,16 @@ class BaseElementExtension extends DataExtension
         $controller = Controller::curr();
 
         return $controller instanceof PageController ? $controller : null;
+    }
+
+    public function BreadcrumbsRendered(): bool
+    {
+        if (!self::$breadcrumbs_rendered) {
+            self::$breadcrumbs_rendered = true;
+
+            return false;
+        }
+
+        return true;
     }
 }

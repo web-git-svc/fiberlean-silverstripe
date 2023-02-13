@@ -1,4 +1,6 @@
 <div class="element-three-column-text <% if $Colour %> element-three-column-text--{$Colour} <% end_if %>">
+	<% include App\Model\Elements\Includes\Breadcrumbs %>
+
 	<div class="container">
 		{$TitleTag('element-three-column-text__title')}
 		<div class="element-three-column-text__columns">

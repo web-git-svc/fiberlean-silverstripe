@@ -26,6 +26,15 @@
 		<clipPath id="intro-block-clip-path" clipPathUnits="objectBoundingBox"><path d="M0,1 h1 V0 C0.747,0.069,0.066,0.318,0,1"></path></clipPath>
 	</svg>
 
+	<svg style="position: absolute; width: 0; height: 0;">
+		<defs>
+			<clipPath id="image-blob-clip">
+				<path d="M-15485.362,358.781s777.939,177.572,778.89,1009.1-1575.7,1080.468-1575.7,1080.468Z"
+					  transform="translate(16282.169 -358.781)"/>
+			</clipPath>
+		</defs>
+	</svg>
+
 
 	<% include App\Includes\Header %>
 

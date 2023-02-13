@@ -26,6 +26,18 @@
 	.element-feature-boxes--blue & {
 		color: $blue-light;
 	}
+
+	.element-feature-boxes--pink & {
+		color: $pink;
+	}
+
+	.element-feature-boxes--red & {
+		color: $red;
+	}
+
+	.element-feature-boxes--orange & {
+		color: $orange;
+	}
 }
 
 @include respond(767px, max) {
@@ -121,6 +133,7 @@
 ------------------------------------*/
 .element-feature-boxes__card {
 	height: 100%;
+	position: relative;
 }
 
 /*------------------------------------
@@ -135,7 +148,7 @@
 	Card content
 ------------------------------------*/
 .element-feature-boxes__card-content {
-	margin-top: 20px;
+	margin: 20px 0;
 
 	h3 {
 		font-size: 1.6rem;
@@ -151,8 +164,22 @@
 			text-decoration: none;
 		}
 
+		&:before {
+			content: '';
+			position: absolute;
+			inset: 0;
+		}
+
+		&:active,
+		&:hover {
+			svg {
+				transform: translateX(3px);
+			}
+		}
+
 		svg {
 			color: $blue-dark;
+			transition: 300ms ease-in-out transform;
 		}
 	}
 }

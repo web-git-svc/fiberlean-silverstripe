@@ -19,6 +19,7 @@
 ------------------------------------*/
 .fluent__inner {
 	position: relative;
+	text-transform: uppercase;
 }
 
 @include respond(992px) {
@@ -31,19 +32,14 @@
 	Button
 ------------------------------------*/
 .fluent__button {
-	position: relative;
-	display: flex;
 	align-items: center;
 	border: none;
 	border-bottom: 1px solid $blue;
-	font-size: 1.4rem;
 	cursor: pointer;
+	display: flex;
+	font-size: 1.4rem;
+	position: relative;
 	z-index: 10;
-
-	span {
-		display: none;
-		color: $blue-dark;
-	}
 
 	svg {
 		margin-left: 6px;
@@ -52,11 +48,6 @@
 
 @include respond(992px) {
 	.fluent__button {
-
-		span {
-			display: inline-block;
-		}
-
 		svg {
 			margin-left: 10px;
 		}
@@ -67,63 +58,96 @@
 	List
 ------------------------------------*/
 ul.fluent__list {
-	position: absolute;
-	top: 95%;
-	left: 50%;
-	width: 100%;
-	max-height: 111px;
-	padding: 9px;
-	border: 1px solid $blue;
 	background-color: $white;
-	transition: all 300ms ease;
-	transform: translateX(-50%);
+	border: 1px solid $blue;
+	color: $blue-dark;
 	font-size: 1.4rem;
+	left: 50%;
+	max-width: calc(100vw - 40px);
+	min-width: max-content;
 	opacity: 1;
-	z-index: 200;
+	position: absolute;
 	text-align: center;
-
-	span {
-		display: none;
-	}
+	top: 95%;
+	transform: translateX(-50%);
+	transition: all 300ms ease;
+	visibility: visible;
+	width: 100%;
+	z-index: 200;
 
 	li {
-		margin-bottom: 1em;
+		padding: .5em 9px;
+
+		&:first-child {
+			margin-top: .5em;
+		}
+
+		&:last-child {
+			margin-bottom: .5em;
+		}
+
+		&:hover {
+			background-color: rgba($blue, .15);
+		}
 	}
 
 	a {
-		color: $blue-dark;
 		text-decoration: none;
+		color: inherit;
 	}
 }
 
 @include respond(992px) {
 	ul.fluent__list {
 		min-width: 220px;
-		padding: 9px 32px 7px 15px;
 		text-align: left;
 
-		span {
-			display: inline-block;
+		li {
+			padding: .5em 32px .5em 18px;
 		}
 	}
 }
 
-ul.fluent__list--hidden {
+ul.fluent__list--hidden{
 	max-height: 0;
 	opacity: 0;
-	z-index: -1;
+	transition: none;
+	visibility: hidden;
+}
+
+/*------------------------------------
+	Option
+------------------------------------*/
+.fluent__option {
+	align-items: center;
+	display: flex;
+}
+
+/*------------------------------------
+	Title
+------------------------------------*/
+.fluent__title {
+	display: none;
+}
+
+@include respond(992px) {
+	.fluent__title {
+		display: block;
+	}
 }
 
 /*------------------------------------
 	Image
 ------------------------------------*/
 .fluent__image {
-	max-width: 14px;
-	max-height: 14px;
-}
+	border-radius: 50%;
+	height: 14px;
+	margin-right: 10px;
+	overflow: hidden;
+	width: 14px;
+	transform: translateY(-1px);
 
-@include respond(992px) {
-	.fluent__image {
-		margin-right: 11px;
+	img {
+		display: block;
 	}
 }
