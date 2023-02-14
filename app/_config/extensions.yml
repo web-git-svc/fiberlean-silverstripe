@@ -29,9 +29,9 @@ SilverStripe\CMS\Model\RedirectorPage:
   extensions:
     - App\Extensions\CMS\RedirectorPageExtension
 
-TractorCow\Fluent\Model\Locale:
-  extensions:
-    - App\Extensions\Fluent\LocaleExtension
+#TractorCow\Fluent\Model\Locale:
+#  extensions:
+#    - App\Extensions\Fluent\LocaleExtension
 
 ---
 After: '#blogconfig'
