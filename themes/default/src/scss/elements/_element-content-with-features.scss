@@ -42,7 +42,12 @@
 
 div.element-content-with-features__background-shape {
 	opacity: .5;
-	clip-path: url('#image-blob-clip');
+	clip-path: url('#circle-quarter');
+	width: 701px;
+	bottom: 0;
+	left: 0;
+	aspect-ratio: 733/813;
+	top: auto;
 
 	img {
 		object-fit: cover;
@@ -55,25 +60,6 @@ div.element-content-with-features__background-shape {
 @include respond(767px, max) {
 	div.element-content-with-features__background-shape {
 		display: none;
-	}
-}
-
-@include respond(767px, max) {
-	.element-content-with-features__background-shape {
-		width: 701px;
-		height: 930px;
-		top: -24px;
-		left: -442px;
-	}
-}
-
-@include respond(768px) {
-	.element-content-with-features__background-shape {
-		.element-content-with-features--blue & {
-			width: 1813px;
-			height: 2404px;
-			left: -937px;
-		}
 	}
 }
 

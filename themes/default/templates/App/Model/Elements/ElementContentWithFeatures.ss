@@ -1,7 +1,7 @@
 <div class="element-content-with-features element-content-with-features--{$Colour.LowerCase} ball--{$Colour.LowerCase}">
 	<% if $Image %>
 		<div class="element-content-with-features__background-shape">
-			{$Image}
+			{$Image.FocusFill(768, 768)}
 		</div>
 	<% else %>
 		{$SVGIcon('semi-circle', 1575, 2089, 'element-content-with-features__background-shape')}
