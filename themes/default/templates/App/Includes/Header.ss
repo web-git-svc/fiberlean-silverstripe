@@ -7,7 +7,7 @@
 				</a>
 
 				<div class="header__row--right">
-					<% include LocaleMenu %>
+<%--					<% include LocaleMenu %>--%>
 
 					<nav class="nav">
 						<ul class="nav__menu">

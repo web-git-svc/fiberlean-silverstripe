@@ -3,7 +3,6 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="//www.google-analytics.com" rel="dns-prefetch" />
-	<link rel="stylesheet" href="https://use.typekit.net/gpv2hcx.css">
 
 	<title><% if $MetaTitle %>{$MetaTitle.XML}<% else %>{$Title.XML} | {$SiteConfig.Title}<% end_if %></title>
 	<% base_tag %>
@@ -33,6 +32,10 @@
 					  transform="translate(16282.169 -358.781)"/>
 			</clipPath>
 		</defs>
+	</svg>
+
+	<svg style="position: absolute; width: 0; height: 0;">
+		<clipPath id="circle-quarter" clipPathUnits="objectBoundingBox"><path d="M1,1 v-0.003 C0.776,0.189,0.001,0.001,0.001,0.001 v1 H1"></path></clipPath>
 	</svg>
 
 
