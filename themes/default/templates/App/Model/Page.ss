@@ -3,8 +3,6 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="//www.google-analytics.com" rel="dns-prefetch" />
-	<link rel="stylesheet" href="https://use.typekit.net/gpv2hcx.css">
-
 	<title><% if $MetaTitle %>{$MetaTitle.XML}<% else %>{$Title.XML} | {$SiteConfig.Title}<% end_if %></title>
 	<% base_tag %>
 	{$MetaTags(false)}
