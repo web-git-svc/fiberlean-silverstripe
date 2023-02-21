@@ -4,5 +4,11 @@
     "/dist/js/app.js": "/dist/js/app.js",
     "/dist/css/style.css": "/dist/css/style.css",
     "/dist/css/editor.css": "/dist/css/editor.css",
-    "/dist/css/login.css": "/dist/css/login.css"
+    "/dist/css/login.css": "/dist/css/login.css",
+    "/dist/webfonts/ofeliatext-bold.woff": "/dist/webfonts/ofeliatext-bold.woff",
+    "/dist/webfonts/ofeliatext-bold.woff2": "/dist/webfonts/ofeliatext-bold.woff2",
+    "/dist/webfonts/ofeliatext-light.woff": "/dist/webfonts/ofeliatext-light.woff",
+    "/dist/webfonts/ofeliatext-light.woff2": "/dist/webfonts/ofeliatext-light.woff2",
+    "/dist/webfonts/ofeliatext-regular.woff": "/dist/webfonts/ofeliatext-regular.woff",
+    "/dist/webfonts/ofeliatext-regular.woff2": "/dist/webfonts/ofeliatext-regular.woff2"
 }
