@@ -96,7 +96,6 @@ class PageController extends ContentController
             Email::create()
                 ->setHTMLTemplate('App\Email\EnquiryFormEmail')
                 ->addData($data)
-                ->setFrom('noreply@fiberlean.com')
                 ->setReplyTo($data['Email'])
                 ->setTo($this->SiteConfig()->EnquiryFormRecipient ?? 'info@fiberlean.com')
                 ->setSubject($this->SiteConfig()->EnquiryFormSubject ?? 'New Enquiry Form Submission')

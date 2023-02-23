@@ -1,0 +1,21 @@
+---
+Name: app-email
+---
+SilverStripe\Control\Email\Email:
+  admin_email: 'info@fiberlean.com'
+---
+Name: app-smtp
+After: '#emailconfig'
+Only:
+  envvarset: 'APP_SMTP_HOST'
+---
+SilverStripe\Core\Injector\Injector:
+  Swift_Transport:
+    class: Swift_SmtpTransport
+    properties:
+      Port: 587
+      Encryption: tls
+    calls:
+      Host: [ setHost, ['`APP_SMTP_HOST`'] ]
+      Username: [ setUsername, ['`APP_SMTP_USERNAME`'] ]
+      Password: [ setPassword, ['`APP_SMTP_PASSWORD`'] ]
