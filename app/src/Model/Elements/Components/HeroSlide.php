@@ -73,6 +73,7 @@ class HeroSlide extends DataObject
             $fields->replaceField(
                 'BallColour',
                 DropdownField::create('BallColour', '“Ball” colour', [
+                    'none' => 'None (hidden)',
                     'pink-alt' => 'Pink',
                     'yellow' => 'Yellow',
                     'orange' => 'Orange',

@@ -5,6 +5,7 @@ namespace App\Model\Elements;
 use App\Forms\GridField\GridFieldConfig_OrderableRecordEditor;
 use App\Model\Elements\Components\HeroSlide;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\TextField;
@@ -18,6 +19,7 @@ class ElementHero extends BaseElement
 
     private static array $db = [
         'Title' => 'Text',
+        'DoNotCrop' => 'Boolean'
     ];
 
     private static array $has_many = [
@@ -49,6 +51,14 @@ class ElementHero extends BaseElement
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
             $fields->removeByName(['HeroSlides']);
 
+            $fields->replaceField(
+                'DoNotCrop',
+                DropdownField::create('DoNotCrop', 'Image cropping', [
+                    0 => 'Default crop',
+                    1 => 'Do not crop'
+                ])
+            );
+
             $fields->addFieldToTab(
                 'Root.Main',
                 GridField::create(
@@ -74,7 +84,7 @@ class ElementHero extends BaseElement
                         TextField::create('Title', 'Title')
                             ->performReadonlyTransformation(),
                     ],
-                    'HeroSlides'
+                    'DoNotCrop'
                 );
             }
         );
