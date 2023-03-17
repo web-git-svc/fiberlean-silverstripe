@@ -18,6 +18,21 @@ Heyday\ResponsiveImages\ResponsiveImageExtension:
         "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 864, 864 ]
         "(min-width: 200px)": [ 576, 576 ]
       default_arguments: [ 1200, 725 ]
+    HeroNoCropSet:
+      method: ScaleWidth
+      css_classes: responsive-image
+      arguments:
+        "(min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 1200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min-resolution: 144dpi), (min-width: 1200px) and (min-resolution: 1.5dppx)": [ 2880 ]
+        "(min-width: 1200px)": [ 1920 ]
+        "(min-width: 992px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 992px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 992px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 992px) and (min-device-pixel-ratio: 1.5), (min-width: 992px) and (min-resolution: 144dpi), (min-width: 992px) and (min-resolution: 1.5dppx)": [ 1800 ]
+        "(min-width: 992px)": [ 1200 ]
+        "(min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 1488 ]
+        "(min-width: 768px)": [ 992 ]
+        "(min-width: 576px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 576px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 1152 ]
+        "(min-width: 576px)": [ 768 ]
+        "(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx)": [ 864 ]
+        "(min-width: 200px)": [ 576 ]
+      default_arguments: [ 1200 ]
     TwoColumnSet:
       method: FocusFill
       css_classes: responsive-image
