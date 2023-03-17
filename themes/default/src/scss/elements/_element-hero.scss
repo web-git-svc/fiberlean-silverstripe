@@ -112,6 +112,17 @@
 }
 
 /*------------------------------------
+	Clickable link overlay
+------------------------------------*/
+.element-hero__link {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	text-indent: 250%;
+	white-space: nowrap;
+}
+
+/*------------------------------------
 	Ball
 ------------------------------------*/
 .ball {

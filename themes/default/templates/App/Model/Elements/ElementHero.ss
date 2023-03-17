@@ -22,6 +22,12 @@
 							</div>
 						<% end_if %>
 
+						<% if $LinkSet %>
+							<a class="element-hero__link" href="{$LinkSet}"<% if $LinkTarget %>target="{$LinkTarget}"<% end_if %> <% if $LinkType == 'File' %>download<% end_if %>>
+								View more information
+							</a>
+						<% end_if %>
+
 						<% if $BallColour != 'none' %>
 							{$Ball($BallColour)}
 
