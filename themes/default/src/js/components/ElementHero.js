@@ -1,4 +1,5 @@
 import Splide from '@splidejs/splide';
+import ResizeSlider from './ResizeSlider';
 
 export const ElementHero = () => {
   const heroes = document.querySelectorAll('[data-element-hero-carousel]');
@@ -14,7 +15,7 @@ export const ElementHero = () => {
       speed: 1500,
       pauseOnHover: false,
       pauseOnFocus: false,
-    }).mount();
+    }).mount({ ResizeSlider });
   }
 
   heroes.forEach(initCarousel);
