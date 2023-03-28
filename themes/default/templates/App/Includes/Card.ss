@@ -13,11 +13,5 @@
 		<time datetime="{$PublishDate}">
 			{$PublishDate.Format('dd MMMM yyyy')}
 		</time>
-
-		<div class="card__summary">
-			{$Summary}
-		</div>
-
-		<span class="card__arrow">{$SVGIcon('arrow', 20, 20)}</span>
 	</div>
 </div>

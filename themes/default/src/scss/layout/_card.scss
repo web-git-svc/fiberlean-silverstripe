@@ -77,8 +77,11 @@
 	time {
 		display: block;
 		font-weight: 500;
-		margin-bottom: 18px;
 		line-height: (26/16);
+
+		&:has(+ *) {
+			margin-bottom: 18px;
+		}
 	}
 
 	svg {
