@@ -2,10 +2,9 @@
 
 namespace App\Control;
 
+use App\Forms\PopupForm;
 use App\Traits\SentTrait;
-use SilverStripe\Blog\Model\BlogPost;
 use SilverStripe\CMS\Controllers\ContentController;
-use SilverStripe\Control\Director;
 use SilverStripe\Control\Email\Email;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\HTTPResponse;
@@ -18,8 +17,8 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\View\Requirements;
 
 class PageController extends ContentController
@@ -28,6 +27,7 @@ class PageController extends ContentController
 
     private static array $allowed_actions = [
         'EnquiryForm',
+        'PopupForm',
     ];
 
     protected function init()
@@ -105,5 +105,31 @@ class PageController extends ContentController
         }
 
         return $this->redirect($this->Link('#enquiry-form'));
+    }
+
+    public function PopupForm(): PopupForm
+    {
+        return PopupForm::create($this, __FUNCTION__);
+    }
+
+    public function doPopupForm(array $data, Form $form, HTTPRequest $request): DBHTMLText
+    {
+        if (empty($data['Title'])) {
+            $form->captureForm('Popup form submission', 'Name', 'Email' );
+
+            $data['AreasOfInterest'] = implode(', ', $data['AreasOfInterest']);
+
+            Email::create()
+                ->setHTMLTemplate('App\Email\PopupFormEmail')
+                ->addData($data)
+                ->setReplyTo($data['Email'])
+                ->setTo($this->SiteConfig()->EnquiryFormRecipient ?? 'info@fiberlean.com')
+                ->setSubject($this->SiteConfig()->EnquiryFormSubject ?? 'New Enquiry Form Submission')
+                ->send();
+
+            $request->getSession()->set('CompletedForm', $form->getName());
+        }
+
+        return $this->renderWith(['App\Includes\PopupFormComplete']);
     }
 }

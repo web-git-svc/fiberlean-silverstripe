@@ -6,13 +6,6 @@ $black: #000000;
 $black-alt: #032F33;
 $grey: #F2F4F4;
 
-$form-description: #505A5F;
-$form-good: #00703C;
-$form-bad: #D4351C;
-$form-warning: #FFDD00;
-$form-info: #1D70B8;
-$form-focus: #1D70B8;
-
 $mine-shaft: #2D2D2D;
 $blue-darker: #032F33;
 $blue-dark: #215860;
@@ -27,6 +20,13 @@ $gold: #B79C00;
 $green: #5ACB77;
 $red: #C91517;
 $brown: #853532;
+
+$form-description: #505A5F;
+$form-good: #00703C;
+$form-bad: #D4351C;
+$form-warning: #FFDD00;
+$form-info: #1D70B8;
+$form-focus: $blue-light;
 
 $font-head: 'Ofelia Text', sans-serif;
 $font-body: 'Ofelia Text', sans-serif;

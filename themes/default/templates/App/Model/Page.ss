@@ -45,6 +45,7 @@
 
 	<% include App\Includes\Footer %>
 
+	<% include App\Includes\PopupForm %>
 </div>
 
 {$SiteConfig.EndOfBody.RAW}

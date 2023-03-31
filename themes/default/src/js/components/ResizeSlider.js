@@ -29,7 +29,7 @@ function ResizeSlider(Splide, Components, options) {
 
     changeActiveSlide() {
       let slide = Components.Elements.slides[Splide.index];
-      slide.classList.add(SPLIDE_SLIDE_NEXT_ACTIVE_CLASS);
+      slide?.classList?.add(SPLIDE_SLIDE_NEXT_ACTIVE_CLASS);
 
       siblings(slide).forEach((sibling) => {
         sibling.classList.remove(SPLIDE_SLIDE_NEXT_ACTIVE_CLASS);

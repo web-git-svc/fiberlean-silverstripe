@@ -4,6 +4,7 @@
  */
 
 import './classes/StickyHeader';
+import PopupForm                          from './components/PopupForm';
 import {ElementFullWidthCarousel}         from './components/ElementFullWidthCarousel';
 import {ElementHero}                      from './components/ElementHero';
 import {NavMenuHandler, OffCanvasHandler} from './components/Navigation';
@@ -17,6 +18,7 @@ const init = _ => {
   ElementSlideshow();
   NavMenuHandler();
   OffCanvasHandler();
+  PopupForm();
 }
 
 window.addEventListener('load', init);
