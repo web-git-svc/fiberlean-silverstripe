@@ -1,0 +1,8 @@
+---
+Name: app-security
+Before:
+  - '#coresecurity'
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Security\MemberAuthenticator\MemberLoginForm:
+    class: 'App\Security\MemberAuthenticator\MemberLoginForm'

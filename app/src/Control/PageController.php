@@ -3,6 +3,7 @@
 namespace App\Control;
 
 use App\Forms\PopupForm;
+use App\Forms\RegisterForm;
 use App\Traits\SentTrait;
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\Control\Email\Email;
@@ -28,6 +29,7 @@ class PageController extends ContentController
     private static array $allowed_actions = [
         'EnquiryForm',
         'PopupForm',
+        'RegisterForm',
     ];
 
     protected function init()
@@ -134,4 +136,10 @@ class PageController extends ContentController
 
         return $this->renderWith(['App\Includes\PopupFormComplete']);
     }
+
+    public function RegisterForm(): RegisterForm
+    {
+        return RegisterForm::create($this, __FUNCTION__);
+    }
+
 }

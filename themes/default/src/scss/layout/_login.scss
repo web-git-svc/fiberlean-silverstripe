@@ -1,0 +1,125 @@
+/* Layout: _vip-area.scss
+---------------------------------------------------------------------------------- */
+.login__section {
+	padding: 36px 0;
+	position: relative;
+}
+
+.login__grid {
+	align-items: start;
+	display: grid;
+	gap: 48px 36px;
+	padding-top: .5em;
+	position: relative;
+	z-index: 5;
+}
+
+@include respond(768px) {
+	.login__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.login__column {
+	background-color: $white;
+	border-radius: 12px;
+	box-shadow: 0 0 6px rgba($black, .5);
+	padding: 36px;
+
+	#LoginForm_LoginForm_Tab,
+	ul,
+	.form-tab h3 {
+		display: none;
+	}
+
+	#MemberLoginForm_LoginForm_action_doLogin {
+		@extend .button;
+		@extend .button--blue-light;
+	}
+}
+
+.login__left {
+	inset: auto auto 0 0;
+	position: absolute;
+	transform: scaleX(-1);
+
+	svg {
+		color: $orange;
+		display: block;
+		height: 100%;
+		inset: auto 0 0 auto;
+		position: absolute;
+	}
+}
+
+@include respond(768px) {
+	.login__left {
+		svg {
+			aspect-ratio: 742/712;
+			height: 734px;
+		}
+	}
+}
+
+.login__image {
+	aspect-ratio: 596/710;
+	clip-path: url(#intro-block-clip-path);
+
+	img {
+		height: 100%;
+		object-fit: cover;
+		transform: scaleX(-1);
+		width: 100%;
+	}
+}
+
+@include respond(768px) {
+	.login__image {
+		height: 710px;
+	}
+}
+
+.login__bottom-title {
+	text-transform: uppercase;
+	color: $blue-light;
+	text-align: center;
+	@include fluid-font-size( (1.8rem, 320px), (2.4rem, 960px) );
+	letter-spacing: .1em;
+	margin-bottom: 1.5em;
+}
+
+.login__feature-boxes {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 36px;
+}
+
+.login__feature-box-image {
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 16px;
+}
+
+.login__feature-box-title {
+	margin-bottom: 8px;
+	@include fluid-font-size( (2.4rem, 320px), (3.8rem, 960px) );
+	text-align: center;
+}
+
+.login__feature-box-content {
+	@include fluid-font-size( (1.6rem, 320px), (1.8rem, 960px) );
+	text-align: center;
+}
+
+.login__bottom-content {
+	text-transform: uppercase;
+	text-align: center;
+	@include fluid-font-size( (1.8rem, 320px), (2.4rem, 960px) );
+	font-weight: 700;
+	padding: 1em 0;
+	border: 2px solid $blue-light;
+	border-left: none;
+	border-right: none;
+	margin: 2em 0 4em;
+}
+

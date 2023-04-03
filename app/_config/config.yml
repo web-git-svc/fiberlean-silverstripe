@@ -27,3 +27,16 @@ SilverStripe\Security\Member:
 SilverStripe\Security\MemberAuthenticator\LostPasswordHandler:
   extensions:
     - App\Extensions\Security\LostPasswordHandler
+
+---
+Before: '#login-forms'
+---
+SilverStripe\Security\Security:
+  extensions:
+    - App\Extensions\Security\VipAreaExtension
+---
+After: '#login-forms'
+---
+SilverStripe\Security\Security:
+  extensions:
+    - App\Extensions\Security\VipAreaTwoExtension
