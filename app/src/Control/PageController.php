@@ -117,7 +117,9 @@ class PageController extends ContentController
         if (empty($data['Title'])) {
             $form->captureForm('Popup form submission', 'Name', 'Email' );
 
-            $data['AreasOfInterest'] = implode(', ', $data['AreasOfInterest']);
+            if (isset($data['AreasOfInterest'] )) {
+                $data['AreasOfInterest'] = implode(', ', $data['AreasOfInterest']);
+            }
 
             Email::create()
                 ->setHTMLTemplate('App\Email\PopupFormEmail')

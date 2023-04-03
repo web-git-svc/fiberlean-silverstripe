@@ -88,7 +88,7 @@
 	background-color: $white;
 	border-radius: 12px;
 	box-shadow: 0 0 6px rgba($black, .8);
-	height: 85svh;
+	max-height: 85svh;
 	inset: auto auto -6px 0;
 	opacity: 0;
 	overflow-x: hidden;
@@ -146,4 +146,37 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
+}
+
+.popup-form__loader {
+	position: absolute;
+	inset: 0;
+	background: rgba($white, .65);
+	display: none;
+
+	&.active {
+		display: block;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		border: 6px solid $blue-light;
+		border-color: $blue-light transparent $blue-light transparent;
+		animation: dual-ring 1.2s linear infinite;
+		position: absolute;
+		inset: calc(50% - 32px);
+	}
+}
+
+@keyframes dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

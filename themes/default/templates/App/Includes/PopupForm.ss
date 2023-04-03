@@ -18,7 +18,11 @@
 					To make an enquiry please complete the form below.
 				</p>
 
-				{$PopupForm}
+				<div>
+					{$PopupForm}
+				</div>
+
+				<div class="popup-form__loader" data-popup-loader></div>
 			</div>
 		</div>
 	</div>
