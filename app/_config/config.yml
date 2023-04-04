@@ -27,7 +27,9 @@ SilverStripe\Security\Member:
 SilverStripe\Security\MemberAuthenticator\LostPasswordHandler:
   extensions:
     - App\Extensions\Security\LostPasswordHandler
-
+SilverStripe\Security\Security:
+  extensions:
+    - App\Extensions\Security\SecurityExtension
 ---
 Before: '#login-forms'
 ---

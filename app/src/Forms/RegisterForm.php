@@ -33,7 +33,7 @@ class RegisterForm extends Form
                 ->setAttribute('placeholder', $label . '*')
                 ->setFieldHolderTemplate(self::HOLDER_TEMPLATE),
             TextField::create('Telephone', $label = 'Telephone')
-                ->setAttribute('placeholder', $label)
+                ->setAttribute('placeholder', $label  . '*')
                 ->setFieldHolderTemplate(self::HOLDER_TEMPLATE),
             EmailField::create('Email', $label = 'Email')
                 ->setAttribute('placeholder', $label . '*')

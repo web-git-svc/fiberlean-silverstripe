@@ -8,7 +8,8 @@ Name: app-smtp
 After: '#emailconfig'
 Only:
   envvarset: 'APP_SMTP_HOST'
-  environment: 'live'
+Except:
+  environment: 'dev'
 ---
 SilverStripe\Core\Injector\Injector:
   Swift_Transport:

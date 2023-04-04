@@ -21,6 +21,8 @@ use SilverStripe\View\TemplateGlobalProvider;
  */
 class VIPAreaHolder extends Page implements TemplateGlobalProvider
 {
+    private static string $table_name = 'VIPAreaHolder';
+
     private static array $db = [
         'FeatureBoxesTitle'   => 'Varchar',
         'FeatureBoxesContent' => 'Text',

@@ -3,3 +3,6 @@ en:
     TITLE: 'Single Sign-On'
   SilverStripe\SiteConfig\SiteConfigLeftAndMain:
     MENUTITLE: Configuration
+  SilverStripe\Security\Member:
+    KEEP_ME_SIGNED_IN': 'Remember me for {count} days'
+    BUTTONLOSTPASSWORD: 'I’ve forgotten my password'

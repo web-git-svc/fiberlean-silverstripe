@@ -3,6 +3,7 @@
 .login__section {
 	padding: 36px 0;
 	position: relative;
+	overflow: hidden;
 }
 
 .login__grid {
@@ -80,46 +81,63 @@
 }
 
 .login__bottom-title {
-	text-transform: uppercase;
 	color: $blue-light;
-	text-align: center;
-	@include fluid-font-size( (1.8rem, 320px), (2.4rem, 960px) );
 	letter-spacing: .1em;
 	margin-bottom: 1.5em;
+	@include fluid-font-size((1.8rem, 320px), (2.4rem, 960px));
+	text-align: center;
+	text-transform: uppercase;
 }
 
 .login__feature-boxes {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	gap: 36px;
+}
+
+@include respond(768px) {
+	.login__feature-boxes {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 .login__feature-box-image {
 	border-radius: 50%;
+	margin: 0 auto 16px;
+	max-width: 352px;
 	overflow: hidden;
-	margin-bottom: 16px;
 }
 
 .login__feature-box-title {
 	margin-bottom: 8px;
-	@include fluid-font-size( (2.4rem, 320px), (3.8rem, 960px) );
+	@include fluid-font-size((2.4rem, 320px), (3.8rem, 960px));
 	text-align: center;
 }
 
 .login__feature-box-content {
-	@include fluid-font-size( (1.6rem, 320px), (1.8rem, 960px) );
+	@include fluid-font-size((1.6rem, 320px), (1.8rem, 960px));
 	text-align: center;
 }
 
 .login__bottom-content {
-	text-transform: uppercase;
-	text-align: center;
-	@include fluid-font-size( (1.8rem, 320px), (2.4rem, 960px) );
-	font-weight: 700;
-	padding: 1em 0;
 	border: 2px solid $blue-light;
 	border-left: none;
+	@include fluid-font-size((1.8rem, 320px), (2.4rem, 960px));
 	border-right: none;
-	margin: 2em 0 4em;
+	font-weight: 700;
+	margin: 2em 0 6em;
+	padding: 1em 0;
+	text-align: center;
+	text-transform: uppercase;
 }
 
+.login__ball .ball {
+	max-width: 600px;
+	width: 100vw;
+	height: 100vw;
+	max-height: 600px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transform: translate(50%, 70%);
+
+}

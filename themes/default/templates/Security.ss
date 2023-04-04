@@ -16,34 +16,11 @@
 {$SiteConfig.StartOfBody.RAW}
 
 <div class="viewport">
-	<%-- Move to include --%>
-	<svg style="position: absolute; width: 0; height: 0;">
-		<clipPath id="curved-image-clip-path" clipPathUnits="objectBoundingBox">
-			<path d="M1,0.137 C0.556,-0.148,0.091,0.092,0,0.144 V1 H1 V0.137"></path>
-		</clipPath>
-	</svg>
-
 	<svg style="position: absolute; width: 0; height: 0;">
 		<clipPath id="intro-block-clip-path" clipPathUnits="objectBoundingBox">
 			<path d="M0,1 h1 V0 C0.747,0.069,0.066,0.318,0,1"></path>
 		</clipPath>
 	</svg>
-
-	<svg style="position: absolute; width: 0; height: 0;">
-		<defs>
-			<clipPath id="image-blob-clip">
-				<path d="M-15485.362,358.781s777.939,177.572,778.89,1009.1-1575.7,1080.468-1575.7,1080.468Z"
-					  transform="translate(16282.169 -358.781)"/>
-			</clipPath>
-		</defs>
-	</svg>
-
-	<svg style="position: absolute; width: 0; height: 0;">
-		<clipPath id="circle-quarter" clipPathUnits="objectBoundingBox">
-			<path d="M1,1 v-0.003 C0.776,0.189,0.001,0.001,0.001,0.001 v1 H1"></path>
-		</clipPath>
-	</svg>
-
 
 	<% include App\Includes\Header %>
 
@@ -60,13 +37,13 @@
 	<div class="bg--grey login__section">
 		<div class="container typography">
 			<p>
-				Get access to exclusive Fiberlean content, login to our VIP area here.
+				Get access to exclusive Fiberlean content, login to our Member Area here.
 			</p>
 
 			<div class="login__grid">
 				<div class="login__column">
 					<h2>
-						VIP login
+						Members Area login
 					</h2>
 
 					<p>
@@ -77,15 +54,19 @@
 				</div>
 
 				<div class="login__column">
-					<h2>
-						Not registered yet?
-					</h2>
+					<% if $Sent('RegisterForm') %>
+						This is sent
+					<% else %>
+						<h2>
+							Not registered yet?
+						</h2>
 
-					<p>
-						Fill in the form below to request access.
-					</p>
+						<p>
+							Fill in the form below to request access.
+						</p>
 
-					{$RegisterForm}
+						{$RegisterForm}
+					<% end_if %>
 				</div>
 			</div>
 		</div>
@@ -148,10 +129,13 @@
 				<% end_if %>
 			<% end_with %>
 		</div>
+
+		<div class="login__ball">
+			{$Ball('blue')}
+		</div>
 	</div>
 
 	<% include App\Includes\Footer %>
-
 </div>
 
 {$SiteConfig.EndOfBody.RAW}

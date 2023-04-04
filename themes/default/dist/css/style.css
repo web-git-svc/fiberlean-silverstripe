@@ -3461,6 +3461,7 @@ div.element-content-with-features__background-shape img {
 .login__section {
   padding: 36px 0;
   position: relative;
+  overflow: hidden;
 }
 
 .login__grid {
@@ -3510,24 +3511,23 @@ div.element-content-with-features__background-shape img {
   width: 100%;
 }
 .login__bottom-title {
-  text-transform: uppercase;
   color: #46A8B8;
-  text-align: center;
-  font-size: calc(1.8rem + 6 * ((100vw - 320px) / 640));
   letter-spacing: 0.1em;
   margin-bottom: 1.5em;
+  font-size: calc(1.8rem + 6 * ((100vw - 320px) / 640));
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .login__feature-boxes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 36px;
 }
-
 .login__feature-box-image {
   border-radius: 50%;
+  margin: 0 auto 16px;
+  max-width: 352px;
   overflow: hidden;
-  margin-bottom: 16px;
 }
 
 .login__feature-box-title {
@@ -3542,15 +3542,27 @@ div.element-content-with-features__background-shape img {
 }
 
 .login__bottom-content {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: calc(1.8rem + 6 * ((100vw - 320px) / 640));
-  font-weight: 700;
-  padding: 1em 0;
   border: 2px solid #46A8B8;
   border-left: none;
+  font-size: calc(1.8rem + 6 * ((100vw - 320px) / 640));
   border-right: none;
-  margin: 2em 0 4em;
+  font-weight: 700;
+  margin: 2em 0 6em;
+  padding: 1em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login__ball .ball {
+  max-width: 600px;
+  width: 100vw;
+  height: 100vw;
+  max-height: 600px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(50%, 70%);
+          transform: translate(50%, 70%);
 }
 
 /* Layout: _nav.scss
@@ -4454,6 +4466,9 @@ select:not([multiple]):not([size]).blog__category-select {
   }
   .login__image {
     height: 710px;
+  }
+  .login__feature-boxes {
+    grid-template-columns: repeat(3, 1fr);
   }
   .popup-form__holder {
     inset: auto auto 36px 36px;
