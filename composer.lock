@@ -164,16 +164,16 @@
         },
         {
             "name": "bigfork/silverstripe-form-capture",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bigfork/silverstripe-form-capture.git",
-                "reference": "9da789e26e38cac8f09d20fca7b36f7b3678a28c"
+                "reference": "5b3aa39dd1eef042f173167b0fa4d3f717971772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bigfork/silverstripe-form-capture/zipball/9da789e26e38cac8f09d20fca7b36f7b3678a28c",
-                "reference": "9da789e26e38cac8f09d20fca7b36f7b3678a28c",
+                "url": "https://api.github.com/repos/bigfork/silverstripe-form-capture/zipball/5b3aa39dd1eef042f173167b0fa4d3f717971772",
+                "reference": "5b3aa39dd1eef042f173167b0fa4d3f717971772",
                 "shasum": ""
             },
             "require": {
@@ -212,9 +212,9 @@
             ],
             "support": {
                 "issues": "http://github.com/bigfork/silverstripe-form-capture/issues",
-                "source": "https://github.com/bigfork/silverstripe-form-capture/tree/3.1.0"
+                "source": "https://github.com/bigfork/silverstripe-form-capture/tree/3.1.1"
             },
-            "time": "2023-01-30T09:14:11+00:00"
+            "time": "2023-03-31T16:14:35+00:00"
         },
         {
             "name": "bigfork/silverstripe-oauth",
