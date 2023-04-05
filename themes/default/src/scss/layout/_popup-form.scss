@@ -1,0 +1,182 @@
+/* Layout: _popup-form.scss
+---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Holder
+------------------------------------*/
+.popup-form__holder {
+	inset: auto auto 36px $container-padding;
+	position: fixed;
+	z-index: 1000;
+}
+
+@include respond(768px) {
+	.popup-form__holder {
+		inset: auto auto 36px 36px;
+	}
+}
+
+/*------------------------------------
+	Round button
+------------------------------------*/
+.popup-form__round-button {
+	border: none;
+	cursor: pointer;
+	display: flex;
+	height: 48px;
+	width: 48px;
+
+	> * {
+		margin: auto;
+	}
+
+	&:before {
+		background-color: $white;
+		border-radius: 50%;
+		box-shadow: 0 0 6px rgba($black, .8);
+		color: $black-alt;
+		content: '';
+		height: 48px;
+		inset: 50% auto auto 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		transition: 300ms ease-in-out all;
+		width: 48px;
+		z-index: -1;
+	}
+
+	&:hover {
+		&:before {
+			height: 54px;
+			width: 54px;
+		}
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+@include respond(768px) {
+	.popup-form__round-button {
+		height: 80px;
+		width: 80px;
+
+		&:before {
+			height: 80px;
+			width: 80px;
+		}
+
+		&:hover {
+			&:before {
+				height: 96px;
+				width: 96px;
+			}
+		}
+
+		svg {
+			width: 36px;
+			height: 36px;
+		}
+	}
+}
+
+/*------------------------------------
+	Bubble
+------------------------------------*/
+.popup-form__bubble {
+	background-color: $white;
+	border-radius: 12px;
+	box-shadow: 0 0 6px rgba($black, .8);
+	max-height: 85svh;
+	inset: auto auto -6px 0;
+	opacity: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	transform: translateY(16px);
+	transition: 300ms ease-in-out all;
+	transition-delay: 300ms;
+	visibility: hidden;
+	width: calc(100vw - $container-padding - $container-padding);
+
+	&.active {
+		opacity: 1;
+		transform: none;
+		transition: 300ms ease-in-out all;
+		transition-delay: unset;
+		visibility: visible;
+	}
+}
+
+@include respond(768px) {
+	.popup-form__bubble {
+		width: 440px;
+		inset: auto auto -6px -16px;
+	}
+}
+
+/*------------------------------------
+	Bubble inner
+------------------------------------*/
+.popup-form__bubble-inner {
+	color: $black-alt;
+	font-size: 1.8rem;
+	font-weight: 300;
+	padding: 24px;
+
+	h2 {
+		font-weight: 700;
+		padding-right: 36px;
+	}
+
+	h2,
+	p {
+		font-size: 1.8rem;
+		margin-bottom: 1em;
+	}
+}
+
+/*------------------------------------
+	Close button
+------------------------------------*/
+.popup-form__close-button {
+	border: none;
+	inset: 24px 24px auto auto;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+.popup-form__loader {
+	position: absolute;
+	inset: 0;
+	background: rgba($white, .65);
+	display: none;
+
+	&.active {
+		display: block;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		border: 6px solid $blue-light;
+		border-color: $blue-light transparent $blue-light transparent;
+		animation: dual-ring 1.2s linear infinite;
+		position: absolute;
+		inset: calc(50% - 32px);
+	}
+}
+
+@keyframes dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

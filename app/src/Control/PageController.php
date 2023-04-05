@@ -2,8 +2,10 @@
 
 namespace App\Control;
 
+use App\Forms\PopupForm;
+use App\Forms\RegisterForm;
+use App\Model\VIPArea\VIPAreaHolder;
 use App\Traits\SentTrait;
-use SilverStripe\Blog\Model\BlogPost;
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\Control\Director;
 use SilverStripe\Control\Email\Email;
@@ -18,8 +20,9 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\FieldType\DBHTMLText;
+use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\View\Requirements;
 
 class PageController extends ContentController
@@ -28,6 +31,8 @@ class PageController extends ContentController
 
     private static array $allowed_actions = [
         'EnquiryForm',
+        'PopupForm',
+        'RegisterForm',
     ];
 
     protected function init()
@@ -100,10 +105,74 @@ class PageController extends ContentController
                 ->setTo($this->SiteConfig()->EnquiryFormRecipient ?? 'info@fiberlean.com')
                 ->setSubject($this->SiteConfig()->EnquiryFormSubject ?? 'New Enquiry Form Submission')
                 ->send();
-
-            $request->getSession()->set('CompletedForm', $form->getName());
         }
 
+        $request->getSession()->set('CompletedForm', $form->getName());
+
         return $this->redirect($this->Link('#enquiry-form'));
+    }
+
+    public function PopupForm(): PopupForm
+    {
+        return PopupForm::create($this, __FUNCTION__);
+    }
+
+    public function doPopupForm(array $data, Form $form, HTTPRequest $request): DBHTMLText
+    {
+        if (empty($data['Title'])) {
+            $form->captureForm('Popup form submission', 'Name', 'Email' );
+
+            if (isset($data['AreasOfInterest'] )) {
+                $data['AreasOfInterest'] = implode(', ', $data['AreasOfInterest']);
+            }
+
+            Email::create()
+                ->setHTMLTemplate('App\Email\PopupFormEmail')
+                ->addData($data)
+                ->setReplyTo($data['Email'])
+                ->setTo($this->SiteConfig()->EnquiryFormRecipient ?? 'info@fiberlean.com')
+                ->setSubject($this->SiteConfig()->EnquiryFormSubject ?? 'New Enquiry Form Submission')
+                ->send();
+        }
+
+        $request->getSession()->set('CompletedForm', $form->getName());
+
+        return $this->renderWith(['App\Includes\PopupFormComplete']);
+    }
+
+    public function RegisterForm(): RegisterForm
+    {
+        return RegisterForm::create($this, __FUNCTION__)
+            ->setFormAction(Director::absoluteURL('/home/RegisterForm/'));
+    }
+
+    public function doRegisterForm(array $data, Form $form, HTTPRequest $request): HTTPResponse
+    {
+        if (empty($data['Title'])) {
+            $form->captureForm('Register form submission', 'Name', 'Email' );
+
+            if (isset($data['AreasOfInterest'] )) {
+                $data['AreasOfInterest'] = implode(', ', $data['AreasOfInterest']);
+            }
+
+            Email::create()
+                ->setHTMLTemplate('App\Email\RegisterFormEmail')
+                ->addData($data)
+                ->setReplyTo($data['Email'])
+                ->setTo(SiteConfig::current_site_config()->EnquiryFormRecipient ?? 'info@fiberlean.com')
+                ->setSubject('New Registration Form Submission')
+                ->send();
+        }
+
+        $request->getSession()->set('CompletedForm', $form->getName());
+
+        $url = $this->getBackURL()
+            ?: $this->getReturnReferer()
+                ?: Director::baseURL();
+
+        // Only direct to absolute urls
+        $url = Director::absoluteURL($url);
+
+        return $this->redirect("{$url}#register-form");
     }
 }
