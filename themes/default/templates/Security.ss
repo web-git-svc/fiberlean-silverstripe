@@ -53,9 +53,9 @@
 					{$Form}
 				</div>
 
-				<div class="login__column">
+				<div id="register-form" class="login__column">
 					<% if $Sent('RegisterForm') %>
-						This is sent
+						{$CurrentVIPArea.RegistrationCompleteMessage}
 					<% else %>
 						<h2>
 							Not registered yet?
@@ -72,14 +72,16 @@
 		</div>
 
 		<% if $CurrentVIPArea.LoginImage %>
-			<div class="login__left">
-				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 711.9 742"
-					 preserveAspectRatio="none">
-					<path d="M711.4,0.7C134.1,156.9,0.6,741.5,0.6,741.5h710.7V0.7z" fill="currentColor"/>
-				</svg>
+			<div class="login__background">
+				<div class="login__left">
+					<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 711.9 742"
+						 preserveAspectRatio="none">
+						<path d="M711.4,0.7C134.1,156.9,0.6,741.5,0.6,741.5h710.7V0.7z" fill="currentColor"/>
+					</svg>
 
-				<div class="login__image">
-					{$CurrentVIPArea.LoginImage}
+					<div class="login__image">
+						{$CurrentVIPArea.LoginImage}
+					</div>
 				</div>
 			</div>
 		<% end_if %>

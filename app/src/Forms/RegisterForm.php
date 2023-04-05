@@ -2,6 +2,7 @@
 
 namespace App\Forms;
 
+use SilverStripe\Control\Controller;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\CheckboxSetField;
 use SilverStripe\Forms\CompositeField;
@@ -19,9 +20,8 @@ class RegisterForm extends Form
 {
     const HOLDER_TEMPLATE = 'SilverStripe\Forms\FormFieldShrinkyLabel_holder';
 
-    public function __construct($controller, $name)
+    public function __construct(Controller $controller, $name)
     {
-
         $fields = FieldList::create(
             TextField::create('Title', 'Title')
                 ->addExtraClass('h-hide-visually')

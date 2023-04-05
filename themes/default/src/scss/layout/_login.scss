@@ -1,15 +1,23 @@
 /* Layout: _vip-area.scss
 ---------------------------------------------------------------------------------- */
+/*------------------------------------
+	Section
+------------------------------------*/
 .login__section {
+	overflow: hidden;
 	padding: 36px 0;
 	position: relative;
-	overflow: hidden;
+
 }
 
+/*------------------------------------
+	Grid
+------------------------------------*/
 .login__grid {
 	align-items: start;
 	display: grid;
 	gap: 48px 36px;
+	min-height: 740px;
 	padding-top: .5em;
 	position: relative;
 	z-index: 5;
@@ -21,6 +29,9 @@
 	}
 }
 
+/*------------------------------------
+	Column
+------------------------------------*/
 .login__column {
 	background-color: $white;
 	border-radius: 12px;
@@ -39,16 +50,35 @@
 	}
 }
 
+/*------------------------------------
+	Background
+------------------------------------*/
+.login__background {
+	display: none;
+}
+
+@include respond(576px) {
+	.login__background {
+		align-items: end;
+		display: flex;
+		inset: 0;
+		justify-content: flex-start;
+		padding-top: 100px;
+		position: absolute;
+	}
+}
+
+/*------------------------------------
+	Left
+------------------------------------*/
 .login__left {
-	inset: auto auto 0 0;
-	position: absolute;
 	transform: scaleX(-1);
 
 	svg {
 		color: $orange;
 		display: block;
 		height: 100%;
-		inset: auto 0 0 auto;
+		inset: -24px 0 auto auto;
 		position: absolute;
 	}
 }
@@ -62,6 +92,9 @@
 	}
 }
 
+/*------------------------------------
+	Image
+------------------------------------*/
 .login__image {
 	aspect-ratio: 596/710;
 	clip-path: url(#intro-block-clip-path);
@@ -80,6 +113,9 @@
 	}
 }
 
+/*------------------------------------
+	Bottom title
+------------------------------------*/
 .login__bottom-title {
 	color: $blue-light;
 	letter-spacing: .1em;
@@ -89,6 +125,9 @@
 	text-transform: uppercase;
 }
 
+/*------------------------------------
+	Feature boxes
+------------------------------------*/
 .login__feature-boxes {
 	display: grid;
 	gap: 36px;
@@ -100,6 +139,9 @@
 	}
 }
 
+/*------------------------------------
+	Feature box image
+------------------------------------*/
 .login__feature-box-image {
 	border-radius: 50%;
 	margin: 0 auto 16px;
@@ -107,17 +149,26 @@
 	overflow: hidden;
 }
 
+/*------------------------------------
+	Feature box title
+------------------------------------*/
 .login__feature-box-title {
 	margin-bottom: 8px;
 	@include fluid-font-size((2.4rem, 320px), (3.8rem, 960px));
 	text-align: center;
 }
 
+/*------------------------------------
+	Feature box content
+------------------------------------*/
 .login__feature-box-content {
 	@include fluid-font-size((1.6rem, 320px), (1.8rem, 960px));
 	text-align: center;
 }
 
+/*------------------------------------
+	Bottom content
+------------------------------------*/
 .login__bottom-content {
 	border: 2px solid $blue-light;
 	border-left: none;
@@ -130,14 +181,16 @@
 	text-transform: uppercase;
 }
 
+/*------------------------------------
+	Ball
+------------------------------------*/
 .login__ball .ball {
-	max-width: 600px;
-	width: 100vw;
+	bottom: 0;
 	height: 100vw;
 	max-height: 600px;
+	max-width: 600px;
 	position: absolute;
 	right: 0;
-	bottom: 0;
 	transform: translate(50%, 70%);
-
+	width: 100vw;
 }

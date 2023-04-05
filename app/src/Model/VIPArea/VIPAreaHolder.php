@@ -11,6 +11,7 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\HasManyList;
@@ -24,8 +25,9 @@ class VIPAreaHolder extends Page implements TemplateGlobalProvider
     private static string $table_name = 'VIPAreaHolder';
 
     private static array $db = [
-        'FeatureBoxesTitle'   => 'Varchar',
-        'FeatureBoxesContent' => 'Text',
+        'FeatureBoxesTitle'           => 'Varchar',
+        'FeatureBoxesContent'         => 'Text',
+        'RegistrationCompleteMessage' => 'HTMLText',
     ];
 
     private static array $has_one = [
@@ -97,6 +99,7 @@ class VIPAreaHolder extends Page implements TemplateGlobalProvider
                         UploadField::create('LoginImage', 'Login image')
                             ->setAllowedFileCategories('image/supported')
                             ->setFolderName('uploads'),
+                        HTMLEditorField::create('RegistrationCompleteMessage', 'Registration complete message'),
                         TextField::create('FeatureBoxesTitle', 'Feature boxes title'),
                         TextareaField::create('FeatureBoxesContent', 'Feature boxes content'),
                         GridField::create(
