@@ -43,7 +43,7 @@
 				<% with $LinkedCategory.BlogPosts.First %>
 					<div class="element-latest-posts__compact-content">
 						<h3 class="element-latest-posts__compact-content-title">
-							<a href="{$Link}">
+							<a href="{$Top.LinkedCategory.Link}">
 								{$Title.LimitCharactersToClosestWord('45')}
 							</a>
 						</h3>
