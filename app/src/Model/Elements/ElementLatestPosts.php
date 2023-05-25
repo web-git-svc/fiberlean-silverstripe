@@ -18,12 +18,14 @@ use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\ORM\HasManyList;
+use UncleCheese\DisplayLogic\Forms\Wrapper;
 
 class ElementLatestPosts extends BaseElement
 {
     private static string $table_name = 'ElementLatestPosts';
 
     private static array $db = [
+        'BlockFormat' => 'Enum(array("Grid", "Compact"), "Grid")',
         'ButtonText' => 'Varchar',
         'Background' => 'Enum(array("Blue", "White"), "White")',
     ];
@@ -49,14 +51,29 @@ class ElementLatestPosts extends BaseElement
     {
         $this->beforeUpdateCMSFields(
             function (FieldList $fields) {
+
+                $fields->removeByName(
+                    [
+                        'BlockFormat',
+                        'ButtonText',
+                        'LinkedCategoryID',
+                        'LinkedPageID',
+                    ]
+                );
+
                 $linkedCategories = BlogCategory::get();
 
                 $fields->addFieldsToTab(
                     'Root.Main',
                     [
-                        TextField::create('ButtonText', 'Button text'),
+                        DropdownField::create('BlockFormat', 'Block format', $this->dbObject('BlockFormat')->enumValues()),
+                        Wrapper::create(
+                            TextField::create('ButtonText', 'Button text')
+                        )->displayIf('BlockFormat')->isEqualTo('Grid')->end(),
                         DropdownField::create('LinkedCategoryID', 'Linked category', $linkedCategories)->setEmptyString('Please select'),
-                        TreeDropdownField::create('LinkedPageID', 'Linked page', SiteTree::class)->setDescription('This will only be used if no category is selected'),
+                        Wrapper::create(
+                            TreeDropdownField::create('LinkedPageID', 'Linked page', SiteTree::class)->setDescription('This will only be used if no category is selected')
+                        )->displayIf('BlockFormat')->isEqualTo('Grid')->end(),
                     ]
                 );
             }
