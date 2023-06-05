@@ -14,6 +14,8 @@ use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\ArrayLib;
+use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\SiteConfig\SiteConfig;
 
 class PopupForm extends Form
 {
@@ -21,6 +23,7 @@ class PopupForm extends Form
 
     public function __construct($controller, $name)
     {
+        $siteConfig = SiteConfig::current_site_config();
 
         $fields = FieldList::create(
             TextField::create('Title', 'Title')
@@ -53,10 +56,10 @@ class PopupForm extends Form
                     ]
                 )
             ),
-            LiteralField::create('', <<<HTML
-<p style="margin-top: 1em">By submitting this form you consent to FiberLean collecting your information
-to manage your enquiry.</p>
-HTML
+            LiteralField::create('',
+                $siteConfig->EnquiryFormPrivacyContent
+                    ? '<div style="margin-top: 1em;text-align: left;">' . DBField::create_field('HTMLFragment', $siteConfig->EnquiryFormPrivacyContent . '</div>')
+                    : ''
             )
         );
 
