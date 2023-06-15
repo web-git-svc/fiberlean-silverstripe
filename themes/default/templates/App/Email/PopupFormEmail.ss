@@ -30,10 +30,10 @@
 			{$Message}<br />
 		<% end_if %>
 
-		<% if $SubscribeToEmailNewsletter %>
-			<br/>
-			<% if $Name %>{$Name} <% end_if %>would like to subscribe to the email newsletter.<br/>
-		<% end_if %>
+<%--		<% if $SubscribeToEmailNewsletter %>--%>
+<%--			<br/>--%>
+<%--			<% if $Name %>{$Name} <% end_if %>would like to subscribe to the email newsletter.<br/>--%>
+<%--		<% end_if %>--%>
 
 		<% if $AreasOfInterest %>
 			<br />
