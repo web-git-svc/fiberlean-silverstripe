@@ -44,7 +44,7 @@ class PopupForm extends Form
             TextareaField::create('Message', $label = 'Message')
                 ->setAttribute('placeholder', $label . '*')
                 ->setFieldHolderTemplate(self::HOLDER_TEMPLATE),
-            CheckboxField::create('SubscribeToEmailNewsletter', 'Subscribe to email newsletter', true),
+//            CheckboxField::create('SubscribeToEmailNewsletter', 'Subscribe to email newsletter', true),
             CheckboxSetField::create(
                 'AreasOfInterest',
                 'Areas of interest',
